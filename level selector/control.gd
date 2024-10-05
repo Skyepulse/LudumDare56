@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 
 func goToLevel(number : int) -> void :
 	#temp definition
-	get_tree().change_scene_to_file(levelPathsArray[number])
+	get_tree().change_scene(levelPathsArray[number])
+	
 	
 func goToLevel1() -> void :
 	goToLevel(1);

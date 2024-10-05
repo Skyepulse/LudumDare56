@@ -18,6 +18,9 @@ enum AnimalType {
 @export var reproduction_rate : int
 @export var type : AnimalType
 @export var ui_sprite: Texture2D
+@export var state : int
+
+
 
 enum AnimalState {
 	STACKED = 0, # animal dans le stack
@@ -25,3 +28,18 @@ enum AnimalState {
 	CROSSING = 2, #traverse la route
 	FREE = 3 #animal sauvage mange les autres
 }
+
+func move() -> void :
+	if (state == AnimalState.CROSSING) :
+		rotation = 0;
+		velocity =speed*Vector2(1,0);
+		move_and_slide();
+	elif (state == AnimalState.STACKED) :
+		rotation = 0;
+		velocity = Vector2(-1,-1);
+		move_and_slide();
+	elif (state == AnimalState.FREE):
+		pass #move towards stack, move away after timeout -> use direction var
+	
+func _process(delta: float) -> void:
+	move();

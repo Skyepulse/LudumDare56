@@ -4,5 +4,11 @@
 
 [node name="Animal" type="CharacterBody2D"]
 script = ExtResource("1_52t7k")
+speed = null
+size = null
+throw_distance = null
+reproduction_rate = null
+type = null
+state = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

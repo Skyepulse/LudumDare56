@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ml2mu2gqwak1"]
+[gd_scene load_steps=6 format=3 uid="uid://d0h4t8bmmobpp"]
 
-[ext_resource type="PackedScene" uid="uid://cqu20qu1o35se" path="res://Level Scenes/animal.tscn" id="1_jliu6"]
+[ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://Level Scenes/animal.tscn" id="1_jliu6"]
 [ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="2_kwfaj"]
 [ext_resource type="Texture2D" uid="uid://doilpve0ktx10" path="res://Sprites/slug_walk_2.png" id="3_qk62b"]
 
@@ -22,6 +22,7 @@ animations = [{
 radius = 7.0
 
 [node name="Slug" instance=ExtResource("1_jliu6")]
+ui_sprite = ExtResource("2_kwfaj")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_10orl")
