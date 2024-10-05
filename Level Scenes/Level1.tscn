@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://xtcc75vdkcyi"]
+[gd_scene load_steps=8 format=3 uid="uid://xtcc75vdkcyi"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
 [ext_resource type="PackedScene" uid="uid://brxn3wghyn815" path="res://PrefabScenes/winning_line.tscn" id="3_o5yjo"]
 [ext_resource type="PackedScene" uid="uid://s2nwtxsi3sdt" path="res://Level Scenes/toad.tscn" id="4_syjkf"]
+[ext_resource type="PackedScene" uid="uid://yvkon0gr243n" path="res://Level Scenes/snake.tscn" id="5_32qtx"]
+[ext_resource type="PackedScene" uid="uid://deukhrjuqqyor" path="res://Level Scenes/chicken.tscn" id="6_uv3y2"]
+[ext_resource type="PackedScene" uid="uid://b0llnbyisa1qf" path="res://Level Scenes/fox.tscn" id="7_qh2pp"]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -11,12 +14,26 @@
 position = Vector2(98, 83)
 state = 2
 
-[node name="Node2D" parent="." instance=ExtResource("1_1lgaw")]
+[node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
 position = Vector2(196, 551)
+initial_slugs = 2
+initial_foxes = 1
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
 position = Vector2(1102, 291)
 
 [node name="Toad" parent="." instance=ExtResource("4_syjkf")]
 position = Vector2(101, 151)
+state = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_32qtx")]
+position = Vector2(104, 222)
+state = 2
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("6_uv3y2")]
+position = Vector2(105, 287)
+state = 2
+
+[node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
+position = Vector2(108, 362)
 state = 2
