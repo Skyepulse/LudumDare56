@@ -1,4 +1,5 @@
 extends Node
+class_name WinningLine
 
 const points = {
 	Animal.AnimalType.SLUG: 5,
@@ -9,6 +10,15 @@ const points = {
 	Animal.AnimalType.FOX: 160,
 	Animal.AnimalType.ALIEN: 320
 }
+
+enum GameState {
+    WIN,
+    LOSE,
+    PLAYING
+}
+
+# Singleton
+static var instance: WinningLine = null
 
 signal win
 signal lose
@@ -30,6 +40,12 @@ var has_won: bool = false
 var has_lost: bool = false
 
 func _ready():
+    #Singleton
+    if instance == null:
+        instance = self
+    else:
+        queue_free()
+
     area2D.body_entered.connect(on_body_entered)
 
     # Debug signals
@@ -53,6 +69,8 @@ func on_body_entered(body: Node):
         emit_signal("points_added")
 
 func add_points(animal_type: Animal.AnimalType):
+    if has_won or has_lost:
+        return
     total_current_points += points[animal_type]
     check_win()
 
@@ -78,3 +96,11 @@ func debug_loser():
 
 func debug_winner():
     print("You won!")
+
+func get_game_state() -> GameState:
+    if has_won:
+        return GameState.WIN
+    elif has_lost:
+        return GameState.LOSE
+    else:
+        return GameState.PLAYING

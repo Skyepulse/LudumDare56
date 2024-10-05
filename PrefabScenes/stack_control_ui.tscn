@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca16fr3xs2hdg"]
+
+[ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="1_avtrf"]
+[ext_resource type="Script" path="res://Scripts/stackControlUI.gd" id="1_mp07o"]
+[ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="2_g1d3r"]
+[ext_resource type="Texture2D" uid="uid://sb5na2qysqgw" path="res://Sprites/snake1.png" id="3_k55en"]
+[ext_resource type="Texture2D" uid="uid://s4cjheo1fwwp" path="res://Sprites/poulet1.png" id="4_xylpj"]
+[ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="5_5128s"]
+
+[node name="stack_control_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_mp07o")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="Control" type="Control" parent="Control"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="slugContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/slugContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_avtrf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/slugContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="betterSlugContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/betterSlugContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_avtrf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/betterSlugContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="toadContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/toadContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_g1d3r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/toadContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="snakeContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/snakeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_k55en")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/snakeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="chickenContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/chickenContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_xylpj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/chickenContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="foxContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/foxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_5128s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/foxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="alienContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/alienContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_avtrf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/alienContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="empty" type="Control" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -20,6 +20,8 @@ enum AnimalType {
 @export var ui_sprite: Texture2D
 @export var state : AnimalState
 
+var is_in_stack : bool = true
+
 enum AnimalState {
 	STACKED = 0, # animal dans le stack
 	HELD = 1, # animal pret a etre lance
@@ -59,5 +61,19 @@ var held = false
 
 func on_press():
 	state = AnimalState.HELD
+	if is_in_stack:
+		if Vivier.instance:
+			Vivier.instance.remove_animal(self.type)
+		else:
+			push_error("No vivier instance in the scene!")
+			
 func on_release():
-	state = AnimalState.STACKED
+	if is_in_stack:
+		if Vivier.instance:
+			Vivier.instance.add_animal(self)
+		else:
+			push_error("No vivier instance in the scene!")
+		state = AnimalState.STACKED
+	else:
+		state = AnimalState.CROSSING
+

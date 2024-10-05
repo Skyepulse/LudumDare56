@@ -1,5 +1,9 @@
 extends Node
 
+class_name Vivier
+
+#----------Singleton Instance----------#
+static var instance: Vivier = null
 #----------Consts----------#
 const reproduce_times = {
 	Animal.AnimalType.SLUG: 5,
@@ -12,11 +16,11 @@ const reproduce_times = {
 }
 
 const max_animals = {
-	Animal.AnimalType.SLUG: 20,
-	Animal.AnimalType.BETTER_SLUG: 20,
-	Animal.AnimalType.TOAD: 10,
-	Animal.AnimalType.SNAKE: 7,
-	Animal.AnimalType.CHICKEN: 5,
+	Animal.AnimalType.SLUG: 10,
+	Animal.AnimalType.BETTER_SLUG: 10,
+	Animal.AnimalType.TOAD: 7,
+	Animal.AnimalType.SNAKE: 5,
+	Animal.AnimalType.CHICKEN: 3,
 	Animal.AnimalType.FOX: 2,
 	Animal.AnimalType.ALIEN: 1
 }
@@ -36,10 +40,6 @@ signal animal_removed(animal)
 signal animal_list_modified()
 
 #----------Members----------#
-var animalList: Array[Animal] = []
-var number: int:
-	get: return animalList.size()
-
 @export var spawn_position: Vector2
 @export var initial_slugs: int = 0
 @export var initial_better_slugs: int = 0
@@ -49,11 +49,34 @@ var number: int:
 @export var initial_foxes: int = 0
 @export var initial_aliens: int = 0
 
+var animal_list: Array[Animal] = []
+var number: int:
+	get: return animal_list.size()
+var animal_dictionary: Dictionary = {}
+
+@onready var stackArea: Area2D = $Area2D
+
 #----------Methods----------#
 func _ready():
+
+	#Singleton
+	if instance == null:
+		instance = self
+	else:
+		queue_free()
+		return
+
+	#initialize dictionary
+	for animalType in Animal.AnimalType.values():
+		animal_dictionary[animalType] = 0
+
+	#connect signals
 	animal_added.connect(self.start_animal_timer)
 	animal_removed.connect(self.stop_animal_timer)
 	animal_list_modified.connect(debug_animal_list)
+	
+
+	#initialize animals
 	init_animals(Animal.AnimalType.SLUG, initial_slugs)
 	init_animals(Animal.AnimalType.BETTER_SLUG, initial_better_slugs)
 	init_animals(Animal.AnimalType.TOAD, initial_toads)
@@ -61,6 +84,11 @@ func _ready():
 	init_animals(Animal.AnimalType.CHICKEN, initial_chickens)
 	init_animals(Animal.AnimalType.FOX, initial_foxes)
 	init_animals(Animal.AnimalType.ALIEN, initial_aliens)
+
+	#Late signals
+	stackArea.body_entered.connect(animal_entered_stack)
+	stackArea.body_exited.connect(animal_left_stack)
+	
 
 func _process(_delta):
 	pass
@@ -80,25 +108,23 @@ func debug_animal_list():
 	#print(result)
 
 func add_animal(animal: Animal):
-	animalList.append(animal)
+	animal_list.append(animal)
+	animal_dictionary[animal.type] += 1
 	emit_signal("animal_added", animal)
 	emit_signal("animal_list_modified")
 
 func remove_animal(animalType: Animal.AnimalType):
-	for animal in animalList:
+	for animal in animal_list:
 		if animal.type == animalType:
-			animalList.erase(animal)
+			animal_list.erase(animal)
+			animal_dictionary[animalType] -= 1
 			emit_signal("animal_removed", animal)
 			emit_signal("animal_list_modified")
 			return
 	print('animal not found')
 
 func get_animal_count(animalType: Animal.AnimalType) -> int:
-	var count: int = 0
-	for animal in animalList:
-		if animal.type == animalType:
-			count += 1
-	return count
+	return animal_dictionary[animalType]
 
 func instantiate_animal(animal_type: Animal.AnimalType):
 	match animal_type:
@@ -147,6 +173,8 @@ func reproduce_animal(animalType: Animal.AnimalType):
 		return
 
 	for i in range(int(get_animal_count(animalType) / 2.0)):
+		if(get_animal_count(animalType) >= max_animals[animalType]):
+			return
 		instantiate_animal(animalType)
 
 func init_animals(animalType: Animal.AnimalType, num: int):
@@ -169,6 +197,7 @@ func start_animal_timer(animal: Animal):
 func stop_animal_timer(animal: Animal):
 	var animal_type = animal.type
 	if get_animal_count(animal_type) < 2 and animal_timers.has(animal_type):
+		print('stopping timer')
 		var timer = animal_timers[animal_type]
 		if timer != null:
 			timer.stop()
@@ -177,3 +206,11 @@ func stop_animal_timer(animal: Animal):
 
 func _on_timer_timeout(animal_type: Animal.AnimalType):
 	reproduce_animal(animal_type)
+
+func animal_entered_stack(animal: Animal):
+	animal.is_in_stack = true
+	pass
+
+func animal_left_stack(animal: Animal):
+	animal.is_in_stack = false
+	pass
