@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bojyech4dm16y"]
+[gd_scene load_steps=6 format=3 uid="uid://ml2mu2gqwak1"]
 
-[ext_resource type="PackedScene" uid="uid://1lejiklyxkae" path="res://Level Scenes/animal.tscn" id="1_jliu6"]
+[ext_resource type="PackedScene" uid="uid://cqu20qu1o35se" path="res://Level Scenes/animal.tscn" id="1_jliu6"]
 [ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="2_kwfaj"]
 [ext_resource type="Texture2D" uid="uid://doilpve0ktx10" path="res://Sprites/slug_walk_2.png" id="3_qk62b"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8awaj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_10orl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -18,6 +18,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Animal" instance=ExtResource("1_jliu6")]
-sprite_frames = SubResource("SpriteFrames_8awaj")
-frame_progress = 0.447823
+[sub_resource type="CircleShape2D" id="CircleShape2D_0lq71"]
+radius = 7.0
+
+[node name="Slug" instance=ExtResource("1_jliu6")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_10orl")
+autoplay = "default"
+frame_progress = 0.393228
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_0lq71")
