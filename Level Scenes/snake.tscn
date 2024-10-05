@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://yvkon0gr243n"]
+
+[ext_resource type="Script" path="res://Scripts/animal.gd" id="1_fj7us"]
+[ext_resource type="Texture2D" uid="uid://sb5na2qysqgw" path="res://Sprites/snake1.png" id="2_roq56"]
+[ext_resource type="Texture2D" uid="uid://dtqlfaojm6xua" path="res://Sprites/snake2.png" id="3_yu71g"]
+[ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="4_nn25t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_veocg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_roq56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yu71g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpykj"]
+radius = 5.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w570n"]
+
+[node name="snake" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_fj7us")
+speed = 22000
+type = 3
+ui_sprite = ExtResource("2_roq56")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_veocg")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bpykj")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_nn25t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w570n")

@@ -14,17 +14,21 @@ const reproduce_times = {
 const max_animals = {
 	Animal.AnimalType.SLUG: 20,
 	Animal.AnimalType.BETTER_SLUG: 20,
-	Animal.AnimalType.TOAD: 15,
-	Animal.AnimalType.SNAKE: 10,
-	Animal.AnimalType.CHICKEN: 10,
-	Animal.AnimalType.FOX: 5,
-	Animal.AnimalType.ALIEN: 3
+	Animal.AnimalType.TOAD: 10,
+	Animal.AnimalType.SNAKE: 7,
+	Animal.AnimalType.CHICKEN: 5,
+	Animal.AnimalType.FOX: 2,
+	Animal.AnimalType.ALIEN: 1
 }
 
 var animal_timers = {}
 
 #----------Preloads----------#
 var slug: PackedScene = preload("res://Level Scenes/slug.tscn")
+var toad: PackedScene = preload("res://Level Scenes/toad.tscn")
+var snake: PackedScene = preload("res://Level Scenes/snake.tscn")
+var chicken: PackedScene = preload("res://Level Scenes/chicken.tscn")
+var fox: PackedScene = preload("res://Level Scenes/fox.tscn")
 
 #----------Signals----------#
 signal animal_added(animal)
@@ -37,13 +41,26 @@ var number: int:
 	get: return animalList.size()
 
 @export var spawn_position: Vector2
+@export var initial_slugs: int = 0
+@export var initial_better_slugs: int = 0
+@export var initial_toads: int = 0
+@export var initial_snakes: int = 0
+@export var initial_chickens: int = 0
+@export var initial_foxes: int = 0
+@export var initial_aliens: int = 0
 
 #----------Methods----------#
 func _ready():
 	animal_added.connect(self.start_animal_timer)
 	animal_removed.connect(self.stop_animal_timer)
 	animal_list_modified.connect(debug_animal_list)
-	init_animals(Animal.AnimalType.SLUG, 2)
+	init_animals(Animal.AnimalType.SLUG, initial_slugs)
+	init_animals(Animal.AnimalType.BETTER_SLUG, initial_better_slugs)
+	init_animals(Animal.AnimalType.TOAD, initial_toads)
+	init_animals(Animal.AnimalType.SNAKE, initial_snakes)
+	init_animals(Animal.AnimalType.CHICKEN, initial_chickens)
+	init_animals(Animal.AnimalType.FOX, initial_foxes)
+	init_animals(Animal.AnimalType.ALIEN, initial_aliens)
 
 func _process(_delta):
 	pass
@@ -83,85 +100,54 @@ func get_animal_count(animalType: Animal.AnimalType) -> int:
 			count += 1
 	return count
 
+func instantiate_animal(animal_type: Animal.AnimalType):
+	match animal_type:
+			Animal.AnimalType.SLUG:
+				var new_animal = slug.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+			Animal.AnimalType.BETTER_SLUG:
+				var new_animal = slug.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+			Animal.AnimalType.TOAD:
+				var new_animal = toad.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+			Animal.AnimalType.SNAKE:
+				var new_animal = snake.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+			Animal.AnimalType.CHICKEN:
+				var new_animal = chicken.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+			Animal.AnimalType.FOX:
+				var new_animal = fox.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+			Animal.AnimalType.ALIEN:
+				var new_animal = slug.instantiate()
+				add_child(new_animal)
+				new_animal.position = spawn_position
+				add_animal(new_animal)
+
 func reproduce_animal(animalType: Animal.AnimalType):
 	if get_animal_count(animalType) >= max_animals[animalType]:
 		return
 		
 	if get_animal_count(animalType) < 2:
-		match animalType:
-			Animal.AnimalType.SLUG:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.BETTER_SLUG:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.TOAD:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.SNAKE:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.CHICKEN:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.FOX:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.ALIEN:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+		instantiate_animal(animalType)
 		return
-	for i in range(int(get_animal_count(animalType) / 2)):
-		match animalType:
-			Animal.AnimalType.SLUG:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.BETTER_SLUG:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.TOAD:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.SNAKE:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.CHICKEN:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.FOX:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
-			Animal.AnimalType.ALIEN:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+
+	for i in range(int(get_animal_count(animalType) / 2.0)):
+		instantiate_animal(animalType)
 
 func init_animals(animalType: Animal.AnimalType, num: int):
 	for i in range(num):
