@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dgjal30b62d72"]
+[gd_scene load_steps=2 format=3 uid="uid://xtcc75vdkcyi"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
+position = Vector2(42, 55)
