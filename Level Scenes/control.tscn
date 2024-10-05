@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkttx7hp2ycs0"]
+[gd_scene load_steps=13 format=3 uid="uid://dkttx7hp2ycs0"]
 
 [ext_resource type="Script" path="res://level selector/control.gd" id="1_k1eak"]
 [ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="2_tf11g"]
 [ext_resource type="Texture2D" uid="uid://j0usy34axpc1" path="res://Sprites/level_box_1.png" id="3_q60ex"]
 [ext_resource type="Texture2D" uid="uid://d7a0k5rjuotw" path="res://Sprites/level_box_1_fonce.png" id="4_nces2"]
+[ext_resource type="Texture2D" uid="uid://c1t75d2fsxr1e" path="res://Sprites/level_box_2.png" id="5_ln720"]
+[ext_resource type="Texture2D" uid="uid://2wj8ge4j4r8" path="res://Sprites/level_box_2_fonce.png" id="6_d5lu5"]
+[ext_resource type="Texture2D" uid="uid://coaotbv73r7r1" path="res://Sprites/level_box_3.png" id="7_tbnue"]
+[ext_resource type="Texture2D" uid="uid://cenf11cdftr5m" path="res://Sprites/level_box_3_fonce.png" id="8_84n1s"]
+[ext_resource type="Texture2D" uid="uid://dnwtn0dxw234s" path="res://Sprites/level_box_4.png" id="9_e2vrm"]
+[ext_resource type="Texture2D" uid="uid://jbhi88m8wnva" path="res://Sprites/level_box_4_fonce.png" id="10_aub7q"]
+[ext_resource type="Texture2D" uid="uid://4fa6c1s0m2rv" path="res://Sprites/level_box_5.png" id="11_l36nr"]
+[ext_resource type="Texture2D" uid="uid://heq8mw3wu1ds" path="res://Sprites/level_box_5_fonce.png" id="12_1inh1"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -65,20 +73,32 @@ texture_pressed = ExtResource("4_nces2")
 stretch_mode = 0
 
 [node name="level2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_tf11g")
+texture_normal = ExtResource("5_ln720")
+texture_pressed = ExtResource("6_d5lu5")
+stretch_mode = 0
 
 [node name="level3" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_tf11g")
+texture_normal = ExtResource("7_tbnue")
+texture_pressed = ExtResource("8_84n1s")
+stretch_mode = 0
 
 [node name="level4" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_tf11g")
+texture_normal = ExtResource("9_e2vrm")
+texture_pressed = ExtResource("10_aub7q")
+stretch_mode = 0
 
 [node name="level5" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("2_tf11g")
+texture_normal = ExtResource("11_l36nr")
+texture_pressed = ExtResource("12_1inh1")
+stretch_mode = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
