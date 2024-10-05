@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://xtcc75vdkcyi"]
+[gd_scene load_steps=3 format=3 uid="uid://dgjal30b62d72"]
 
+[ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_arjuv"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
-position = Vector2(42, 55)
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" parent="Camera2D" instance=ExtResource("1_arjuv")]
+position = Vector2(-0.0078125, -0.0546875)
+
+[node name="Slug" parent="Camera2D" instance=ExtResource("1_qi1dv")]
+position = Vector2(28, 54)
+collision_mask = 1

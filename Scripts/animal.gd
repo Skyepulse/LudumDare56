@@ -35,11 +35,17 @@ func move() -> void :
 		velocity =speed*Vector2(1,0);
 		move_and_slide();
 	elif (state == AnimalState.STACKED) :
-		rotation = 0;
-		velocity = Vector2(-1,-1);
 		move_and_slide();
 	elif (state == AnimalState.FREE):
 		pass #move towards stack, move away after timeout -> use direction var
+
+func collide_wall() -> void :
+	velocity = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized();
+	rotation = atan(velocity.y/velocity.x)
 	
+func _ready() -> void:
+	velocity = 10*Vector2(-1.0, 1.0);
+	rotation = 1.5;
 func _process(delta: float) -> void:
-	move();
+
+	move_and_slide()

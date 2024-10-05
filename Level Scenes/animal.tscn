@@ -3,12 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/animal.gd" id="1_52t7k"]
 
 [node name="Animal" type="CharacterBody2D"]
+collision_mask = 6
 script = ExtResource("1_52t7k")
-speed = null
-size = null
-throw_distance = null
-reproduction_rate = null
-type = null
-state = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
