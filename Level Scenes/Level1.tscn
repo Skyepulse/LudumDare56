@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dgjal30b62d72"]
+[gd_scene load_steps=2 format=3 uid="uid://dgjal30b62d72"]
+
+[ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_arjuv"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_arjuv")]
+position = Vector2(444, 192)

@@ -11,6 +11,16 @@ const reproduce_times = {
 	Animal.AnimalType.ALIEN: 75
 }
 
+const max_animals = {
+	Animal.AnimalType.SLUG: 20,
+	Animal.AnimalType.BETTER_SLUG: 20,
+	Animal.AnimalType.TOAD: 15,
+	Animal.AnimalType.SNAKE: 10,
+	Animal.AnimalType.CHICKEN: 10,
+	Animal.AnimalType.FOX: 5,
+	Animal.AnimalType.ALIEN: 3
+}
+
 var animal_timers = {}
 
 #----------Preloads----------#
@@ -36,8 +46,6 @@ func _ready():
 	init_animals(Animal.AnimalType.SLUG, 2)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("kill"):
-		remove_animal(Animal.AnimalType.SLUG)
 
 #====================================#
 func debug_animal_list():
@@ -75,6 +83,9 @@ func get_animal_count(animalType: Animal.AnimalType) -> int:
 	return count
 
 func reproduce_animal(animalType: Animal.AnimalType):
+	if get_animal_count(animalType) >= max_animals[animalType]:
+		return
+		
 	if get_animal_count(animalType) < 2:
 		match animalType:
 			Animal.AnimalType.SLUG:
