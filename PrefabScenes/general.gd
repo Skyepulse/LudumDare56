@@ -1,9 +1,5 @@
 extends Node2D
 
-# @onready var position_camera = get_screen_center_position()
-# @onready var size_camera = get_viewport_rect().size() 
-
-#var top_left_position = (position_camera - (0.5*size_camera))
 var voiture: PackedScene = preload("res://PrefabScenes/Voiture.tscn")
 
 # Called when the node enters the scene tree for the first time.
