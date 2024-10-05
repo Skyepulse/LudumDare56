@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkttx7hp2ycs0"]
+[gd_scene load_steps=5 format=3 uid="uid://dkttx7hp2ycs0"]
 
 [ext_resource type="Script" path="res://level selector/control.gd" id="1_k1eak"]
 [ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="2_tf11g"]
+[ext_resource type="Texture2D" uid="uid://j0usy34axpc1" path="res://Sprites/level_box_1.png" id="3_q60ex"]
+[ext_resource type="Texture2D" uid="uid://d7a0k5rjuotw" path="res://Sprites/level_box_1_fonce.png" id="4_nces2"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -19,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.478239, 0.272018, 0.17073, 1)
+color = Color(0.101813, 0.230543, 0.28611, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(10, 10)
@@ -56,8 +58,11 @@ focus_neighbor_top = NodePath("../RichTextLabel")
 alignment = 1
 
 [node name="level1" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-texture_normal = ExtResource("2_tf11g")
+texture_normal = ExtResource("3_q60ex")
+texture_pressed = ExtResource("4_nces2")
+stretch_mode = 0
 
 [node name="level2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
