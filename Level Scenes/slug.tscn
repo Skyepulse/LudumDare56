@@ -22,13 +22,8 @@ animations = [{
 radius = 7.0
 
 [node name="Slug" instance=ExtResource("1_jliu6")]
-speed = 0
-size = 0
-throw_distance = 0
-reproduction_rate = 0
-type = 0
+collision_mask = 6
 ui_sprite = ExtResource("2_kwfaj")
-state = 0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_10orl")
