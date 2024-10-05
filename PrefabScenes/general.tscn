@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bea80sbyltokd"]
 
 [ext_resource type="Script" path="res://PrefabScenes/general.gd" id="1_i5x5e"]
-[ext_resource type="PackedScene" uid="uid://c3eb4omrh87gl" path="res://PrefabScenes/voiture.tscn" id="2_y7spw"]
+[ext_resource type="PackedScene" uid="uid://jrtywmu0w4lu" path="res://PrefabScenes/voiture.tscn" id="2_y7spw"]
 [ext_resource type="Script" path="res://PrefabScenes/voiture.gd" id="3_rnapf"]
 [ext_resource type="PackedScene" uid="uid://b6c6cmvxordo1" path="res://PrefabScenes/route_departementale.tscn" id="4_6sbx2"]
 
