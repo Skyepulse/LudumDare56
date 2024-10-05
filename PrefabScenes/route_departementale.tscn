@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6c6cmvxordo1"]
+
+[ext_resource type="Script" path="res://PrefabScenes/route_departementale.gd" id="1_8ymx3"]
+
+[node name="RouteDepartementale" type="Node2D"]
+script = ExtResource("1_8ymx3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

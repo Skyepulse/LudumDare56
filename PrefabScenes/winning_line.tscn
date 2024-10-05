@@ -9,8 +9,6 @@ size = Vector2(2000, 100)
 
 [node name="WinningLine" type="Node2D"]
 script = ExtResource("1_8d3w6")
-total_needed_points = 25
-time_to_win = 180
 
 [node name="WinningArea" type="Area2D" parent="."]
 rotation = 1.5708

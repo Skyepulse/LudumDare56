@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://4vvxaoggeiqn"]
 
 [ext_resource type="Script" path="res://Scripts/animalStack.gd" id="1_m35fy"]
-[ext_resource type="Texture2D" uid="uid://ckbvs4ne37hr3" path="res://Sprites/viver_back.png" id="2_jd4b3"]
-[ext_resource type="Texture2D" uid="uid://qwpf5m7ieykx" path="res://Sprites/viver_face.png" id="2_m5tyg"]
-[ext_resource type="Texture2D" uid="uid://cr7gk633v8hgg" path="res://Sprites/viver_left.png" id="3_qfr43"]
-[ext_resource type="Texture2D" uid="uid://dbj71qhrnd1k0" path="res://Sprites/viver_right.png" id="4_4s2m2"]
+[ext_resource type="Texture2D" uid="uid://d4e1qphd7md06" path="res://Sprites/viver_back.png" id="2_jd4b3"]
+[ext_resource type="Texture2D" uid="uid://w8qcpggynqyg" path="res://Sprites/viver_face.png" id="2_m5tyg"]
+[ext_resource type="Texture2D" uid="uid://by5wpixti0amb" path="res://Sprites/viver_left.png" id="3_qfr43"]
+[ext_resource type="Texture2D" uid="uid://dv56c205cx1x0" path="res://Sprites/viver_right.png" id="4_4s2m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28xw4"]
 size = Vector2(5, 200)
