@@ -27,7 +27,7 @@ enum AnimalState {
 	FREE = 3 #animal sauvage mange les autres
 }
 
-func move(delta:floatdelta : float) -> void :
+func move(delta: float) -> void :
 	if (state == AnimalState.CROSSING) :
 		rotation = 0;
 		velocity = speed*Vector2(1,0)*delta;
