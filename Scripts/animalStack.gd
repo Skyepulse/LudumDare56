@@ -46,6 +46,7 @@ func _ready():
 	init_animals(Animal.AnimalType.SLUG, 2)
 
 func _process(_delta):
+	pass
 
 #====================================#
 func debug_animal_list():
