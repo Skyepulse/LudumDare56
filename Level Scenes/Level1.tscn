@@ -17,21 +17,22 @@ func _process(delta: float) -> void:
 "
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(1, 1)
 script = SubResource("GDScript_nkkeb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 352.0
+offset_bottom = 258.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(146, 123)
-zoom = Vector2(10, 10)
+zoom = Vector2(5, 5)
 
 [node name="Slug" parent="." instance=ExtResource("1_ij8s2")]
-position = Vector2(169, 137)
+position = Vector2(129, 158)
 speed = 0
 size = 0
 throw_distance = 0
 reproduction_rate = 0
 type = 0
 state = 0
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 352.0
-offset_bottom = 258.0
