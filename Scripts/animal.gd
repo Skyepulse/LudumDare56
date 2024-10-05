@@ -17,3 +17,4 @@ enum AnimalType {
 @export var throw_distance : int
 @export var reproduction_rate : int
 @export var type : AnimalType
+@export var ui_sprite: Texture2D
