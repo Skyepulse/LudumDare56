@@ -38,6 +38,8 @@ func move() -> void :
 		move_and_slide();
 	elif (state == AnimalState.FREE):
 		pass #move towards stack, move away after timeout -> use direction var
+	elif (state == AnimalState.HELD):
+		global_transform.origin = get_global_mouse_position()
 
 func collide_wall() -> void :
 	velocity = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized();
@@ -47,5 +49,12 @@ func _ready() -> void:
 	velocity = 10*Vector2(-1.0, 1.0);
 	rotation = 1.5;
 func _process(delta: float) -> void:
+	move();
 
-	move_and_slide()
+
+var held = false
+
+func on_press():
+	state = AnimalState.HELD
+func on_release():
+	state = AnimalState.STACKED
