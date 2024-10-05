@@ -1,38 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://4vvxaoggeiqn"]
+[gd_scene load_steps=7 format=3 uid="uid://4vvxaoggeiqn"]
 
 [ext_resource type="Script" path="res://Scripts/animalStack.gd" id="1_m35fy"]
+[ext_resource type="Texture2D" uid="uid://d4e1qphd7md06" path="res://Sprites/viver_back.png" id="2_jd4b3"]
+[ext_resource type="Texture2D" uid="uid://w8qcpggynqyg" path="res://Sprites/viver_face.png" id="2_m5tyg"]
+[ext_resource type="Texture2D" uid="uid://by5wpixti0amb" path="res://Sprites/viver_left.png" id="3_qfr43"]
+[ext_resource type="Texture2D" uid="uid://dv56c205cx1x0" path="res://Sprites/viver_right.png" id="4_4s2m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28xw4"]
 size = Vector2(5, 200)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_uvtvv"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m35fy")
 
 [node name="Murs" type="Node2D" parent="."]
+position = Vector2(66, 50)
 
 [node name="Mur1" type="StaticBody2D" parent="Murs"]
-position = Vector2(-100, 0)
+position = Vector2(-164, -44)
+rotation = 0.843619
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/Mur1"]
 shape = SubResource("RectangleShape2D_28xw4")
 
-[node name="Sprite2D" type="Sprite2D" parent="Murs/Mur1"]
-scale = Vector2(5, 200)
-texture = SubResource("CanvasTexture_uvtvv")
-
 [node name="Mur2" type="StaticBody2D" parent="Murs"]
-position = Vector2(100, 0)
+position = Vector2(19, -46)
+rotation = 0.802817
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/Mur2"]
 shape = SubResource("RectangleShape2D_28xw4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Murs/Mur2"]
-scale = Vector2(5, 200)
-texture = SubResource("CanvasTexture_uvtvv")
 
 [node name="Mur3" type="StaticBody2D" parent="Murs"]
 position = Vector2(0, -100)
@@ -42,18 +39,77 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/Mur3"]
 shape = SubResource("RectangleShape2D_28xw4")
 
-[node name="Sprite2D" type="Sprite2D" parent="Murs/Mur3"]
-scale = Vector2(5, 200)
-texture = SubResource("CanvasTexture_uvtvv")
-
 [node name="Mur4" type="StaticBody2D" parent="Murs"]
-position = Vector2(0, 100)
+position = Vector2(-127, -2)
 rotation = 1.5708
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/Mur4"]
 shape = SubResource("RectangleShape2D_28xw4")
 
-[node name="Sprite2D" type="Sprite2D" parent="Murs/Mur4"]
-scale = Vector2(5, 200)
-texture = SubResource("CanvasTexture_uvtvv")
+[node name="Sprites" type="Node2D" parent="."]
+position = Vector2(66, 50)
+
+[node name="ViverBack" type="Sprite2D" parent="Sprites"]
+position = Vector2(-44, -138)
+texture = ExtResource("2_jd4b3")
+
+[node name="ViverBack2" type="Sprite2D" parent="Sprites"]
+position = Vector2(9, -140)
+texture = ExtResource("2_jd4b3")
+
+[node name="ViverBack3" type="Sprite2D" parent="Sprites"]
+position = Vector2(60, -139)
+texture = ExtResource("2_jd4b3")
+
+[node name="ViverBack4" type="Sprite2D" parent="Sprites"]
+position = Vector2(105, -141)
+texture = ExtResource("2_jd4b3")
+
+[node name="ViverLeft" type="Sprite2D" parent="Sprites"]
+position = Vector2(-145, -107)
+texture = ExtResource("3_qfr43")
+
+[node name="ViverRight" type="Sprite2D" parent="Sprites"]
+position = Vector2(66, -109)
+texture = ExtResource("4_4s2m2")
+
+[node name="ViverLeft2" type="Sprite2D" parent="Sprites"]
+position = Vector2(-181, -73)
+texture = ExtResource("3_qfr43")
+
+[node name="ViverLeft3" type="Sprite2D" parent="Sprites"]
+position = Vector2(-216, -41)
+texture = ExtResource("3_qfr43")
+
+[node name="ViverLeft4" type="Sprite2D" parent="Sprites"]
+position = Vector2(-253, -8)
+texture = ExtResource("3_qfr43")
+
+[node name="ViverRight2" type="Sprite2D" parent="Sprites"]
+position = Vector2(29, -72)
+texture = ExtResource("4_4s2m2")
+
+[node name="ViverRight3" type="Sprite2D" parent="Sprites"]
+position = Vector2(-8, -36)
+texture = ExtResource("4_4s2m2")
+
+[node name="ViverRight4" type="Sprite2D" parent="Sprites"]
+position = Vector2(-44, -8)
+texture = ExtResource("4_4s2m2")
+
+[node name="ViverFace5" type="Sprite2D" parent="Sprites"]
+position = Vector2(-187, -9)
+texture = ExtResource("2_m5tyg")
+
+[node name="ViverFace6" type="Sprite2D" parent="Sprites"]
+position = Vector2(-136, -9)
+texture = ExtResource("2_m5tyg")
+
+[node name="ViverFace7" type="Sprite2D" parent="Sprites"]
+position = Vector2(-86, -8)
+texture = ExtResource("2_m5tyg")
+
+[node name="ViverFace8" type="Sprite2D" parent="Sprites"]
+position = Vector2(-35, -8)
+texture = ExtResource("2_m5tyg")
