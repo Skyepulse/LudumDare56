@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkttx7hp2ycs0"]
+[gd_scene load_steps=3 format=3 uid="uid://dkttx7hp2ycs0"]
 
+[ext_resource type="Script" path="res://level selector/control.gd" id="1_rofwn"]
 [ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="1_um121"]
 
 [node name="LevelSelect" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rofwn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,13 +45,9 @@ layout_mode = 2
 texture = ExtResource("1_um121")
 stretch_mode = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 40)
 layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-text = "A game by MATELOU & co"
-fit_content = true
-tab_size = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,3 +74,17 @@ texture_normal = ExtResource("1_um121")
 [node name="level5" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_um121")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "A game by MATELOU & co"
+fit_content = true
+tab_size = 6
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/level1" to="." method="goToLevel1"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/level2" to="." method="goToLevel2"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/level3" to="." method="goToLevel3"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/level4" to="." method="goToLevel4"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/level5" to="." method="goToLevel5"]
