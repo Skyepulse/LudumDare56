@@ -18,7 +18,7 @@ enum AnimalType {
 @export var reproduction_rate : int
 @export var type : AnimalType
 @export var ui_sprite: Texture2D
-@export var state : int
+@export var state : AnimalState
 
 
 
@@ -29,10 +29,10 @@ enum AnimalState {
 	FREE = 3 #animal sauvage mange les autres
 }
 
-func move() -> void :
+func move(delta:float) -> void :
 	if (state == AnimalState.CROSSING) :
 		rotation = 0;
-		velocity =speed*Vector2(1,0);
+		velocity = speed*Vector2(1,0)*delta;
 		move_and_slide();
 	elif (state == AnimalState.STACKED) :
 		rotation = 0;
@@ -44,7 +44,7 @@ func move() -> void :
 		global_transform.origin = get_global_mouse_position()
 	
 func _process(delta: float) -> void:
-	move();
+	move(delta);
 
 
 var held = false
