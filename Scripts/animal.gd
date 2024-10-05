@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+class_name Animal
+
 @export var speed : int
 @export var size : int
 @export var throw_distance : int
