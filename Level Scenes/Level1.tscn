@@ -7,7 +7,7 @@
 [node name="Level1" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_1lgaw")]
-position = Vector2(108, 534)
+position = Vector2(189, 523)
 
 [node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
 position = Vector2(79, 96)
@@ -15,3 +15,5 @@ state = 2
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
 position = Vector2(1100, 323)
+total_needed_points = 100
+time_to_win = 300
