@@ -13,23 +13,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(\"hi! you're my world\")
+	pass
 "
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(1, 1)
 script = SubResource("GDScript_nkkeb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 352.0
-offset_bottom = 258.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(146, 123)
+position = Vector2(-4, 8)
 zoom = Vector2(5, 5)
 
-[node name="Slug" parent="." instance=ExtResource("1_ij8s2")]
-position = Vector2(129, 158)
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 356.0
+offset_bottom = 250.0
+
+[node name="Slug" parent="Camera2D" instance=ExtResource("1_ij8s2")]
+position = Vector2(64, 34)
 speed = 0
 size = 0
 throw_distance = 0

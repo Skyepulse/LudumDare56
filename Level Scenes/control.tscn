@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkttx7hp2ycs0"]
 
-[ext_resource type="Script" path="res://level selector/control.gd" id="1_rofwn"]
-[ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="1_um121"]
+[ext_resource type="Script" path="res://level selector/control.gd" id="1_k1eak"]
+[ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="2_tf11g"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rofwn")
+script = ExtResource("1_k1eak")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,7 +42,7 @@ layout_mode = 2
 
 [node name="GameLogo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_um121")
+texture = ExtResource("2_tf11g")
 stretch_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
@@ -57,23 +57,23 @@ alignment = 1
 
 [node name="level1" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_um121")
+texture_normal = ExtResource("2_tf11g")
 
 [node name="level2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_um121")
+texture_normal = ExtResource("2_tf11g")
 
 [node name="level3" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_um121")
+texture_normal = ExtResource("2_tf11g")
 
 [node name="level4" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_um121")
+texture_normal = ExtResource("2_tf11g")
 
 [node name="level5" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_um121")
+texture_normal = ExtResource("2_tf11g")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
