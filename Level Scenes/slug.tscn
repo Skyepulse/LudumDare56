@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bojyech4dm16y"]
+
+[ext_resource type="PackedScene" uid="uid://1lejiklyxkae" path="res://Level Scenes/animal.tscn" id="1_jliu6"]
+[ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="2_kwfaj"]
+[ext_resource type="Texture2D" uid="uid://doilpve0ktx10" path="res://Sprites/slug_walk_2.png" id="3_qk62b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8awaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kwfaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qk62b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Animal" instance=ExtResource("1_jliu6")]
+sprite_frames = SubResource("SpriteFrames_8awaj")
+frame_progress = 0.447823
