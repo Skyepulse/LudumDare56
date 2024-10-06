@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://2r5lcd8ragky" path="res://Level Scenes/better_slug.tscn" id="9_73wku"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 [ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="10_mbc1y"]
-[ext_resource type="PackedScene" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
+[ext_resource type="PackedScene" uid="uid://dwan1huf7kheg" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
 [ext_resource type="AudioStream" uid="uid://cyq2lcf4urjhs" path="res://Musics/v3.mp3" id="15_vmjbd"]
 [ext_resource type="PackedScene" uid="uid://bea80sbyltokd" path="res://PrefabScenes/general.tscn" id="16_50rs8"]
 
@@ -27,7 +27,6 @@ script = ExtResource("1_llewe")
 [node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
 position = Vector2(597, 511)
 rotation = -1.57079
-script = ExtResource("1_llewe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
