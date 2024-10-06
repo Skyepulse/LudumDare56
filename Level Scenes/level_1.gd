@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 
 func win()-> void : 
 	get_tree().change_scene_to_file("res://Level Scenes/win_screen.tscn")
+	
+func lose()-> void : 
+	get_tree().change_scene_to_file("res://Level Scenes/lose_screen.tscn")

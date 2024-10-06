@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://2pt1cxdrak6g"]
+[gd_scene load_steps=4 format=3 uid="uid://bfxalqyg2hlyc"]
 
-[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_5cqks"]
-[ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_5p3a8"]
-[ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_1nukb"]
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_k8ugf"]
+[ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_8r226"]
+[ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_51p1n"]
 
-[node name="WinScreen" type="Control"]
+[node name="LoseScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5cqks")
+script = ExtResource("1_k8ugf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -29,9 +29,9 @@ offset_top = 75.0
 offset_right = 1079.0
 offset_bottom = 406.0
 theme_override_colors/default_color = Color(0.611254, 0.359404, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_5p3a8")
+theme_override_fonts/normal_font = ExtResource("2_8r226")
 theme_override_font_sizes/normal_font_size = 40
-text = "YOU WIN!"
+text = "YOU LOSE!"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -68,18 +68,12 @@ alignment = 1
 
 [node name="Replay" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1nukb")
+theme_override_fonts/font = ExtResource("3_51p1n")
 text = "Replay"
-
-[node name="NextLevel" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1nukb")
-text = "Next "
-icon_alignment = 1
 
 [node name="Home" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1nukb")
+theme_override_fonts/font = ExtResource("3_51p1n")
 text = "Home"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
@@ -91,5 +85,4 @@ fit_content = true
 tab_size = 6
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay" to="." method="replay"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NextLevel" to="." method="go_to_next"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home" to="." method="go_home"]
