@@ -78,7 +78,7 @@ vivier = NodePath("../Vivier")
 [node name="Area2D" type="Area2D" parent="PredatorSpawner"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PredatorSpawner/Area2D"]
-position = Vector2(1251, 570.5)
+position = Vector2(-102, 576)
 shape = SubResource("RectangleShape2D_ss0dk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
