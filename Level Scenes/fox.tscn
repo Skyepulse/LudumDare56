@@ -37,7 +37,6 @@ type = 5
 ui_sprite = ExtResource("2_4a0oy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_udrfj")
 autoplay = "default"
 

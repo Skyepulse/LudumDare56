@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ipu886jhxmh3"]
+[gd_scene load_steps=15 format=3 uid="uid://ipu886jhxmh3"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/predator_spawner.tscn" id="1_34c6p"]
@@ -20,11 +20,15 @@ size = Vector2(161.5, 295)
 
 [node name="Level" type="Node2D"]
 
+[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
+position = Vector2(597, 511)
+rotation = -1.57079
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
 
 [node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
-position = Vector2(98, 83)
+position = Vector2(421, 499)
 state = 2
 
 [node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
@@ -37,30 +41,31 @@ initial_chickens = 1
 initial_foxes = 1
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
-position = Vector2(1102, 291)
+position = Vector2(621, -48)
+rotation = -1.5708
 
 [node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
-position = Vector2(108, 362)
+position = Vector2(718, 499)
 max_throw_distance = 0.0
 min_throw_distance = 0.0
 state = 2
 
 [node name="Toad" parent="." instance=ExtResource("4_syjkf")]
-position = Vector2(101, 151)
+position = Vector2(494, 499)
 state = 2
 
 [node name="betterSlug" parent="." instance=ExtResource("9_73wku")]
-position = Vector2(98, 115)
+position = Vector2(458, 499)
 max_throw_distance = 0.0
 min_throw_distance = 0.0
 state = 2
 
 [node name="snake" parent="." instance=ExtResource("5_32qtx")]
-position = Vector2(100, 210)
+position = Vector2(540, 499)
 state = 2
 
 [node name="chicken" parent="." instance=ExtResource("6_uv3y2")]
-position = Vector2(103, 294)
+position = Vector2(597, 499)
 state = 2
 
 [node name="PredatorSpawner" parent="." node_paths=PackedStringArray("vivier") instance=ExtResource("1_34c6p")]
@@ -73,6 +78,7 @@ position = Vector2(1251, 570.5)
 shape = SubResource("RectangleShape2D_ss0dk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
 mouse_filter = 2
@@ -82,6 +88,3 @@ mouse_filter = 2
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_xjqyx")]
 mouse_filter = 1
-
-[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(104, 234)

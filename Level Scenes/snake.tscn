@@ -34,7 +34,6 @@ type = 3
 ui_sprite = ExtResource("2_roq56")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_veocg")
 autoplay = "default"
 

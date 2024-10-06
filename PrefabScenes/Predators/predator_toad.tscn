@@ -25,7 +25,6 @@ radius = 13.0
 radius = 15.0333
 
 [node name="PredatorToad" instance=ExtResource("1_ti4rq")]
-speed = 50
 kind = 2
 
 [node name="AnimatedSprite2D" parent="." index="0"]

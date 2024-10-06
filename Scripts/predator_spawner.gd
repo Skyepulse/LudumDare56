@@ -7,7 +7,6 @@ static var instance: PredatorSpawner = null
 
 # Exported Variables
 @export var vivier: Vivier = null
-@export var spawn_interval: float = 5
 
 # Get area2D child
 @onready var area2D: Area2D = $Area2D
