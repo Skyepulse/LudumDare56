@@ -16,7 +16,8 @@ var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
 
 @export var speed : int
 @export var size : int
-@export var throw_distance : int
+@export var max_throw_distance : float
+@export var min_throw_distance : float
 @export var reproduction_rate : int
 @export var type : AnimalType
 @export var ui_sprite: Texture2D
@@ -31,7 +32,8 @@ enum AnimalState {
 	STACKED = 0, # animal dans le stack
 	HELD = 1, # animal pret a etre lance
 	CROSSING = 2, #traverse la route
-	FREE = 3 #animal sauvage mange les autres
+	FREE = 3, #animal sauvage mange les autres
+	THROWN = 4 #animal lancé par le joueur avant d'aterrir et passer dans crossing
 }
 
 func move(delta: float) -> void :
