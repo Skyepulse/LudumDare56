@@ -28,7 +28,7 @@ rotation = -1.57079
 position = Vector2(579, 325)
 
 [node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
-position = Vector2(421, 539)
+position = Vector2(421, 499)
 state = 2
 
 [node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
@@ -41,30 +41,31 @@ initial_chickens = 1
 initial_foxes = 1
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
-position = Vector2(1102, 291)
+position = Vector2(621, -48)
+rotation = -1.5708
 
 [node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
-position = Vector2(750, 508)
+position = Vector2(718, 499)
 max_throw_distance = 0.0
 min_throw_distance = 0.0
 state = 2
 
 [node name="Toad" parent="." instance=ExtResource("4_syjkf")]
-position = Vector2(510, 551)
+position = Vector2(494, 499)
 state = 2
 
 [node name="betterSlug" parent="." instance=ExtResource("9_73wku")]
-position = Vector2(458, 547)
+position = Vector2(458, 499)
 max_throw_distance = 0.0
 min_throw_distance = 0.0
 state = 2
 
 [node name="snake" parent="." instance=ExtResource("5_32qtx")]
-position = Vector2(556, 546)
+position = Vector2(540, 499)
 state = 2
 
 [node name="chicken" parent="." instance=ExtResource("6_uv3y2")]
-position = Vector2(597, 536)
+position = Vector2(597, 499)
 state = 2
 
 [node name="PredatorSpawner" parent="." node_paths=PackedStringArray("vivier") instance=ExtResource("1_34c6p")]
