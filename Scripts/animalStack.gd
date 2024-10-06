@@ -114,10 +114,25 @@ func add_animal(animal: Animal):
 	emit_signal("animal_added", animal)
 	emit_signal("animal_list_modified")
 
-func remove_animal(animalType: Animal.AnimalType):
+func remove_random_animal(animal_max: Animal.AnimalType):
+	var last_kind = -1
+	for i in range(animal_max):
+		if get_animal_count(i) > 0:
+			last_kind = i
+			if randf() < 0.5 or i == animal_max - 1:
+				break
+	if last_kind >= 0:
+		remove_animal(last_kind, true)
+		print('animal removed ' + str(last_kind))
+		
+	
+
+func remove_animal(animalType: Animal.AnimalType, kill: bool = false):
 	for animal in animal_list:
 		if animal.type == animalType:
 			animal_list.erase(animal)
+			if kill:
+				animal.queue_free()
 			animal_dictionary[animalType] -= 1
 			emit_signal("animal_removed", animal)
 			emit_signal("animal_list_modified")
@@ -192,10 +207,10 @@ func stop_animal_timer(animal: Animal):
 func _on_timer_timeout(animal_type: Animal.AnimalType):
 	reproduce_animal(animal_type)
 
-func animal_entered_stack(animal: Animal):
+func animal_entered_stack(animal):
 	animal.is_in_stack = true
 	pass
 
-func animal_left_stack(animal: Animal):
+func animal_left_stack(animal):
 	animal.is_in_stack = false
 	pass
