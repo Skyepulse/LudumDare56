@@ -19,6 +19,10 @@ position = Vector2(579, 325)
 
 [node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
 position = Vector2(98, 83)
+size = null
+throw_distance = null
+reproduction_rate = null
+type = null
 state = 2
 
 [node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
@@ -31,22 +35,37 @@ position = Vector2(1102, 291)
 
 [node name="Toad" parent="." instance=ExtResource("4_syjkf")]
 position = Vector2(101, 151)
+size = null
+throw_distance = null
+reproduction_rate = null
 state = 2
 
 [node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
 position = Vector2(108, 362)
+size = null
+throw_distance = null
+reproduction_rate = null
 state = 2
 
 [node name="betterSlug" parent="." instance=ExtResource("9_73wku")]
 position = Vector2(98, 115)
+size = null
+throw_distance = null
+reproduction_rate = null
 state = 2
 
 [node name="snake" parent="." instance=ExtResource("5_32qtx")]
 position = Vector2(100, 210)
+size = null
+throw_distance = null
+reproduction_rate = null
 state = 2
 
 [node name="chicken" parent="." instance=ExtResource("6_uv3y2")]
 position = Vector2(103, 294)
+size = null
+throw_distance = null
+reproduction_rate = null
 state = 2
 
 [node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
