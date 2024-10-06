@@ -12,6 +12,8 @@ enum AnimalType {
 	ALIEN = 6
 }
 
+var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
+
 @export var speed : int
 @export var size : int
 @export var throw_distance : int
@@ -22,6 +24,8 @@ enum AnimalType {
 
 var is_in_stack : bool = false
 var is_in_throw_area : bool = false
+
+var throw_arrow: ThrowArrow = null
 
 enum AnimalState {
 	STACKED = 0, # animal dans le stack
@@ -56,6 +60,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	move(delta);
+	update_arrow_position();
 
 
 var held = false
@@ -69,6 +74,9 @@ func on_press():
 			push_error("No vivier instance in the scene!")
 			
 func on_release():
+	if throw_arrow != null:
+		remove_throw_arrow()	
+
 	if !Vivier.instance:
 		push_error("No vivier instance in the scene!")
 		return
@@ -83,6 +91,22 @@ func on_release():
 		Vivier.instance.add_animal(self)
 		state = AnimalState.STACKED
 
+#====================================#
+func add_throw_arrow():
+	if throw_arrow == null and state == AnimalState.HELD:
+		throw_arrow = throwArrowPrefab.instantiate()
+		throw_arrow.position = get_global_mouse_position();
+		get_tree().get_root().get_node("Level").add_child(throw_arrow)
+
+func remove_throw_arrow():
+	if throw_arrow != null:
+		throw_arrow.queue_free()
+		throw_arrow = null
+
+func update_arrow_position():
+	if throw_arrow != null:
+		throw_arrow.position = get_global_mouse_position()
+		
 #===============Floating Label=====================#
 func spawn_floating_label(value: int, spawn_point: Vector2):
 	var label = Label.new()

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/throwArea.gd" id="1_eb6hp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgu4f"]
-size = Vector2(200, 400)
+size = Vector2(100, 400)
 
 [sub_resource type="Gradient" id="Gradient_d404n"]
 colors = PackedColorArray(0, 0.14902, 0, 1, 0.358915, 0.649166, 0.264576, 1)
@@ -24,6 +24,6 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_dgu4f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-scale = Vector2(20, 40)
+z_index = -2
+scale = Vector2(10, 40)
 texture = SubResource("GradientTexture2D_nn0qk")
