@@ -25,6 +25,8 @@ radius = 22.0907
 radius = 29.2746
 
 [node name="PredatorFox" instance=ExtResource("1_lkjag")]
+speed = 50
+kind = 5
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_fqt1l")

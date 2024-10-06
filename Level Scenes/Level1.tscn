@@ -63,7 +63,6 @@ position = Vector2(1251, 570.5)
 shape = SubResource("RectangleShape2D_ss0dk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
 
