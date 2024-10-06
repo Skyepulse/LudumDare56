@@ -183,7 +183,6 @@ func start_animal_timer(animal: Animal):
 func stop_animal_timer(animal: Animal):
 	var animal_type = animal.type
 	if get_animal_count(animal_type) < 2 and animal_timers.has(animal_type):
-		print('stopping timer')
 		var timer = animal_timers[animal_type]
 		if timer != null:
 			timer.stop()
