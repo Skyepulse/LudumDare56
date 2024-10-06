@@ -20,6 +20,10 @@ var predator_scenes = {
 	Animal.AnimalType.FOX: preload("res://PrefabScenes/Predators/predator_fox.tscn"),
 }
 
+var max_animal_level = [Animal.AnimalType.SLUG,Animal.AnimalType.BETTER_SLUG,
+						Animal.AnimalType.SNAKE, Animal.AnimalType.CHICKEN,
+						Animal.AnimalType.FOX]
+
 var minx = 100000
 var maxx = -100000
 var miny = 100000
@@ -58,5 +62,7 @@ func _on_timer_timeout():
 		var x = randf_range(minx, maxx)
 		var y = randf_range(miny, maxy)
 		var at = global_position + Vector2(x, y)
-		var type = (1 + randi() % (Animal.AnimalType.ALIEN - 1))
+		var type = (1 + 
+					randi() % (max_animal_level[LevelNumber.level_number-1]))
+					
 		spawn_predator(predator_scenes[type], at)

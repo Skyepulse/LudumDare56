@@ -1,5 +1,73 @@
-[gd_scene format=3 uid="uid://dd0ko2clldqka"]
+[gd_scene load_steps=12 format=3 uid="uid://dd0ko2clldqka"]
+
+[ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_8tgj3"]
+[ext_resource type="PackedScene" path="res://PrefabScenes/throw_area.tscn" id="1_xorrs"]
+[ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="4_ssp5o"]
+[ext_resource type="PackedScene" uid="uid://brxn3wghyn815" path="res://PrefabScenes/winning_line.tscn" id="5_bif0b"]
+[ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/predator_spawner.tscn" id="11_ih2bp"]
+[ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="12_mhjmv"]
+[ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="13_apu16"]
+[ext_resource type="PackedScene" uid="uid://bxhhkulpgydwe" path="res://PrefabScenes/pause_menu.tscn" id="14_8kwsw"]
+[ext_resource type="AudioStream" uid="uid://cyq2lcf4urjhs" path="res://Musics/v3.mp3" id="15_hbq4n"]
+[ext_resource type="PackedScene" uid="uid://bea80sbyltokd" path="res://PrefabScenes/general.tscn" id="16_vwc71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2x5s"]
+resource_local_to_scene = true
+size = Vector2(161.5, 295)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_8tgj3")
+
+[node name="Throw Area" parent="." instance=ExtResource("1_xorrs")]
+position = Vector2(597, 511)
+rotation = -1.57079
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 325)
+
+[node name="Vivier" parent="." instance=ExtResource("4_ssp5o")]
+position = Vector2(196, 551)
+initial_slugs = 1
+initial_better_slugs = 1
+initial_toads = 1
+initial_snakes = 1
+initial_chickens = 1
+initial_foxes = 1
+
+[node name="WinningLine" parent="." instance=ExtResource("5_bif0b")]
+position = Vector2(621, -48)
+rotation = -1.5708
+
+[node name="PredatorSpawner" parent="." node_paths=PackedStringArray("vivier") instance=ExtResource("11_ih2bp")]
+vivier = NodePath("../Vivier")
+
+[node name="Area2D" type="Area2D" parent="PredatorSpawner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PredatorSpawner/Area2D"]
+position = Vector2(1251, 570.5)
+shape = SubResource("RectangleShape2D_o2x5s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("12_mhjmv")]
+visible = false
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="level_info_ui" parent="CanvasLayer" instance=ExtResource("13_apu16")]
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("14_8kwsw")]
+visible = false
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_hbq4n")
+autoplay = true
+
+[node name="General" parent="." instance=ExtResource("16_vwc71")]
+position = Vector2(580, 400)
+
+[connection signal="lose" from="WinningLine" to="." method="lose"]
+[connection signal="win" from="WinningLine" to="." method="win"]
