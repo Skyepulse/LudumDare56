@@ -35,13 +35,13 @@ func _process(delta: float) -> void:
 
 	if time_passed >= delay:
 		if rand_gauche <= 0.1: #probability that there is a car on delay
-			voiture_move(top_left_position, 2)
+			voiture_move(top_left_position, 2, true)
 		if rand_droite <= 0.1: #probability that there is a car on delay
-			voiture_move(top_right_position, 1)
+			voiture_move(top_right_position, 1, false)
 		time_passed = 0.0
 			
 	   
-func voiture_move(camera_position, direc: int) -> void:
+func voiture_move(camera_position, direc: int,a: bool ) -> void:
 	var rand = randf()
 	var voiture_instance
 	if rand <=0.4:
@@ -50,6 +50,12 @@ func voiture_move(camera_position, direc: int) -> void:
 		voiture_instance = voiture_bleu.instantiate()
 	else:
 		voiture_instance = camion.instantiate()
+
+	
+	voiture_instance.get_node("AnimatedSprite2D").flip_h = a
+	
+
+
 
 	voiture_instance.direc = direc
 	add_child(voiture_instance)

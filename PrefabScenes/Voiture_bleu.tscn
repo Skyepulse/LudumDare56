@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnreyl28nj3dc"]
+[gd_scene load_steps=5 format=3 uid="uid://bnreyl28nj3dc"]
 
 [ext_resource type="PackedScene" uid="uid://b85yc2dcgsrvy" path="res://PrefabScenes/Voiture.tscn" id="1_o8y1h"]
-[ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="2_v15uw"]
+[ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="2_vnqwb"]
+[ext_resource type="Texture2D" uid="uid://nesn8mpjwreq" path="res://Sprites/carblue2.png" id="3_e6pxw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vf846"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vnqwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e6pxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Voiture_bleu" instance=ExtResource("1_o8y1h")]
 
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_v15uw")
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_vf846")
