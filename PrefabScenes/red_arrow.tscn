@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcrqqupke35mq"]
+
+[ext_resource type="Script" path="res://Scripts/throw_arrow.gd" id="1_o6wvf"]
+[ext_resource type="Texture2D" uid="uid://prer3r2ajhpe" path="res://Sprites/red-arrow.png" id="1_obsgm"]
+
+[node name="arrow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_o6wvf")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -12.0
+offset_bottom = 13.0
+grow_horizontal = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+z_index = -1
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+texture = ExtResource("1_obsgm")
+expand_mode = 2
