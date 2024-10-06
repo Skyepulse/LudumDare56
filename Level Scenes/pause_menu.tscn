@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cik6fhixktwqq"]
+[gd_scene load_steps=6 format=3 uid="uid://cik6fhixktwqq"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Level Scenes/blurr.gdshader" id="2_p2h16"]
+[ext_resource type="Texture2D" uid="uid://c1t75d2fsxr1e" path="res://Sprites/level_box_2.png" id="3_tk813"]
+[ext_resource type="Texture2D" uid="uid://2wj8ge4j4r8" path="res://Sprites/level_box_2_fonce.png" id="4_o8exn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bdq0o"]
 shader = ExtResource("2_p2h16")
@@ -16,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tw5my")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BlurrFilter" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_bdq0o")
 layout_mode = 1
 anchors_preset = 15
@@ -25,32 +27,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="hiddenMenu" type="MarginContainer" parent="."]
+[node name="Menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hiddenMenu" type="MarginContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -33.0
-offset_right = 35.0
-offset_bottom = 33.0
+offset_left = 521.0
+offset_top = 257.0
+offset_right = 591.0
+offset_bottom = 351.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="hiddenMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/hiddenMenu"]
 layout_mode = 2
 
-[node name="Resume" type="Button" parent="hiddenMenu/VBoxContainer"]
+[node name="Resume" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
 custom_minimum_size = Vector2(64, 45)
 layout_mode = 2
 text = "Resume"
 
-[node name="Home" type="Button" parent="hiddenMenu/VBoxContainer"]
+[node name="Home" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
 custom_minimum_size = Vector2(64, 45)
 layout_mode = 2
 text = "Home"
 
-[connection signal="pressed" from="hiddenMenu/VBoxContainer/Resume" to="." method="pause_game"]
-[connection signal="pressed" from="hiddenMenu/VBoxContainer/Home" to="." method="home_menu"]
+[node name="PauseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_tk813")
+texture_pressed = ExtResource("4_o8exn")
+
+[connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Resume" to="." method="pause_game"]
+[connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Home" to="." method="home_menu"]
+[connection signal="pressed" from="PauseButton" to="." method="pause_game"]

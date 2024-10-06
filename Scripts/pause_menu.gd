@@ -1,10 +1,12 @@
 extends Control
-@onready var pauseMenu = $"."
+@onready var pauseMenu = $Menu
+@onready var blurrFilter = $BlurrFilter
 var paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pauseMenu.hide() # Replace with function body.
+	blurrFilter.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,9 +17,11 @@ func _process(delta: float) -> void:
 func pause_game() -> void :
 	if paused :
 		pauseMenu.hide()
+		blurrFilter.hide()
 		Engine.time_scale = 1
 	else :
 		pauseMenu.show()
+		blurrFilter.show()
 		Engine.time_scale=0
 	paused = !paused
 

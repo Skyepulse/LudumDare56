@@ -51,7 +51,7 @@ position = Vector2(103, 294)
 state = 2
 
 [node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(67, 255)
+position = Vector2(146, 256)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
