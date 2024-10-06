@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwrmt1xvnvopf"]
+
+[ext_resource type="PackedScene" uid="uid://b85yc2dcgsrvy" path="res://PrefabScenes/Voiture.tscn" id="1_ew08f"]
+
+[node name="Voiture_rouge" instance=ExtResource("1_ew08f")]

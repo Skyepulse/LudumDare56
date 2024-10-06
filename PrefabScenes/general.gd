@@ -1,6 +1,9 @@
 extends Node2D
 
-var voiture: PackedScene = preload("res://PrefabScenes/Voiture.tscn")
+var voiture_rouge: PackedScene = preload("res://PrefabScenes/Voiture_rouge.tscn")
+var voiture_bleu: PackedScene = preload("res://PrefabScenes/Voiture_bleu.tscn")
+var camion: PackedScene = preload("res://PrefabScenes/Camion.tscn")
+
 var road: PackedScene = preload("res://PrefabScenes/sprite_2d.tscn")
 
 var delay = 0.15 #Time between car
@@ -38,10 +41,16 @@ func _process(delta: float) -> void:
 		time_passed = 0.0
 			
 	   
-		
+func voiture_move(camera_position, direc: int) -> void:
+	var rand = randf()
+	var voiture_instance
+	if rand <=0.4:
+		voiture_instance = voiture_rouge.instantiate()
+	elif (rand <=0.8):
+		voiture_instance = voiture_bleu.instantiate()
+	else:
+		voiture_instance = camion.instantiate()
 
-func voiture_move(camera_position, direc) -> void:
-	var voiture_instance = voiture.instantiate()
 	voiture_instance.direc = direc
 	add_child(voiture_instance)
 	voiture_instance.position = camera_position
