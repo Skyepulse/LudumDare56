@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkttx7hp2ycs0"]
+[gd_scene load_steps=14 format=3 uid="uid://dkttx7hp2ycs0"]
 
 [ext_resource type="Script" path="res://level selector/control.gd" id="1_k1eak"]
 [ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="2_tf11g"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://jbhi88m8wnva" path="res://Sprites/level_box_4_fonce.png" id="10_aub7q"]
 [ext_resource type="Texture2D" uid="uid://4fa6c1s0m2rv" path="res://Sprites/level_box_5.png" id="11_l36nr"]
 [ext_resource type="Texture2D" uid="uid://heq8mw3wu1ds" path="res://Sprites/level_box_5_fonce.png" id="12_1inh1"]
+[ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="13_00atd"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -100,9 +101,15 @@ texture_normal = ExtResource("11_l36nr")
 texture_pressed = ExtResource("12_1inh1")
 stretch_mode = 0
 
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("13_00atd")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "A game by MATELOU & co"
 fit_content = true
