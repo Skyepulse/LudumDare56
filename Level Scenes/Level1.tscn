@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xtcc75vdkcyi"]
+[gd_scene load_steps=10 format=3 uid="uid://xtcc75vdkcyi"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://yvkon0gr243n" path="res://Level Scenes/snake.tscn" id="5_32qtx"]
 [ext_resource type="PackedScene" uid="uid://deukhrjuqqyor" path="res://Level Scenes/chicken.tscn" id="6_uv3y2"]
 [ext_resource type="PackedScene" uid="uid://b0llnbyisa1qf" path="res://Level Scenes/fox.tscn" id="7_qh2pp"]
+[ext_resource type="PackedScene" uid="uid://2r5lcd8ragky" path="res://Level Scenes/better_slug.tscn" id="9_73wku"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 
 [node name="Level2" type="Node2D"]
@@ -27,14 +28,6 @@ position = Vector2(1102, 291)
 position = Vector2(101, 151)
 state = 2
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_32qtx")]
-position = Vector2(104, 222)
-state = 2
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("6_uv3y2")]
-position = Vector2(105, 287)
-state = 2
-
 [node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
 position = Vector2(108, 362)
 state = 2
@@ -45,3 +38,15 @@ position = Vector2(579, 325)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
+
+[node name="betterSlug" parent="." instance=ExtResource("9_73wku")]
+position = Vector2(98, 115)
+state = 2
+
+[node name="snake" parent="." instance=ExtResource("5_32qtx")]
+position = Vector2(100, 210)
+state = 2
+
+[node name="chicken" parent="." instance=ExtResource("6_uv3y2")]
+position = Vector2(103, 294)
+state = 2

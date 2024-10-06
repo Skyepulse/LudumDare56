@@ -77,11 +77,13 @@ func add_points(animal_type: Animal.AnimalType):
 func check_win():
     if total_current_points >= total_needed_points:
         has_won = true
+        timer.stop()
         emit_signal("win")
     elif time_left > 0:
         return
     else:
         has_lost = true
+        timer.stop()
         emit_signal("lose")
 
 func debug_points():
