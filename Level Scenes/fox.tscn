@@ -31,8 +31,13 @@ height = 70.0
 collision_mask = 6
 script = ExtResource("1_o8pjd")
 speed = 30000
+size = null
+max_throw_distance = null
+min_throw_distance = null
+reproduction_rate = null
 type = 5
 ui_sprite = ExtResource("2_4a0oy")
+state = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708

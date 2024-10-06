@@ -23,6 +23,17 @@ var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
 @export var ui_sprite: Texture2D
 @export var state : AnimalState
 
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+#===========Throw parameters================#
+var throw_time: float = 0.5 # seconds, time for the animal to land once thrown
+var throw_rotation_speed: float =  20.0# radians per second
+var throw_value: float = 0
+var actual_throw_distance: float = 0
+var objective_position: Vector2 = Vector2(0,0)
+var thrown_position: Vector2 = Vector2(0,0)
+
+#===========Throw Arrow================#
+
 var is_in_stack : bool = false
 var is_in_throw_area : bool = false
 
@@ -49,7 +60,27 @@ func move(delta: float) -> void :
 		pass #move towards stack, move away after timeout -> use direction var
 	elif (state == AnimalState.HELD):
 		global_transform.origin = get_global_mouse_position();
+	elif state == AnimalState.THROWN:
+		rotation += throw_rotation_speed * delta
+		
+		var direction = (objective_position - global_position).normalized()
+		var distance_traveled = (thrown_position - global_position).length()
+		var total_distance = (objective_position - thrown_position).length()
 
+		if distance_traveled < total_distance / 2:
+			var scale_factor = lerp(1.0, 2.0, distance_traveled / (total_distance / 2))
+			sprite.scale = Vector2(scale_factor, scale_factor)
+		else:
+			var scale_factor = lerp(2.0, 1.0, (distance_traveled - total_distance / 2) / (total_distance / 2))
+			sprite.scale = Vector2(scale_factor, scale_factor)
+
+		if direction.x <= 0:
+			state = AnimalState.CROSSING
+			return
+		
+		var sp = actual_throw_distance / throw_time
+		position += sp * direction * delta
+			
 func collide_wall() -> void :
 	
 	var angle= randf_range(-PI,PI);
@@ -77,21 +108,38 @@ func on_press():
 			
 func on_release():
 	if throw_arrow != null:
+		configure_throw()
 		remove_throw_arrow()	
 
 	if !Vivier.instance:
 		push_error("No vivier instance in the scene!")
+		reset_throw_configuration()
 		return
 
 	if is_in_throw_area:
-		state = AnimalState.CROSSING
+		state = AnimalState.THROWN
 		return
 
 	else:
 		if !is_in_stack and !is_in_throw_area:
 			self.position = Vivier.instance.spawn_position
 		Vivier.instance.add_animal(self)
+		reset_throw_configuration()
 		state = AnimalState.STACKED
+
+#====================================#
+func configure_throw():
+	if throw_arrow != null:
+		throw_value = throw_arrow.throw_value
+		actual_throw_distance = lerp(min_throw_distance, max_throw_distance, throw_value)
+		objective_position = get_global_mouse_position() + Vector2(actual_throw_distance, 0)
+		thrown_position = get_global_mouse_position()
+
+func reset_throw_configuration():
+	throw_value = 0
+	actual_throw_distance = 0
+	objective_position = Vector2(0,0)
+	thrown_position = Vector2(0,0)
 
 #====================================#
 func add_throw_arrow():
