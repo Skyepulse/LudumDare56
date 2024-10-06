@@ -58,8 +58,9 @@ size_flags_horizontal = 3
 text = "00:00"
 
 [node name="Control" type="Control" parent="Control/Control/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 
 [node name="Points" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
 layout_mode = 2
