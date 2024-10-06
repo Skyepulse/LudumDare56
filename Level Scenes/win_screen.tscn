@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm6lsyqkgxu78"]
+[gd_scene load_steps=4 format=3 uid="uid://8xa18n4hugxv"]
 
 [ext_resource type="Script" path="res://Level Scenes/win_screen.gd" id="1_5cqks"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_5p3a8"]
