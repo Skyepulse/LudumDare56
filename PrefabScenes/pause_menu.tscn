@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://w4rowuhgnfuf"]
+[gd_scene load_steps=7 format=3 uid="uid://bxhhkulpgydwe"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Scripts/blurr.gdshader" id="2_p2h16"]
@@ -56,6 +56,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ragyt")
 text = "Resume"
 
+[node name="Replay" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
+custom_minimum_size = Vector2(64, 45)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ragyt")
+text = "Replay"
+
 [node name="Home" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
 custom_minimum_size = Vector2(64, 45)
 layout_mode = 2
@@ -74,5 +80,6 @@ texture_normal = ExtResource("3_tk813")
 texture_pressed = ExtResource("4_o8exn")
 
 [connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Resume" to="." method="pause_game"]
+[connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Replay" to="." method="replay"]
 [connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Home" to="." method="home_menu"]
 [connection signal="pressed" from="PauseButton" to="." method="pause_game"]
