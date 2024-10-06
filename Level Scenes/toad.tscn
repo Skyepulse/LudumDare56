@@ -28,6 +28,8 @@ radius = 12.0
 collision_mask = 6
 script = ExtResource("1_tcvpb")
 speed = 20000
+max_throw_distance = 400.0
+min_throw_distance = 100.0
 type = 2
 ui_sprite = ExtResource("2_getoe")
 
