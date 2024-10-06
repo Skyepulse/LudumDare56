@@ -23,6 +23,11 @@ size = Vector2(161.5, 295)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_llewe")
 
+[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
+position = Vector2(597, 511)
+rotation = -1.57079
+script = ExtResource("1_llewe")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
 
@@ -75,10 +80,6 @@ vivier = NodePath("../Vivier")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PredatorSpawner/Area2D"]
 position = Vector2(1251, 570.5)
 shape = SubResource("RectangleShape2D_ss0dk")
-
-[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(597, 511)
-rotation = -1.57079
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
