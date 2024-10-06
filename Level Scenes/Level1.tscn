@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ipu886jhxmh3"]
+[gd_scene load_steps=17 format=3 uid="uid://ipu886jhxmh3"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/predator_spawner.tscn" id="1_34c6p"]
@@ -13,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://2r5lcd8ragky" path="res://Level Scenes/better_slug.tscn" id="9_73wku"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 [ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="10_mbc1y"]
-[ext_resource type="PackedScene" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
+[ext_resource type="PackedScene" uid="uid://dwan1huf7kheg" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
+[ext_resource type="AudioStream" uid="uid://cyq2lcf4urjhs" path="res://Musics/v3.mp3" id="15_vmjbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ss0dk"]
 resource_local_to_scene = true
@@ -89,5 +90,4 @@ mouse_filter = 2
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_xjqyx")]
 
-[connection signal="lose" from="WinningLine" to="." method="lose"]
 [connection signal="win" from="WinningLine" to="." method="win"]
