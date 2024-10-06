@@ -20,7 +20,7 @@ enum AnimalType {
 @export var ui_sprite: Texture2D
 @export var state : AnimalState
 
-var is_in_stack : bool = true
+var is_in_stack : bool = false
 
 enum AnimalState {
 	STACKED = 0, # animal dans le stack

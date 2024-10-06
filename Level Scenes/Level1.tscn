@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b0llnbyisa1qf" path="res://Level Scenes/fox.tscn" id="7_qh2pp"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
 position = Vector2(98, 83)
@@ -18,7 +18,7 @@ state = 2
 [node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
 position = Vector2(196, 551)
 initial_slugs = 2
-initial_foxes = 1
+initial_better_slugs = 1
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
 position = Vector2(1102, 291)

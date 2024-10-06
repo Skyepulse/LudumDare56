@@ -29,6 +29,7 @@ var animal_timers = {}
 
 #----------Preloads----------#
 var slug: PackedScene = preload("res://Level Scenes/slug.tscn")
+var better_slug: PackedScene = preload("res://Level Scenes/better_slug.tscn")
 var toad: PackedScene = preload("res://Level Scenes/toad.tscn")
 var snake: PackedScene = preload("res://Level Scenes/snake.tscn")
 var chicken: PackedScene = preload("res://Level Scenes/chicken.tscn")
@@ -127,42 +128,27 @@ func get_animal_count(animalType: Animal.AnimalType) -> int:
 	return animal_dictionary[animalType]
 
 func instantiate_animal(animal_type: Animal.AnimalType):
+	var new_animal = null
 	match animal_type:
 			Animal.AnimalType.SLUG:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = slug.instantiate()
 			Animal.AnimalType.BETTER_SLUG:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = better_slug.instantiate()
 			Animal.AnimalType.TOAD:
-				var new_animal = toad.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = toad.instantiate()
 			Animal.AnimalType.SNAKE:
-				var new_animal = snake.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = snake.instantiate()
 			Animal.AnimalType.CHICKEN:
-				var new_animal = chicken.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = chicken.instantiate()
 			Animal.AnimalType.FOX:
-				var new_animal = fox.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = fox.instantiate()
 			Animal.AnimalType.ALIEN:
-				var new_animal = slug.instantiate()
-				add_child(new_animal)
-				new_animal.position = spawn_position
-				add_animal(new_animal)
+				new_animal = slug.instantiate()
+	if new_animal != null:
+		add_child(new_animal)
+		new_animal.position = spawn_position
+		add_animal(new_animal)
+		new_animal.is_in_stack = true
 
 func reproduce_animal(animalType: Animal.AnimalType):
 	if get_animal_count(animalType) >= max_animals[animalType]:

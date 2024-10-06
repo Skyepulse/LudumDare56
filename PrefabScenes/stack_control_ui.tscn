@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca16fr3xs2hdg"]
+[gd_scene load_steps=8 format=3 uid="uid://ca16fr3xs2hdg"]
 
 [ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="1_avtrf"]
 [ext_resource type="Script" path="res://Scripts/stackControlUI.gd" id="1_mp07o"]
 [ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="2_g1d3r"]
+[ext_resource type="Texture2D" uid="uid://c5tmi18ecjg7w" path="res://Sprites/betterSlug_walk_1.png" id="3_1q6pd"]
 [ext_resource type="Texture2D" uid="uid://sb5na2qysqgw" path="res://Sprites/snake1.png" id="3_k55en"]
 [ext_resource type="Texture2D" uid="uid://s4cjheo1fwwp" path="res://Sprites/poulet1.png" id="4_xylpj"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="5_5128s"]
@@ -67,7 +68,7 @@ size_flags_horizontal = 3
 [node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/betterSlugContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_avtrf")
+texture = ExtResource("3_1q6pd")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/betterSlugContainer"]
 layout_mode = 2
