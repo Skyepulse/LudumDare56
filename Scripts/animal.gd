@@ -50,7 +50,7 @@ enum AnimalState {
 func move(delta: float) -> void :
 	if (state == AnimalState.CROSSING) :
 		rotation = 0;
-		velocity = speed*Vector2(0,-1) * 0.01; # pour pas avoir à changer toutes les vitesses
+		velocity = speed*Vector2(0,-1) * 0.002; # pour pas avoir à changer toutes les vitesses
 		move_and_slide();
 	elif (state == AnimalState.STACKED) :
 		var collision_info = move_and_collide(10*velocity*delta);
