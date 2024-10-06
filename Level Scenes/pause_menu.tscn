@@ -29,8 +29,6 @@ grow_vertical = 2
 
 [node name="Menu" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="hiddenMenu" type="MarginContainer" parent="Menu"]
 layout_mode = 1
