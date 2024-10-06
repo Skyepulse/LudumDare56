@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhfrx80rueggt"]
+[gd_scene load_steps=23 format=3 uid="uid://dhfrx80rueggt"]
 
 [ext_resource type="Texture2D" uid="uid://dv56c205cx1x0" path="res://Sprites/viver_right.png" id="1_lswa6"]
 [ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_vdttv"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://deftxgkvbcv8h" path="res://Sprites/arrival.png" id="14_rdhj5"]
 [ext_resource type="FontFile" uid="uid://blebgpfn3utle" path="res://fonts/Avenixel-Regular.ttf" id="17_17mcr"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="19_s4haj"]
+[ext_resource type="AudioStream" uid="uid://b1m6y3j24yqot" path="res://Musics/Little jazz.mp3" id="20_nk1vv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m23nb"]
 bg_color = Color(0.608321, 0.610715, 0.488438, 1)
@@ -291,6 +292,10 @@ offset_bottom = 618.0
 theme_override_fonts/font = ExtResource("19_s4haj")
 theme_override_font_sizes/font_size = 45
 text = "Play!"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_nk1vv")
+autoplay = true
 
 [connection signal="mouse_entered" from="road" to="." method="hover_road"]
 [connection signal="mouse_exited" from="road" to="." method="exit_object"]
