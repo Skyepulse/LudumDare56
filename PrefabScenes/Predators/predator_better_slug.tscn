@@ -20,7 +20,6 @@ radius = 7.07107
 [sub_resource type="CircleShape2D" id="CircleShape2D_hv3j5"]
 
 [node name="PredatorBetterSlug" instance=ExtResource("1_w3pe7")]
-speed = 50
 kind = 1
 
 [node name="AnimatedSprite2D" parent="." index="0"]
