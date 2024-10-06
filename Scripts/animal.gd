@@ -13,6 +13,7 @@ enum AnimalType {
 }
 
 var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 @export var speed : int
 @export var size : int
@@ -23,7 +24,6 @@ var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
 @export var ui_sprite: Texture2D
 @export var state : AnimalState
 
-@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 #===========Throw parameters================#
 var throw_time: float = 0.5 # seconds, time for the animal to land once thrown
 var throw_rotation_speed: float =  20.0# radians per second
@@ -77,10 +77,10 @@ func move(delta: float) -> void :
 		if direction.x <= 0:
 			state = AnimalState.CROSSING
 			return
-		
+
 		var sp = actual_throw_distance / throw_time
 		position += sp * direction * delta
-			
+
 func collide_wall() -> void :
 	
 	var angle= randf_range(-PI,PI);
@@ -99,6 +99,8 @@ func _process(delta: float) -> void:
 var held = false
 
 func on_press():
+	if state != AnimalState.STACKED:
+		return
 	state = AnimalState.HELD
 	if is_in_stack:
 		if Vivier.instance:
