@@ -39,3 +39,5 @@ func display_text()->void :
 func hide_text() -> void :
 	hints.clear()
 	hints.hide()
+func go_menu() -> void :
+	get_tree().change_scene_to_file("res://Level Scenes/control.tscn")

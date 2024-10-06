@@ -1,0 +1,305 @@
+[gd_scene load_steps=22 format=3 uid="uid://dhfrx80rueggt"]
+
+[ext_resource type="Texture2D" uid="uid://dv56c205cx1x0" path="res://Sprites/viver_right.png" id="1_lswa6"]
+[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_vdttv"]
+[ext_resource type="Texture2D" uid="uid://by5wpixti0amb" path="res://Sprites/viver_left.png" id="2_0t23b"]
+[ext_resource type="Texture2D" uid="uid://w8qcpggynqyg" path="res://Sprites/viver_face.png" id="3_r10g2"]
+[ext_resource type="Texture2D" uid="uid://d4e1qphd7md06" path="res://Sprites/viver_back.png" id="4_jhlum"]
+[ext_resource type="Texture2D" uid="uid://c2su5qxiri0vl" path="res://Sprites/road.png" id="5_8bxyn"]
+[ext_resource type="Shader" path="res://tutorial.gdshader" id="6_3hpnb"]
+[ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="6_odhdm"]
+[ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="7_m5bqn"]
+[ext_resource type="Texture2D" uid="uid://cycfbpregtkia" path="res://Sprites/truck2.png" id="8_4b7i4"]
+[ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="9_xoib5"]
+[ext_resource type="Texture2D" uid="uid://t2m2bsoc2yri" path="res://Sprites/tree.png" id="10_1kp1s"]
+[ext_resource type="Texture2D" uid="uid://bwdhlwan668i7" path="res://Sprites/coeur.png" id="11_365fg"]
+[ext_resource type="Texture2D" uid="uid://cbpx2ft4kehma" path="res://Sprites/buisson.png" id="12_2r8k4"]
+[ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="12_sasit"]
+[ext_resource type="Texture2D" uid="uid://cgsyfni5fw3an" path="res://Sprites/grass_patch_3.png" id="13_i317t"]
+[ext_resource type="Texture2D" uid="uid://deftxgkvbcv8h" path="res://Sprites/arrival.png" id="14_rdhj5"]
+[ext_resource type="FontFile" uid="uid://blebgpfn3utle" path="res://fonts/Avenixel-Regular.ttf" id="17_17mcr"]
+[ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="19_s4haj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m23nb"]
+bg_color = Color(0.608321, 0.610715, 0.488438, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 10
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 7
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fabfe"]
+shader = ExtResource("6_3hpnb")
+
+[node name="Tutorial" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdttv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32549, 0.498039, 0.215686, 1)
+
+[node name="road" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 15.0
+offset_right = 2480.0
+offset_bottom = 371.0
+texture = ExtResource("5_8bxyn")
+
+[node name="slug" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 467.0
+offset_right = 158.0
+offset_bottom = 507.0
+texture = ExtResource("6_odhdm")
+
+[node name="slug2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 227.0
+offset_right = 715.0
+offset_bottom = 267.0
+texture = ExtResource("6_odhdm")
+
+[node name="car" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 38.0
+offset_right = 1097.0
+offset_bottom = 134.0
+texture = ExtResource("7_m5bqn")
+
+[node name="car2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 207.0
+offset_right = 541.0
+offset_bottom = 303.0
+texture = ExtResource("8_4b7i4")
+flip_h = true
+
+[node name="predator" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 527.0
+offset_right = 327.0
+offset_bottom = 591.0
+rotation = -0.872665
+texture = ExtResource("9_xoib5")
+
+[node name="throwing zone" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 379.0
+offset_right = 773.0
+offset_bottom = 507.0
+texture = ExtResource("12_sasit")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(1061, 385)
+scale = Vector2(4.60417, 3.77083)
+texture = ExtResource("10_1kp1s")
+
+[node name="Coeur" type="Sprite2D" parent="."]
+position = Vector2(171, 463)
+texture = ExtResource("11_365fg")
+
+[node name="Buisson" type="Sprite2D" parent="."]
+position = Vector2(818, 570)
+scale = Vector2(4.375, 4.25)
+texture = ExtResource("12_2r8k4")
+
+[node name="GrassPatch3" type="Sprite2D" parent="."]
+position = Vector2(484.5, 541.5)
+scale = Vector2(1.46094, 1.40625)
+texture = ExtResource("13_i317t")
+
+[node name="Arrival" type="Sprite2D" parent="."]
+position = Vector2(499, -95)
+texture = ExtResource("14_rdhj5")
+
+[node name="Hints" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 416.0
+offset_top = 516.0
+offset_right = -395.0
+offset_bottom = -25.0
+theme_override_fonts/normal_font = ExtResource("17_17mcr")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_m23nb")
+text = "Hover objects to know more"
+fit_content = true
+scroll_active = false
+
+[node name="fence" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 459.0
+offset_right = 253.0
+offset_bottom = 555.0
+texture = ExtResource("1_lswa6")
+
+[node name="fence2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -55.0
+offset_top = 459.0
+offset_right = 73.0
+offset_bottom = 555.0
+texture = ExtResource("2_0t23b")
+
+[node name="fence11" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 431.0
+offset_right = 100.0
+offset_bottom = 527.0
+texture = ExtResource("2_0t23b")
+
+[node name="fence12" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 377.0
+offset_right = 156.0
+offset_bottom = 473.0
+texture = ExtResource("2_0t23b")
+
+[node name="fence13" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 403.0
+offset_right = 128.0
+offset_bottom = 499.0
+texture = ExtResource("2_0t23b")
+
+[node name="fence3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 349.0
+offset_right = 333.0
+offset_bottom = 445.0
+texture = ExtResource("3_r10g2")
+
+[node name="fence8" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 349.0
+offset_right = 289.0
+offset_bottom = 445.0
+texture = ExtResource("3_r10g2")
+
+[node name="fence9" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 350.0
+offset_right = 377.0
+offset_bottom = 446.0
+texture = ExtResource("3_r10g2")
+
+[node name="fence10" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 349.0
+offset_right = 245.0
+offset_bottom = 445.0
+texture = ExtResource("3_r10g2")
+
+[node name="fence4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 456.0
+offset_right = 137.0
+offset_bottom = 552.0
+texture = ExtResource("4_jhlum")
+
+[node name="fence14" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 456.0
+offset_right = 183.0
+offset_bottom = 552.0
+texture = ExtResource("4_jhlum")
+
+[node name="fence15" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 457.0
+offset_right = 228.0
+offset_bottom = 553.0
+texture = ExtResource("4_jhlum")
+
+[node name="fence16" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 458.0
+offset_right = 272.0
+offset_bottom = 554.0
+texture = ExtResource("4_jhlum")
+
+[node name="fence5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 404.0
+offset_right = 306.0
+offset_bottom = 500.0
+texture = ExtResource("1_lswa6")
+
+[node name="fence6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 431.0
+offset_right = 280.0
+offset_bottom = 527.0
+texture = ExtResource("1_lswa6")
+
+[node name="fence7" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 377.0
+offset_right = 332.0
+offset_bottom = 473.0
+texture = ExtResource("1_lswa6")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fabfe")
+layout_mode = 0
+offset_left = 16.0
+offset_top = 391.0
+offset_right = 354.0
+offset_bottom = 556.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 557.0
+offset_right = 1133.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("19_s4haj")
+theme_override_font_sizes/font_size = 45
+text = "Play!"
+
+[connection signal="mouse_entered" from="road" to="." method="hover_road"]
+[connection signal="mouse_exited" from="road" to="." method="exit_object"]
+[connection signal="mouse_entered" from="car" to="." method="hover_cars"]
+[connection signal="mouse_exited" from="car" to="." method="exit_object"]
+[connection signal="mouse_entered" from="car2" to="." method="hover_cars"]
+[connection signal="mouse_exited" from="car2" to="." method="exit_object"]
+[connection signal="mouse_entered" from="throwing zone" to="." method="hover_throwing_zone"]
+[connection signal="mouse_exited" from="throwing zone" to="." method="exit_object"]
+[connection signal="mouse_entered" from="ColorRect2" to="." method="hover_pen"]
+[connection signal="mouse_exited" from="ColorRect2" to="." method="exit_object"]
+[connection signal="pressed" from="Button" to="." method="go_menu"]
