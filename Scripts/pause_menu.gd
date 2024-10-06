@@ -8,6 +8,7 @@ var paused = false
 func _ready() -> void:
 	pauseMenu.hide() # Replace with function body.
 	blurrFilter.hide()
+	Engine.time_scale=1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +33,5 @@ func home_menu() -> void :
 	paused = false
 	get_tree().change_scene_to_file("res://Level Scenes/control.tscn")
 	
+func replay()->void :
+		get_tree().reload_current_scene()
