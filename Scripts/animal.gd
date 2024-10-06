@@ -109,6 +109,8 @@ func on_press():
 			push_error("No vivier instance in the scene!")
 			
 func on_release():
+	if state != AnimalState.STACKED and state != AnimalState.HELD:
+		return
 	if throw_arrow != null:
 		configure_throw()
 		remove_throw_arrow()	
