@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c26kht77sggk4"]
+
+[ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/predator.tscn" id="1_w3pe7"]
+[ext_resource type="Texture2D" uid="uid://c5tmi18ecjg7w" path="res://Sprites/betterSlug_walk_1.png" id="2_ayqis"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ec0qv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ayqis")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qckxq"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv3j5"]
+
+[node name="PredatorBetterSlug" instance=ExtResource("1_w3pe7")]
+kind = 1
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ec0qv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_qckxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_hv3j5")

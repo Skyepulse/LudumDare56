@@ -1,23 +1,47 @@
 extends Node2D
 
-# @onready var position_camera = get_screen_center_position()
-# @onready var size_camera = get_viewport_rect().size() 
+var voiture: PackedScene = preload("res://PrefabScenes/Voiture.tscn")
+var road: PackedScene = preload("res://PrefabScenes/sprite_2d.tscn")
 
-#var top_left_position = (position_camera - (0.5*size_camera))
+var delay = 0.15 #Time between car
+var time_passed = 0.0
+
+var top_left_position
+var top_right_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	var route = road.instantiate()
+	add_child(route)
+
+	#Camera
+	var camera = $Camera2D
+	var position_camera = camera.get_screen_center_position()
+	var size_camera = get_viewport_rect().size
+	top_left_position = (position_camera - (0.5*size_camera) + Vector2(0,102))
+	var top_route = (position_camera - (0.5*size_camera))
+
+	top_right_position = (position_camera + (0.5*size_camera)*Vector2(1,-1) + Vector2(0,250))
+	route.position = top_route + Vector2(route.texture.get_width(),route.texture.get_height())/2
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	while (1):
-		var rand = randf()
-		if rand <= 0.2:
-			_on_timer_timeout()
+	time_passed += delta  # Incrémente le temps écoulé
+	var rand_gauche = randf()
+	var rand_droite = randf()
+
+	if time_passed >= delay:
+		if rand_gauche <= 0.1: #probability that there is a car on delay
+			voiture_move(top_left_position, 2)
+		if rand_droite <= 0.1: #probability that there is a car on delay
+			voiture_move(top_right_position, 1)
+		time_passed = 0.0
+			
+	   
 		
 
-func _on_timer_timeout() -> void:
-	var voiture: PackedScene = preload("res://PrefabScenes/voiture.tscn")
-	var voiture_instance = voiture.instance()
+func voiture_move(camera_position, direc) -> void:
+	var voiture_instance = voiture.instantiate()
+	voiture_instance.direc = direc
 	add_child(voiture_instance)
-	voiture_instance.position = Vector2(100, 100)
+	voiture_instance.position = camera_position

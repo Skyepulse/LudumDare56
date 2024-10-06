@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://2r5lcd8ragky"]
+
+[ext_resource type="Script" path="res://Scripts/animal.gd" id="1_byc71"]
+[ext_resource type="Texture2D" uid="uid://c5tmi18ecjg7w" path="res://Sprites/betterSlug_walk_1.png" id="2_n0evy"]
+[ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="3_kwlra"]
+[ext_resource type="Texture2D" uid="uid://doilpve0ktx10" path="res://Sprites/slug_walk_2.png" id="4_tgqut"]
+[ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="5_7xout"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0jlfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kwlra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tgqut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmxde"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_laels"]
+
+[node name="betterSlug" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_byc71")
+speed = 12000
+max_throw_distance = 350.0
+min_throw_distance = 100.0
+type = 1
+ui_sprite = ExtResource("2_n0evy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.233589, 0.475536, 0.931313, 1)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_0jlfr")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jmxde")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_7xout")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_laels")

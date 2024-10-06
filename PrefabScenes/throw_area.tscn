@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwan1huf7kheg"]
+
+[ext_resource type="Script" path="res://Scripts/throwArea.gd" id="1_eb6hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgu4f"]
+size = Vector2(100, 400)
+
+[sub_resource type="Gradient" id="Gradient_d404n"]
+colors = PackedColorArray(0, 0.14902, 0, 1, 0.358915, 0.649166, 0.264576, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nn0qk"]
+gradient = SubResource("Gradient_d404n")
+width = 10
+height = 10
+
+[node name="Throw Area" type="Node2D"]
+position = Vector2(121, 226)
+script = ExtResource("1_eb6hp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dgu4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(10, 40)
+texture = SubResource("GradientTexture2D_nn0qk")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://brxn3wghyn815"]
+
+[ext_resource type="Script" path="res://Scripts/winningLine.gd" id="1_8d3w6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifysp"]
+size = Vector2(2000, 100)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1anmw"]
+
+[node name="WinningLine" type="Node2D"]
+script = ExtResource("1_8d3w6")
+
+[node name="WinningArea" type="Area2D" parent="."]
+rotation = 1.5708
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinningArea"]
+shape = SubResource("RectangleShape2D_ifysp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+rotation = 1.5708
+scale = Vector2(2000, 100)
+texture = SubResource("CanvasTexture_1anmw")

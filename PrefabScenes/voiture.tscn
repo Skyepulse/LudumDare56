@@ -1,18 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://b85yc2dcgsrvy"]
 
-[ext_resource type="Script" path="res://PrefabScenes/voiture.gd" id="1_bvwhl"]
-[ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="2_xb41b"]
+[ext_resource type="Script" path="res://PrefabScenes/voiture.gd" id="1_2sfxp"]
+[ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="1_y5req"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqaqr"]
-size = Vector2(124, 87)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rjjc"]
 
 [node name="Voiture" type="CharacterBody2D"]
-script = ExtResource("1_bvwhl")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(501, 467)
-texture = ExtResource("2_xb41b")
+script = ExtResource("1_2sfxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(502, 470)
-shape = SubResource("RectangleShape2D_uqaqr")
+shape = SubResource("RectangleShape2D_3rjjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y5req")

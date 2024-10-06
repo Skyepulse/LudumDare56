@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://c61p5l12878sx"]
+
+[ext_resource type="Texture2D" uid="uid://o8u0imqa1b3k" path="res://Sprites/clock.svg" id="1_6g13l"]
+[ext_resource type="Script" path="res://Scripts/level_info_ui.gd" id="1_qlppt"]
+[ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="2_wrat0"]
+
+[node name="level_info_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 5.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_qlppt")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 1
+
+[node name="Control" type="Control" parent="Control"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/Time"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_6g13l")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/Time"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00:00"
+
+[node name="Control" type="Control" parent="Control/Control/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Points" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/Points"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_wrat0")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/Points"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
