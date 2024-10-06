@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xtcc75vdkcyi"]
+[gd_scene load_steps=13 format=3 uid="uid://ipu886jhxmh3"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://2r5lcd8ragky" path="res://Level Scenes/better_slug.tscn" id="9_73wku"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 [ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="10_mbc1y"]
-[ext_resource type="PackedScene" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
+[ext_resource type="PackedScene" uid="uid://dwan1huf7kheg" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
 
 [node name="Level" type="Node2D"]
 
@@ -50,9 +50,6 @@ state = 2
 position = Vector2(103, 294)
 state = 2
 
-[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(146, 256)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
@@ -61,4 +58,12 @@ mouse_filter = 2
 [node name="level_info_ui" parent="CanvasLayer" instance=ExtResource("10_mbc1y")]
 mouse_filter = 2
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_xjqyx")]
+[node name="PauseMenu" parent="." instance=ExtResource("1_xjqyx")]
+offset_left = 579.0
+offset_top = 327.0
+offset_right = 579.0
+offset_bottom = 327.0
+scale = Vector2(2, 2)
+
+[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
+position = Vector2(104, 234)
