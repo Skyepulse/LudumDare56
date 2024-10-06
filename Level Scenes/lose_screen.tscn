@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfxalqyg2hlyc"]
+
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_k8ugf"]
+[ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_8r226"]
+[ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_51p1n"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k8ugf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101813, 0.230543, 0.28611, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 75.0
+offset_right = 1079.0
+offset_bottom = 406.0
+theme_override_colors/default_color = Color(0.611254, 0.359404, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_8r226")
+theme_override_font_sizes/normal_font_size = 40
+text = "YOU LOSE!"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -79.5
+offset_right = 64.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../RichTextLabel")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Replay" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_51p1n")
+text = "Replay"
+
+[node name="Home" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_51p1n")
+text = "Home"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "A game by MATELOU & co"
+fit_content = true
+tab_size = 6
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay" to="." method="replay"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home" to="." method="go_home"]

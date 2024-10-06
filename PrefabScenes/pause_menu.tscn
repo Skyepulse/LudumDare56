@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cik6fhixktwqq"]
+[gd_scene load_steps=7 format=3 uid="uid://bxhhkulpgydwe"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Level Scenes/blurr.gdshader" id="2_p2h16"]
+[ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="3_ragyt"]
 [ext_resource type="Texture2D" uid="uid://c1t75d2fsxr1e" path="res://Sprites/level_box_2.png" id="3_tk813"]
 [ext_resource type="Texture2D" uid="uid://2wj8ge4j4r8" path="res://Sprites/level_box_2_fonce.png" id="4_o8exn"]
 
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_tw5my")
 
 [node name="BlurrFilter" type="ColorRect" parent="."]
@@ -26,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Menu" type="Control" parent="."]
 anchors_preset = 0
@@ -50,11 +53,13 @@ layout_mode = 2
 [node name="Resume" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
 custom_minimum_size = Vector2(64, 45)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ragyt")
 text = "Resume"
 
 [node name="Home" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
 custom_minimum_size = Vector2(64, 45)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ragyt")
 text = "Home"
 
 [node name="PauseButton" type="TextureButton" parent="."]

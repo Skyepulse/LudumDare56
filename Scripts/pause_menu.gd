@@ -1,6 +1,7 @@
 extends Control
 @onready var pauseMenu = $Menu
 @onready var blurrFilter = $BlurrFilter
+
 var paused = false
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +19,7 @@ func pause_game() -> void :
 	if paused :
 		pauseMenu.hide()
 		blurrFilter.hide()
+		
 		Engine.time_scale = 1
 	else :
 		pauseMenu.show()

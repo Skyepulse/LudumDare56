@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://ipu886jhxmh3"]
+[gd_scene load_steps=16 format=3 uid="uid://ipu886jhxmh3"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/predator_spawner.tscn" id="1_34c6p"]
+[ext_resource type="Script" path="res://Level Scenes/level_1.gd" id="1_llewe"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
-[ext_resource type="PackedScene" uid="uid://cik6fhixktwqq" path="res://Level Scenes/pause_menu.tscn" id="1_xjqyx"]
+[ext_resource type="PackedScene" uid="uid://bxhhkulpgydwe" path="res://PrefabScenes/pause_menu.tscn" id="1_xjqyx"]
 [ext_resource type="PackedScene" uid="uid://brxn3wghyn815" path="res://PrefabScenes/winning_line.tscn" id="3_o5yjo"]
 [ext_resource type="PackedScene" uid="uid://s2nwtxsi3sdt" path="res://Level Scenes/toad.tscn" id="4_syjkf"]
 [ext_resource type="PackedScene" uid="uid://yvkon0gr243n" path="res://Level Scenes/snake.tscn" id="5_32qtx"]
@@ -12,17 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://2r5lcd8ragky" path="res://Level Scenes/better_slug.tscn" id="9_73wku"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 [ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="10_mbc1y"]
-[ext_resource type="PackedScene" uid="uid://dwan1huf7kheg" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
+[ext_resource type="PackedScene" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ss0dk"]
 resource_local_to_scene = true
 size = Vector2(161.5, 295)
 
 [node name="Level" type="Node2D"]
-
-[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(597, 511)
-rotation = -1.57079
+script = ExtResource("1_llewe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
@@ -77,8 +75,11 @@ vivier = NodePath("../Vivier")
 position = Vector2(1251, 570.5)
 shape = SubResource("RectangleShape2D_ss0dk")
 
+[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
+position = Vector2(597, 511)
+rotation = -1.57079
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
 mouse_filter = 2
@@ -87,4 +88,6 @@ mouse_filter = 2
 mouse_filter = 2
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_xjqyx")]
-mouse_filter = 1
+
+[connection signal="lose" from="WinningLine" to="." method="lose"]
+[connection signal="win" from="WinningLine" to="." method="win"]
