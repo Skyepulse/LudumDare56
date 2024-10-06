@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://btc11j6ugf7lo"]
+[gd_scene load_steps=7 format=3 uid="uid://btc11j6ugf7lo"]
 
 [ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/predator.tscn" id="1_ti4rq"]
 [ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="2_67htu"]
@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_12beb"]
 radius = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vj00k"]
+radius = 15.0333
+
 [node name="PredatorToad" instance=ExtResource("1_ti4rq")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -30,3 +33,6 @@ frame_progress = 0.754919
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_12beb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_vj00k")
