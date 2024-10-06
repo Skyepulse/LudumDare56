@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnwtgouj7ifed"]
+[gd_scene load_steps=7 format=3 uid="uid://cnwtgouj7ifed"]
 
 [ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/predator.tscn" id="1_lkjag"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="2_s6and"]
@@ -21,7 +21,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkdcr"]
 radius = 22.0907
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhrqv"]
+radius = 29.2746
+
 [node name="PredatorFox" instance=ExtResource("1_lkjag")]
+speed = 50
+kind = 5
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_fqt1l")
@@ -31,3 +36,7 @@ frame_progress = 0.524177
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(4, 3)
 shape = SubResource("CircleShape2D_wkdcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_nhrqv")

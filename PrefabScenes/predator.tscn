@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://cux36tf7iuug0"]
+[gd_scene load_steps=3 format=3 uid="uid://cux36tf7iuug0"]
+
+[ext_resource type="Script" path="res://Scripts/predator.gd" id="1_mjlop"]
+[ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="2_l1ytv"]
 
 [node name="Predator" type="CharacterBody2D"]
+script = ExtResource("1_mjlop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 6
+script = ExtResource("2_l1ytv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

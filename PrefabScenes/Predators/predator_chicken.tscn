@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf8t7iatu2kdb"]
+[gd_scene load_steps=7 format=3 uid="uid://bf8t7iatu2kdb"]
 
 [ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/predator.tscn" id="1_th0bq"]
 [ext_resource type="Texture2D" uid="uid://s4cjheo1fwwp" path="res://Sprites/poulet1.png" id="2_82bbc"]
@@ -21,7 +21,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_q1ltk"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_va1sp"]
+radius = 19.6469
+
 [node name="PredatorChicken" instance=ExtResource("1_th0bq")]
+speed = 50
+kind = 4
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_77bbs")
@@ -31,3 +36,6 @@ frame_progress = 0.324842
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_q1ltk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_va1sp")

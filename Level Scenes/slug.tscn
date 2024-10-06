@@ -24,6 +24,8 @@ radius = 7.0
 [node name="Slug" instance=ExtResource("1_jliu6")]
 collision_mask = 6
 speed = 10000
+max_throw_distance = 200.0
+min_throw_distance = 100.0
 ui_sprite = ExtResource("2_kwfaj")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
