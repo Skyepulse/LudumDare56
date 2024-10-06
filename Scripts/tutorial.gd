@@ -8,21 +8,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	hints.get
+	pass
 func hover_cars() -> void :
+	hints.clear()
 	text = "Cars and Trucks will squish your animals!"
 	display_text()
 	
 func hover_road() -> void : 
+	hints.clear()
 	text = "Get your animals to the other side to score points!"
 	display_text()
 	
 func hover_throwing_zone() -> void : 
-	text = "Throw your animals on the road to get them to cross!"
+	hints.clear()
+	text = "Throw your animals from here on the road to get them to cross!"
 	display_text()
 
 func hover_pen() -> void : 
-	
+	hints.clear()
 	text = "Store your animals in the pen, they will reproduce. \n Watch out for predators..."
 	display_text()
 	

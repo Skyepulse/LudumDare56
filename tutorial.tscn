@@ -261,6 +261,7 @@ offset_bottom = -25.0
 theme_override_fonts/normal_font = ExtResource("17_17mcr")
 theme_override_font_sizes/normal_font_size = 30
 theme_override_styles/background = SubResource("StyleBoxFlat_m23nb")
+text = "Hover objects to know more"
 fit_content = true
 scroll_active = false
 
