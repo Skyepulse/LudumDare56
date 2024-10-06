@@ -26,5 +26,7 @@ func pause_game() -> void :
 	paused = !paused
 
 func home_menu() -> void :
+	Engine.time_scale = 1
+	paused = false
 	get_tree().change_scene_to_file("res://Level Scenes/control.tscn")
 	
