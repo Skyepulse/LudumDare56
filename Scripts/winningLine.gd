@@ -12,9 +12,9 @@ const points = {
 }
 
 enum GameState {
-    WIN,
-    LOSE,
-    PLAYING
+	WIN,
+	LOSE,
+	PLAYING
 }
 
 # Singleton
@@ -34,79 +34,79 @@ var total_current_points: int = 0
 var timer: Timer = null
 
 var time_left: float:
-    get: return timer.time_left
+	get: return timer.time_left
 
 var has_won: bool = false
 var has_lost: bool = false
 
 func _ready():
-    #Singleton
-    if instance == null:
-        instance = self
-    else:
-        queue_free()
+	#Singleton
+	if instance == null:
+		instance = self
+	else:
+		queue_free()
 
-    area2D.body_entered.connect(on_body_entered)
+	area2D.body_entered.connect(on_body_entered)
 
-    # Debug signals
-    points_added.connect(debug_points)
-    win.connect(debug_winner)
-    lose.connect(debug_loser)
+	# Debug signals
+	points_added.connect(debug_points)
+	win.connect(debug_winner)
+	lose.connect(debug_loser)
 
-    timer = Timer.new()
-    timer.set_wait_time(time_to_win)
-    timer.set_one_shot(true)
-    timer.timeout.connect(check_win)
-    add_child(timer)
-    timer.start()
+	timer = Timer.new()
+	timer.set_wait_time(time_to_win)
+	timer.set_one_shot(true)
+	timer.timeout.connect(check_win)
+	add_child(timer)
+	timer.start()
 
 func _process(_delta):
-    pass
+	pass
 
 func on_body_entered(body: Node):
-    if body is Animal:
-        add_points((body as Animal))
-        emit_signal("points_added")
+	if body is Animal:
+		add_points((body as Animal))
+		emit_signal("points_added")
 
 func add_points(animal: Animal):
-    if has_won or has_lost:
-        return
-    total_current_points += points[animal.type]
-    animal.spawn_floating_label(points[animal.type], animal.position)
-    check_win()
+	if has_won or has_lost:
+		return
+	total_current_points += points[animal.type]
+	animal.spawn_floating_label(points[animal.type], animal.position)
+	check_win()
 
 func check_win():
-    if total_current_points >= total_needed_points:
-        has_won = true
-        timer.stop()
-        emit_signal("win")
-    elif time_left > 0:
-        return
-    else:
-        has_lost = true
-        timer.stop()
-        emit_signal("lose")
+	if total_current_points >= total_needed_points:
+		has_won = true
+		timer.stop()
+		emit_signal("win")
+	elif time_left > 0:
+		return
+	else:
+		has_lost = true
+		timer.stop()
+		emit_signal("lose")
 
 func debug_points():
-    pass
-    #print("Total points: ", total_current_points)
-    #print("Time left: ", time_left)
-    #print("Has won: ", has_won)
-    #print("Total needed points: ", total_needed_points)
-    #print("Time to win: ", time_to_win)
+	pass
+	#print("Total points: ", total_current_points)
+	#print("Time left: ", time_left)
+	#print("Has won: ", has_won)
+	#print("Total needed points: ", total_needed_points)
+	#print("Time to win: ", time_to_win)
 
 func debug_loser():
-    #print("You lost!")
-    pass
+	#print("You lost!")
+	pass
 
 func debug_winner():
-    #print("You won!")
-    pass
+	#print("You won!")
+	pass
 
 func get_game_state() -> GameState:
-    if has_won:
-        return GameState.WIN
-    elif has_lost:
-        return GameState.LOSE
-    else:
-        return GameState.PLAYING
+	if has_won:
+		return GameState.WIN
+	elif has_lost:
+		return GameState.LOSE
+	else:
+		return GameState.PLAYING
