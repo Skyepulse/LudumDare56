@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
-[ext_resource type="PackedScene" uid="uid://cik6fhixktwqq" path="res://Level Scenes/pause_menu.tscn" id="1_xjqyx"]
 [ext_resource type="PackedScene" uid="uid://brxn3wghyn815" path="res://PrefabScenes/winning_line.tscn" id="3_o5yjo"]
 [ext_resource type="PackedScene" uid="uid://s2nwtxsi3sdt" path="res://Level Scenes/toad.tscn" id="4_syjkf"]
 [ext_resource type="PackedScene" uid="uid://yvkon0gr243n" path="res://Level Scenes/snake.tscn" id="5_32qtx"]
@@ -30,12 +29,12 @@ initial_better_slugs = 1
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
 position = Vector2(1102, 291)
 
-[node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
-position = Vector2(108, 362)
-state = 2
-
 [node name="Toad" parent="." instance=ExtResource("4_syjkf")]
 position = Vector2(101, 151)
+state = 2
+
+[node name="Fox" parent="." instance=ExtResource("7_qh2pp")]
+position = Vector2(108, 362)
 state = 2
 
 [node name="betterSlug" parent="." instance=ExtResource("9_73wku")]
@@ -56,7 +55,6 @@ position = Vector2(67, 255)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
-mouse_filter = 2
 
 [node name="level_info_ui" parent="CanvasLayer" instance=ExtResource("10_mbc1y")]
 mouse_filter = 2
