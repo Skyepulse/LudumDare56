@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bea80sbyltokd"]
+[gd_scene load_steps=2 format=3 uid="uid://bea80sbyltokd"]
 
-[ext_resource type="Script" path="res://Scripts/general.gd" id="1_i5x5e"]
-[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_e3fir"]
+[ext_resource type="Script" path="res://PrefabScenes/general.gd" id="1_i5x5e"]
 
 [node name="General" type="Node2D"]
 script = ExtResource("1_i5x5e")
@@ -11,9 +10,5 @@ wait_time = 10.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_e3fir")
-position_camera = null
-size_camera = null
-top_left_position = null
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

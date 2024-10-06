@@ -50,7 +50,7 @@ enum AnimalState {
 func move(delta: float) -> void :
 	if (state == AnimalState.CROSSING) :
 		rotation = 0;
-		velocity = speed*Vector2(1,0)*delta;
+		velocity = speed*Vector2(0,-1) * 0.01; # pour pas avoir à changer toutes les vitesses
 		move_and_slide();
 	elif (state == AnimalState.STACKED) :
 		var collision_info = move_and_collide(10*velocity*delta);
@@ -74,7 +74,7 @@ func move(delta: float) -> void :
 			var scale_factor = lerp(2.0, 1.0, (distance_traveled - total_distance / 2) / (total_distance / 2))
 			sprite.scale = Vector2(scale_factor, scale_factor)
 
-		if direction.x <= 0:
+		if direction.y >= 0:
 			state = AnimalState.CROSSING
 			return
 
@@ -134,7 +134,7 @@ func configure_throw():
 	if throw_arrow != null:
 		throw_value = throw_arrow.throw_value
 		actual_throw_distance = lerp(min_throw_distance, max_throw_distance, throw_value)
-		objective_position = get_global_mouse_position() + Vector2(actual_throw_distance, 0)
+		objective_position = get_global_mouse_position() + Vector2(0, -actual_throw_distance)
 		thrown_position = get_global_mouse_position()
 
 func reset_throw_configuration():
