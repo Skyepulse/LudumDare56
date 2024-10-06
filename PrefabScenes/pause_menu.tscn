@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://w4rowuhgnfuf"]
+[gd_scene load_steps=7 format=3 uid="uid://bxhhkulpgydwe"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Level Scenes/blurr.gdshader" id="2_p2h16"]
