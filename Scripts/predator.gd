@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Predator
 
 var target_stack: Vivier
-@export var speed = 10 
+@export var speed = 50 
 
 func _ready():
 	# Set the predator's position a random position in the world

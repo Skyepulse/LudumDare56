@@ -6,6 +6,8 @@ class_name PredatorSpawner
 static var instance: PredatorSpawner = null
 
 # Exported Variables
+@export var vivier: Vivier = null
+@export var spawn_interval: float = 5
 
 # Load scenes
 var predator_scenes = {
@@ -16,7 +18,6 @@ var predator_scenes = {
 	Animal.AnimalType.FOX: preload("res://PrefabScenes/Predators/predator_fox.tscn"),
 }
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	# Singleton
 	if instance == null:
@@ -25,8 +26,14 @@ func _ready():
 		queue_free()
 		return
 
-
-func spawn_predator(type: Animal.AnimalType, at: Vector2) -> void:
-	var predator = predator_scenes[type].instance()
+func spawn_predator(type: PackedScene, at: Vector2) -> void:
+	var predator: Predator = type.instantiate()
 	predator.position = at
+	predator.target_stack = vivier
 	get_parent().add_child(predator)
+
+
+func _on_timer_timeout():
+	var at = Vector2(randf_range(0, 1920), randf_range(0, 1080))
+	var type = (1 + randi() % (Animal.AnimalType.ALIEN - 1))
+	spawn_predator(predator_scenes[type], at)
