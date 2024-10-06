@@ -21,6 +21,7 @@ enum AnimalType {
 @export var state : AnimalState
 
 var is_in_stack : bool = false
+var is_in_throw_area : bool = false
 
 enum AnimalState {
 	STACKED = 0, # animal dans le stack
@@ -68,14 +69,19 @@ func on_press():
 			push_error("No vivier instance in the scene!")
 			
 func on_release():
-	if is_in_stack:
-		if Vivier.instance:
-			Vivier.instance.add_animal(self)
-		else:
-			push_error("No vivier instance in the scene!")
-		state = AnimalState.STACKED
-	else:
+	if !Vivier.instance:
+		push_error("No vivier instance in the scene!")
+		return
+
+	if is_in_throw_area:
 		state = AnimalState.CROSSING
+		return
+
+	else:
+		if !is_in_stack and !is_in_throw_area:
+			self.position = Vivier.instance.spawn_position
+		Vivier.instance.add_animal(self)
+		state = AnimalState.STACKED
 
 #===============Floating Label=====================#
 func spawn_floating_label(value: int, spawn_point: Vector2):
