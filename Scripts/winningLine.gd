@@ -1,4 +1,5 @@
 extends Node
+class_name WinningLine
 
 const points = {
 	Animal.AnimalType.SLUG: 5,
@@ -9,6 +10,15 @@ const points = {
 	Animal.AnimalType.FOX: 160,
 	Animal.AnimalType.ALIEN: 320
 }
+
+enum GameState {
+    WIN,
+    LOSE,
+    PLAYING
+}
+
+# Singleton
+static var instance: WinningLine = null
 
 signal win
 signal lose
@@ -30,6 +40,12 @@ var has_won: bool = false
 var has_lost: bool = false
 
 func _ready():
+    #Singleton
+    if instance == null:
+        instance = self
+    else:
+        queue_free()
+
     area2D.body_entered.connect(on_body_entered)
 
     # Debug signals
@@ -49,32 +65,48 @@ func _process(_delta):
 
 func on_body_entered(body: Node):
     if body is Animal:
-        add_points((body as Animal).type)
+        add_points((body as Animal))
         emit_signal("points_added")
 
-func add_points(animal_type: Animal.AnimalType):
-    total_current_points += points[animal_type]
+func add_points(animal: Animal):
+    if has_won or has_lost:
+        return
+    total_current_points += points[animal.type]
+    animal.spawn_floating_label(points[animal.type], animal.position)
     check_win()
 
 func check_win():
     if total_current_points >= total_needed_points:
         has_won = true
+        timer.stop()
         emit_signal("win")
     elif time_left > 0:
         return
     else:
         has_lost = true
+        timer.stop()
         emit_signal("lose")
 
 func debug_points():
-    print("Total points: ", total_current_points)
-    print("Time left: ", time_left)
-    print("Has won: ", has_won)
-    print("Total needed points: ", total_needed_points)
-    print("Time to win: ", time_to_win)
+    pass
+    #print("Total points: ", total_current_points)
+    #print("Time left: ", time_left)
+    #print("Has won: ", has_won)
+    #print("Total needed points: ", total_needed_points)
+    #print("Time to win: ", time_to_win)
 
 func debug_loser():
-    print("You lost!")
+    #print("You lost!")
+    pass
 
 func debug_winner():
-    print("You won!")
+    #print("You won!")
+    pass
+
+func get_game_state() -> GameState:
+    if has_won:
+        return GameState.WIN
+    elif has_lost:
+        return GameState.LOSE
+    else:
+        return GameState.PLAYING

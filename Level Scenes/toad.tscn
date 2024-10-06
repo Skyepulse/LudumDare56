@@ -25,6 +25,7 @@ animations = [{
 radius = 12.0
 
 [node name="Toad" type="CharacterBody2D"]
+collision_mask = 6
 script = ExtResource("1_tcvpb")
 speed = 20000
 type = 2
