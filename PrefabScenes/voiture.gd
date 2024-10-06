@@ -13,7 +13,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(direc==1):
 		velocity = speed*direction_droite
-		move_and_slide()
 	else:
 		velocity = speed*direction_gauche
-		move_and_slide()
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		var animal: Animal = collision.get_collider()
+		animal.squish()

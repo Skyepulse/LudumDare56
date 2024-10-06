@@ -15,6 +15,8 @@ enum AnimalType {
 var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var collision_shape : CollisionShape2D = $CollisionShape2D
+
 @export var speed : int
 @export var size : int
 @export var max_throw_distance : float
@@ -44,7 +46,8 @@ enum AnimalState {
 	HELD = 1, # animal pret a etre lance
 	CROSSING = 2, #traverse la route
 	FREE = 3, #animal sauvage mange les autres
-	THROWN = 4 #animal lancé par le joueur avant d'aterrir et passer dans crossing
+	THROWN = 4, #animal lancé par le joueur avant d'aterrir et passer dans crossing
+	SQUISHED = 5 #pretty self-explanatory
 }
 
 func move(delta: float) -> void :
@@ -187,3 +190,7 @@ func tween_floating_text(label: Label):
 func queue_free_delayed(label: Label, seconds: float):
 	await get_tree().create_timer(seconds).timeout
 	label.queue_free()
+
+func squish():
+	state = AnimalState.SQUISHED
+	collision_shape.disabled = true;
