@@ -77,3 +77,30 @@ func on_release():
 	else:
 		state = AnimalState.CROSSING
 
+#===============Floating Label=====================#
+func spawn_floating_label(value: int, spawn_point: Vector2):
+	var label = Label.new()
+	
+	label.text = "+%d" % value
+	label.add_theme_color_override("font_color", Color(1, 0, 0))
+	label.add_theme_font_size_override("font_size", 30)
+	
+	
+	label.position = spawn_point
+	label.rotation = 0
+	
+	get_tree().get_root().get_node("Level").add_child(label)
+	
+	tween_floating_text(label)
+	
+	queue_free_delayed(label, 1.5)
+
+func tween_floating_text(label: Label):
+	var tween = create_tween()
+	# Animate the label moving upwards by 50 units in 1.5 seconds
+	tween.tween_property(label, "position:y", self.position.y - 50, 1.5)
+	tween.tween_property(label, "modulate:a", 0, 1.5)  # Fade out
+
+func queue_free_delayed(label: Label, seconds: float):
+	await get_tree().create_timer(seconds).timeout
+	label.queue_free()

@@ -65,13 +65,14 @@ func _process(_delta):
 
 func on_body_entered(body: Node):
     if body is Animal:
-        add_points((body as Animal).type)
+        add_points((body as Animal))
         emit_signal("points_added")
 
-func add_points(animal_type: Animal.AnimalType):
+func add_points(animal: Animal):
     if has_won or has_lost:
         return
-    total_current_points += points[animal_type]
+    total_current_points += points[animal.type]
+    animal.spawn_floating_label(points[animal.type], animal.position)
     check_win()
 
 func check_win():
@@ -87,17 +88,20 @@ func check_win():
         emit_signal("lose")
 
 func debug_points():
-    print("Total points: ", total_current_points)
-    print("Time left: ", time_left)
-    print("Has won: ", has_won)
-    print("Total needed points: ", total_needed_points)
-    print("Time to win: ", time_to_win)
+    pass
+    #print("Total points: ", total_current_points)
+    #print("Time left: ", time_left)
+    #print("Has won: ", has_won)
+    #print("Total needed points: ", total_needed_points)
+    #print("Time to win: ", time_to_win)
 
 func debug_loser():
-    print("You lost!")
+    #print("You lost!")
+    pass
 
 func debug_winner():
-    print("You won!")
+    #print("You won!")
+    pass
 
 func get_game_state() -> GameState:
     if has_won:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xtcc75vdkcyi"]
+[gd_scene load_steps=11 format=3 uid="uid://xtcc75vdkcyi"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://d0h4t8bmmobpp" path="res://Level Scenes/slug.tscn" id="1_qi1dv"]
@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://b0llnbyisa1qf" path="res://Level Scenes/fox.tscn" id="7_qh2pp"]
 [ext_resource type="PackedScene" uid="uid://2r5lcd8ragky" path="res://Level Scenes/better_slug.tscn" id="9_73wku"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
+[ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="10_mbc1y"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 325)
 
 [node name="Slug" parent="." instance=ExtResource("1_qi1dv")]
 position = Vector2(98, 83)
@@ -32,13 +36,6 @@ state = 2
 position = Vector2(108, 362)
 state = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(579, 325)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
-
 [node name="betterSlug" parent="." instance=ExtResource("9_73wku")]
 position = Vector2(98, 115)
 state = 2
@@ -50,3 +47,9 @@ state = 2
 [node name="chicken" parent="." instance=ExtResource("6_uv3y2")]
 position = Vector2(103, 294)
 state = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
+
+[node name="level_info_ui" parent="CanvasLayer" instance=ExtResource("10_mbc1y")]
