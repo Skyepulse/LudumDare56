@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://2pt1cxdrak6g"]
+[gd_scene load_steps=8 format=3 uid="uid://2pt1cxdrak6g"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_5cqks"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_5p3a8"]
 [ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_1nukb"]
+[ext_resource type="Texture2D" uid="uid://dhlf0oliv2tyu" path="res://Sprites/slug_turn.png" id="4_4myf4"]
+[ext_resource type="Texture2D" uid="uid://vmbn1l5yr0sm" path="res://Sprites/fox_walk2.png" id="5_12g8b"]
+[ext_resource type="Texture2D" uid="uid://c5tmi18ecjg7w" path="res://Sprites/betterSlug_walk_1.png" id="6_6xpnt"]
+[ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="7_qctju"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -89,6 +93,26 @@ bbcode_enabled = true
 text = "A game by MATELOU & co"
 fit_content = true
 tab_size = 6
+
+[node name="SlugTurn" type="Sprite2D" parent="."]
+position = Vector2(706, 267)
+scale = Vector2(3, 3)
+texture = ExtResource("4_4myf4")
+
+[node name="FoxWalk2" type="Sprite2D" parent="."]
+position = Vector2(120, 505)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_12g8b")
+
+[node name="BetterSlugWalk1" type="Sprite2D" parent="."]
+position = Vector2(401, 316)
+scale = Vector2(3, 3)
+texture = ExtResource("6_6xpnt")
+
+[node name="Frog1" type="Sprite2D" parent="."]
+position = Vector2(567, 201)
+scale = Vector2(3, 3)
+texture = ExtResource("7_qctju")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay" to="." method="replay"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NextLevel" to="." method="go_to_next"]
