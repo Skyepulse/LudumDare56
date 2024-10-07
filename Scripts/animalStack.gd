@@ -127,11 +127,12 @@ func remove_animal(animalType: Animal.AnimalType, kill: bool = false):
 	for animal in animal_list:
 		if animal.type == animalType:
 			animal_list.erase(animal)
-			if kill:
-				animal.queue_free()
 			animal_dictionary[animalType] -= 1
 			emit_signal("animal_removed", animal)
 			emit_signal("animal_list_modified")
+			if kill:
+				print("Killed: " + str(animalType))
+				animal.queue_free()
 			return
 	print('animal not found')
 
