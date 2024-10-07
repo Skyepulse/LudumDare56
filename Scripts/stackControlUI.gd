@@ -3,7 +3,6 @@ extends Node
 #References
 @onready var vivier_reference: Vivier = null
 @onready var slugLabel: RichTextLabel = $Control/Control/GridContainer/slugContainer/RichTextLabel
-@onready var betterSlugLabel: RichTextLabel = $Control/Control/GridContainer/betterSlugContainer/RichTextLabel
 @onready var toadLabel: RichTextLabel = $Control/Control/GridContainer/toadContainer/RichTextLabel
 @onready var snakeLabel: RichTextLabel = $Control/Control/GridContainer/snakeContainer/RichTextLabel
 @onready var chickenLabel: RichTextLabel = $Control/Control/GridContainer/chickenContainer/RichTextLabel
@@ -26,7 +25,6 @@ func find_root():
 func update_labels():
 	var animal_count: Dictionary = vivier_reference.animal_dictionary
 	slugLabel.text = str(animal_count[Animal.AnimalType.SLUG])
-	betterSlugLabel.text = str(animal_count[Animal.AnimalType.BETTER_SLUG])
 	toadLabel.text = str(animal_count[Animal.AnimalType.TOAD])
 	snakeLabel.text = str(animal_count[Animal.AnimalType.SNAKE])
 	chickenLabel.text = str(animal_count[Animal.AnimalType.CHICKEN])

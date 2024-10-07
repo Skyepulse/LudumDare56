@@ -72,7 +72,7 @@ func add_points(animal: Animal):
 	if has_won or has_lost:
 		return
 	total_current_points += points[animal.type]
-	animal.spawn_floating_label(points[animal.type], animal.position)
+	animal.spawn_floating_label(points[animal.type], animal.global_position)
 	check_win()
 
 func check_win():
