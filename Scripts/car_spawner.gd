@@ -4,8 +4,9 @@ var voiture_rouge: PackedScene = preload("res://PrefabScenes/Voitures/Voiture_ro
 var voiture_bleu: PackedScene = preload("res://PrefabScenes/Voitures/Voiture_bleu.tscn")
 var camion: PackedScene = preload("res://PrefabScenes/Voitures/Camion.tscn")
 
-var road: PackedScene = preload("res://PrefabScenes/road_sprite.tscn")
+@onready var route = $Road
 
+@export var camera: Camera2D
 @export var delay = 1 #Time between car
 @export var car_speed = 200
 @export var proba_droite = 0.1
@@ -17,18 +18,14 @@ var top_right_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var route = road.instantiate()
-	add_child(route)
-
 	#Camera
-	var camera = $Camera2D
 	var position_camera = camera.get_screen_center_position()
 	var size_camera = get_viewport_rect().size
 	top_left_position = (position_camera - (0.5*size_camera) + Vector2(0,102))
 	var top_route = (position_camera - (0.5*size_camera))
 
 	top_right_position = (position_camera + (0.5*size_camera)*Vector2(1,-1) + Vector2(0,250))
-	route.position = top_route + Vector2(route.texture.get_width(),route.texture.get_height())/2
+	# route.position = top_route + Vector2(route.texture.get_width(),route.texture.get_height())/2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -21,6 +21,11 @@ script = ExtResource("1_llewe")
 [node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
 position = Vector2(625, 650)
 
+[node name="CarSpawner" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("16_50rs8")]
+position = Vector2(6, 81)
+camera = NodePath("../Camera2D")
+proba_gauche = 0.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
 
@@ -29,8 +34,7 @@ position = Vector2(196, 551)
 initial_slugs = 2
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
-position = Vector2(621, -48)
-rotation = -1.5708
+position = Vector2(626, 71)
 
 [node name="PredatorSpawner" parent="." instance=ExtResource("1_34c6p")]
 
@@ -53,9 +57,5 @@ mouse_filter = 2
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_vmjbd")
 autoplay = true
-
-[node name="CarSpawner" parent="." instance=ExtResource("16_50rs8")]
-position = Vector2(580, 400)
-proba_gauche = 0.0
 
 [connection signal="win" from="WinningLine" to="." method="win"]

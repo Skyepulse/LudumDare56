@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bea80sbyltokd"]
+[gd_scene load_steps=3 format=3 uid="uid://bea80sbyltokd"]
 
 [ext_resource type="Script" path="res://Scripts/car_spawner.gd" id="1_i5x5e"]
+[ext_resource type="PackedScene" uid="uid://cnorjv36wfjvd" path="res://PrefabScenes/road_sprite.tscn" id="2_7fgwq"]
 
 [node name="CarSpawner" type="Node2D"]
 script = ExtResource("1_i5x5e")
@@ -11,6 +12,7 @@ proba_gauche = 0.25
 wait_time = 10.0
 autostart = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Road" parent="." instance=ExtResource("2_7fgwq")]
+position = Vector2(621, 178)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
