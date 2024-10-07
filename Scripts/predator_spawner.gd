@@ -15,14 +15,13 @@ static var instance: PredatorSpawner = null
 
 # Load scenes
 var predator_scenes = {
-	Animal.AnimalType.BETTER_SLUG: preload("res://PrefabScenes/Predators/predator_better_slug.tscn"),
 	Animal.AnimalType.TOAD: preload("res://PrefabScenes/Predators/predator_toad.tscn"),
 	Animal.AnimalType.SNAKE: preload("res://PrefabScenes/Predators/predator_snake.tscn"),
 	Animal.AnimalType.CHICKEN: preload("res://PrefabScenes/Predators/predator_chicken.tscn"),
 	Animal.AnimalType.FOX: preload("res://PrefabScenes/Predators/predator_fox.tscn"),
 }
 
-var max_animal_level = [Animal.AnimalType.SLUG,Animal.AnimalType.BETTER_SLUG,
+var max_animal_level = [Animal.AnimalType.TOAD,
 						Animal.AnimalType.SNAKE, Animal.AnimalType.CHICKEN,
 						Animal.AnimalType.FOX]
 
@@ -63,12 +62,13 @@ func _on_timer_timeout():
 		print("Set area2D child")
 		return
 	else:
+		if predator_max == Animal.AnimalType.SLUG:
+			return
 		var x = randf_range(minx, maxx)
 		var y = randf_range(miny, maxy)
 		var at = global_position + Vector2(x, y)
 		var type = 1
-		if LevelNumber.level_number > 1:
-			type = (1 + 
-					randi() % (max_animal_level[LevelNumber.level_number-1]))
+		if predator_max > 1:
+			type = (1 + randi() % predator_max)
 					
 		spawn_predator(predator_scenes[type], at)

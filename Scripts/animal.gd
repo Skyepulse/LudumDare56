@@ -4,12 +4,11 @@ class_name Animal
 
 enum AnimalType {
 	SLUG = 0,
-	BETTER_SLUG= 1,
-	TOAD =2,
-	SNAKE = 3,
-	CHICKEN = 4,
-	FOX = 5,
-	ALIEN = 6
+	TOAD =1,
+	SNAKE = 2,
+	CHICKEN = 3,
+	FOX = 4,
+	ALIEN = 5
 }
 
 var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")

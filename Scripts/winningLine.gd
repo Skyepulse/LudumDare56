@@ -3,7 +3,6 @@ class_name WinningLine
 
 const points = {
 	Animal.AnimalType.SLUG: 1,
-	Animal.AnimalType.BETTER_SLUG: 2,
 	Animal.AnimalType.TOAD: 4,
 	Animal.AnimalType.SNAKE: 8,
 	Animal.AnimalType.CHICKEN: 15,

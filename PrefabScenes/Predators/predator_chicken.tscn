@@ -25,7 +25,7 @@ radius = 15.0
 radius = 19.6469
 
 [node name="PredatorChicken" instance=ExtResource("1_th0bq")]
-kind = 4
+kind = 3
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_77bbs")

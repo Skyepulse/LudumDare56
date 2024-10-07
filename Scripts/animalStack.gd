@@ -7,7 +7,6 @@ static var instance: Vivier = null
 #----------Consts----------#
 const reproduce_times = {
 	Animal.AnimalType.SLUG: 5,
-	Animal.AnimalType.BETTER_SLUG: 7,
 	Animal.AnimalType.TOAD: 15,
 	Animal.AnimalType.SNAKE: 25,
 	Animal.AnimalType.CHICKEN: 35,
@@ -17,7 +16,6 @@ const reproduce_times = {
 
 const max_animals = {
 	Animal.AnimalType.SLUG: 10,
-	Animal.AnimalType.BETTER_SLUG: 10,
 	Animal.AnimalType.TOAD: 7,
 	Animal.AnimalType.SNAKE: 5,
 	Animal.AnimalType.CHICKEN: 3,
@@ -29,7 +27,6 @@ var animal_timers = {}
 
 #----------Preloads----------#
 var slug: PackedScene = preload("res://PrefabScenes/Animals/slug.tscn")
-var better_slug: PackedScene = preload("res://PrefabScenes/Animals/better_slug.tscn")
 var toad: PackedScene = preload("res://PrefabScenes/Animals/toad.tscn")
 var snake: PackedScene = preload("res://PrefabScenes/Animals/snake.tscn")
 var chicken: PackedScene = preload("res://PrefabScenes/Animals/chicken.tscn")
@@ -79,7 +76,6 @@ func _ready():
 
 	#initialize animals
 	init_animals(Animal.AnimalType.SLUG, initial_slugs)
-	init_animals(Animal.AnimalType.BETTER_SLUG, initial_better_slugs)
 	init_animals(Animal.AnimalType.TOAD, initial_toads)
 	init_animals(Animal.AnimalType.SNAKE, initial_snakes)
 	init_animals(Animal.AnimalType.CHICKEN, initial_chickens)
@@ -147,8 +143,6 @@ func instantiate_animal(animal_type: Animal.AnimalType):
 	match animal_type:
 			Animal.AnimalType.SLUG:
 				new_animal = slug.instantiate()
-			Animal.AnimalType.BETTER_SLUG:
-				new_animal = better_slug.instantiate()
 			Animal.AnimalType.TOAD:
 				new_animal = toad.instantiate()
 			Animal.AnimalType.SNAKE:
