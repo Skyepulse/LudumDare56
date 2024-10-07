@@ -6,7 +6,8 @@ var camion: PackedScene = preload("res://PrefabScenes/Camion.tscn")
 
 var road: PackedScene = preload("res://PrefabScenes/sprite_2d.tscn")
 
-var delay = 0.15 #Time between car
+@export var delay = 0.15 #Time between car
+@export var car_speed = 1000
 var time_passed = 0.0
 
 var top_left_position
@@ -51,12 +52,9 @@ func voiture_move(camera_position, direc: int,a: bool ) -> void:
 	else:
 		voiture_instance = camion.instantiate()
 
-	
 	voiture_instance.get_node("AnimatedSprite2D").flip_h = a
+	voiture_instance.speed = car_speed
 	
-
-
-
 	voiture_instance.direc = direc
 	add_child(voiture_instance)
 	voiture_instance.position = camera_position

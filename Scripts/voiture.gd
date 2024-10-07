@@ -19,5 +19,3 @@ func _process(delta: float) -> void:
 	if collision:
 		var animal: Animal = collision.get_collider()
 		animal.squish()
-
-	
