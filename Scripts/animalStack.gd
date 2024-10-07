@@ -118,22 +118,23 @@ func remove_random_animal(animal_max: Animal.AnimalType):
 			if randf() < 0.5 or i == animal_max - 1:
 				break
 	if last_kind >= 0:
-		remove_animal(last_kind, true)
-		print('animal removed ' + str(last_kind))
+		for animal in animal_list:
+			if animal.type == last_kind:
+				remove_animal(animal, true)
+				return
 		
 	
 
-func remove_animal(animalType: Animal.AnimalType, kill: bool = false):
-	for animal in animal_list:
-		if animal.type == animalType:
-			animal_list.erase(animal)
-			animal_dictionary[animalType] -= 1
-			emit_signal("animal_removed", animal)
-			emit_signal("animal_list_modified")
-			if kill:
-				print("Killed: " + str(animalType))
-				animal.queue_free()
-			return
+func remove_animal(animal: Animal, kill: bool = false):
+	if animal in animal_list:
+		animal_list.erase(animal)
+		animal_dictionary[animal.type] -= 1
+		emit_signal("animal_removed", animal)
+		emit_signal("animal_list_modified")
+		if kill:
+			print("Killed: " + str(animal.type))
+			animal.queue_free()
+		return
 	print('animal not found')
 
 func get_animal_count(animalType: Animal.AnimalType) -> int:
