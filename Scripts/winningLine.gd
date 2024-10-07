@@ -63,7 +63,7 @@ func _process(_delta):
 	pass
 
 func on_body_entered(body: Node):
-	if body is Animal:
+	if body is Animal and body.state == Animal.AnimalState.CROSSING:
 		add_points((body as Animal))
 		emit_signal("points_added")
 
