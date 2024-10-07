@@ -1,37 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dccowd8npis50"]
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dccowd8npis50"]
 
-[ext_resource type="Texture2D" uid="uid://cn7wgh5wdip80" path="res://Sprites/IdleLoop-Sheet.png" id="1_jgay2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_62aeb"]
-atlas = ExtResource("1_jgay2")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_788rv"]
-atlas = ExtResource("1_jgay2")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtpt5"]
-atlas = ExtResource("1_jgay2")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhxyh"]
-atlas = ExtResource("1_jgay2")
-region = Rect2(192, 0, 64, 64)
+[ext_resource type="Texture2D" uid="uid://6r6gfs3h5ao5" path="res://Sprites/fire_crash.png" id="1_v4bkf"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_62aeb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_788rv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtpt5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fhxyh")
+"texture": ExtResource("1_v4bkf")
 }],
 "loop": true,
 "name": &"burn",
