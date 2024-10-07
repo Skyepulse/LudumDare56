@@ -106,6 +106,7 @@ func on_press():
 	if state != AnimalState.STACKED:
 		return
 	state = AnimalState.HELD
+	ThrowArea.instance.highlight();
 	if is_in_stack:
 		if Vivier.instance:
 			Vivier.instance.remove_animal(self.type)
@@ -113,6 +114,7 @@ func on_press():
 			push_error("No vivier instance in the scene!")
 			
 func on_release():
+	ThrowArea.instance.un_highlight();
 	if state != AnimalState.STACKED and state != AnimalState.HELD:
 		return
 	if throw_arrow != null:
