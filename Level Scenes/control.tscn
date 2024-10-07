@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkttx7hp2ycs0"]
+[gd_scene load_steps=18 format=3 uid="uid://dkttx7hp2ycs0"]
 
 [ext_resource type="Script" path="res://level selector/control.gd" id="1_k1eak"]
 [ext_resource type="Texture2D" uid="uid://bb1jv5g8dbu2d" path="res://Sprites/road2x2.png" id="2_0rtr0"]
-[ext_resource type="Texture2D" uid="uid://dc1gkpr3ccob8" path="res://Sprites/logo.png" id="2_gd88t"]
+[ext_resource type="Texture2D" uid="uid://c1tay2bp5g6fi" path="res://Sprites/logo.png" id="2_gd88t"]
 [ext_resource type="Texture2D" uid="uid://j0usy34axpc1" path="res://Sprites/level_box_1.png" id="3_q60ex"]
 [ext_resource type="Texture2D" uid="uid://d7a0k5rjuotw" path="res://Sprites/level_box_1_fonce.png" id="4_nces2"]
 [ext_resource type="Texture2D" uid="uid://c1t75d2fsxr1e" path="res://Sprites/level_box_2.png" id="5_ln720"]
@@ -16,7 +16,6 @@
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="13_00atd"]
 [ext_resource type="AudioStream" uid="uid://b1m6y3j24yqot" path="res://Musics/Little jazz.mp3" id="14_jhuca"]
 [ext_resource type="Texture2D" uid="uid://bu7fde25a5iux" path="res://Sprites/poulet2.png" id="16_5rfnv"]
-[ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="17_qremy"]
 [ext_resource type="Texture2D" uid="uid://3g7nrfm65is1" path="res://Sprites/truck1.png" id="18_h0b2j"]
 
 [node name="LevelSelect" type="Control"]
@@ -52,12 +51,15 @@ scale = Vector2(0.9, 0.9)
 layout_mode = 2
 
 [node name="GameLogo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("2_gd88t")
-stretch_mode = 3
+expand_mode = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(10, 40)
+custom_minimum_size = Vector2(10, 100)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -120,15 +122,13 @@ stream = ExtResource("14_jhuca")
 autoplay = true
 
 [node name="Poulet2" type="Sprite2D" parent="."]
-position = Vector2(280, 248)
+position = Vector2(307, 315)
+scale = Vector2(2, 2)
 texture = ExtResource("16_5rfnv")
 
-[node name="SlugWalk1" type="Sprite2D" parent="."]
-position = Vector2(560, 160)
-texture = ExtResource("17_qremy")
-
 [node name="Truck1" type="Sprite2D" parent="."]
-position = Vector2(632, 442)
+position = Vector2(924, 228)
+scale = Vector2(2, 2)
 texture = ExtResource("18_h0b2j")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/level1" to="." method="goToLevel1"]
