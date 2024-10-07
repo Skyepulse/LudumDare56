@@ -203,3 +203,10 @@ func squish():
 	collision_shape.disabled = true;
 	sprite.frames = FIRE
 	sprite.play("burn")
+	var disappear_timer = Timer.new()
+	disappear_timer.set_wait_time(4.0)
+	disappear_timer.set_one_shot(true)
+	disappear_timer.timeout.connect(queue_free)
+	add_child(disappear_timer)
+	disappear_timer.start()
+	

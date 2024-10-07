@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://o8u0imqa1b3k" path="res://Sprites/clock.svg" id="1_6g13l"]
 [ext_resource type="Script" path="res://Scripts/Levels/level_info_ui.gd" id="1_qlppt"]
-[ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="2_wrat0"]
+[ext_resource type="Texture2D" uid="uid://c6l0gh3c307g2" path="res://Sprites/points.png" id="3_b41hd"]
 
 [node name="level_info_ui" type="Control"]
 layout_mode = 3
@@ -69,7 +69,7 @@ size_flags_horizontal = 3
 [node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/Points"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_wrat0")
+texture = ExtResource("3_b41hd")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/Points"]

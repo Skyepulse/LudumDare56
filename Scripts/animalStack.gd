@@ -7,10 +7,10 @@ static var instance: Vivier = null
 #----------Consts----------#
 const reproduce_times = {
 	Animal.AnimalType.SLUG: 5,
-	Animal.AnimalType.TOAD: 15,
-	Animal.AnimalType.SNAKE: 25,
-	Animal.AnimalType.CHICKEN: 35,
-	Animal.AnimalType.FOX: 50,
+	Animal.AnimalType.TOAD: 8,
+	Animal.AnimalType.SNAKE: 15,
+	Animal.AnimalType.CHICKEN: 25,
+	Animal.AnimalType.FOX: 40,
 	Animal.AnimalType.ALIEN: 75
 }
 
