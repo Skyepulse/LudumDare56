@@ -34,3 +34,6 @@ func do_things()-> void :
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+func skip() -> void :
+	#pour ce rageux de telo
+	get_tree().change_scene_to_file("res://Level Scenes/tutorial.tscn")
