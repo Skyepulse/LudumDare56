@@ -6,10 +6,12 @@ class_name PredatorSpawner
 static var instance: PredatorSpawner = null
 
 # Exported Variables
-@export var vivier: Vivier = null
+@export var predator_cooldown = 10
+@export var predator_max: Animal.AnimalType = Animal.AnimalType.SLUG
 
 # Get area2D child
 @onready var area2D: Area2D = $Area2D
+@onready var timer = $Timer
 
 # Load scenes
 var predator_scenes = {
@@ -37,6 +39,8 @@ func _ready():
 		queue_free()
 		return
 	
+	timer.wait_time = predator_cooldown
+	
 	# Compute the bounds of the area2D
 	for child in area2D.get_children():
 		if child is CollisionShape2D:
@@ -49,7 +53,7 @@ func _ready():
 
 func spawn_predator(type: PackedScene, at: Vector2) -> void:
 	var predator: Predator = type.instantiate()
-	predator.target_stack = vivier
+	predator.target_stack = Vivier.instance
 	add_child(predator)
 	predator.global_position = at
 
@@ -62,7 +66,9 @@ func _on_timer_timeout():
 		var x = randf_range(minx, maxx)
 		var y = randf_range(miny, maxy)
 		var at = global_position + Vector2(x, y)
-		var type = (1 + 
+		var type = 1
+		if LevelNumber.level_number > 1:
+			type = (1 + 
 					randi() % (max_animal_level[LevelNumber.level_number-1]))
 					
 		spawn_predator(predator_scenes[type], at)
