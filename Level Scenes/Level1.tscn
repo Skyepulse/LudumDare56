@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ipu886jhxmh3"]
+[gd_scene load_steps=12 format=3 uid="uid://ipu886jhxmh3"]
 
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="1_1lgaw"]
 [ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/Predators/predator_spawner.tscn" id="1_34c6p"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="9_oglhl"]
 [ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="10_mbc1y"]
 [ext_resource type="PackedScene" uid="uid://dwan1huf7kheg" path="res://PrefabScenes/throw_area.tscn" id="11_aoj50"]
-[ext_resource type="Texture2D" uid="uid://uhppxq04mece" path="res://Sprites/grass_texture.png" id="11_ctpmg"]
 [ext_resource type="AudioStream" uid="uid://cyq2lcf4urjhs" path="res://Musics/v3.mp3" id="15_vmjbd"]
 [ext_resource type="PackedScene" uid="uid://bea80sbyltokd" path="res://PrefabScenes/Voitures/car_spawner.tscn" id="16_50rs8"]
 
@@ -19,15 +18,15 @@ size = Vector2(105.75, 201.25)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_llewe")
 
-[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(787, 600)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 325)
 
 [node name="CarSpawner" parent="." instance=ExtResource("16_50rs8")]
 position = Vector2(6, 81)
 scale = Vector2(1, 0.72)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(579, 325)
+[node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
+position = Vector2(787, 600)
 
 [node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
 position = Vector2(272, 496)
@@ -50,9 +49,11 @@ shape = SubResource("RectangleShape2D_ss0dk")
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("9_oglhl")]
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="level_info_ui" parent="CanvasLayer" instance=ExtResource("10_mbc1y")]
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_xjqyx")]
 visible = false
@@ -60,8 +61,5 @@ visible = false
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_vmjbd")
 autoplay = true
-
-[node name="Grass" type="Sprite2D" parent="."]
-texture = ExtResource("11_ctpmg")
 
 [connection signal="win" from="WinningLine" to="." method="win"]
