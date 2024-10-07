@@ -35,7 +35,7 @@ initial_slugs = 3
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
 position = Vector2(626, 71)
-total_needed_points = 10
+total_needed_points = 5
 
 [node name="PredatorSpawner" parent="." instance=ExtResource("1_34c6p")]
 
