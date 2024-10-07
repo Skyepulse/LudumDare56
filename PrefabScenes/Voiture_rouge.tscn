@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcbp0bc0f5hrj"]
+
+[ext_resource type="PackedScene" uid="uid://cw6wwkdjmmchk" path="res://PrefabScenes/Voiture.tscn" id="1_ew08f"]
+[ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="2_yhl27"]
+[ext_resource type="Texture2D" uid="uid://cfkrledcmq8kt" path="res://Sprites/carred2.png" id="3_1ps13"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxvoy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yhl27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1ps13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Voiture_rouge" instance=ExtResource("1_ew08f")]
+script = null
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_dxvoy")
