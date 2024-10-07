@@ -133,7 +133,7 @@ func remove_animal(animal: Animal, kill: bool = false):
 		emit_signal("animal_list_modified")
 		if kill:
 			print("Killed: " + str(animal.type))
-			animal.queue_free()
+			animal.squish()
 		return
 	print('animal not found')
 
