@@ -2,13 +2,13 @@ extends Node
 
 #References
 @onready var vivier_reference: Vivier = null
-@onready var slugLabel: RichTextLabel = $Control/Control/HBoxContainer/slugContainer/RichTextLabel
-@onready var betterSlugLabel: RichTextLabel = $Control/Control/HBoxContainer/betterSlugContainer/RichTextLabel
-@onready var toadLabel: RichTextLabel = $Control/Control/HBoxContainer/toadContainer/RichTextLabel
-@onready var snakeLabel: RichTextLabel = $Control/Control/HBoxContainer/snakeContainer/RichTextLabel
-@onready var chickenLabel: RichTextLabel = $Control/Control/HBoxContainer/chickenContainer/RichTextLabel
-@onready var foxLabel: RichTextLabel = $Control/Control/HBoxContainer/foxContainer/RichTextLabel
-@onready var alienLabel: RichTextLabel = $Control/Control/HBoxContainer/alienContainer/RichTextLabel
+@onready var slugLabel: RichTextLabel = $Control/Control/GridContainer/slugContainer/RichTextLabel
+@onready var betterSlugLabel: RichTextLabel = $Control/Control/GridContainer/betterSlugContainer/RichTextLabel
+@onready var toadLabel: RichTextLabel = $Control/Control/GridContainer/toadContainer/RichTextLabel
+@onready var snakeLabel: RichTextLabel = $Control/Control/GridContainer/snakeContainer/RichTextLabel
+@onready var chickenLabel: RichTextLabel = $Control/Control/GridContainer/chickenContainer/RichTextLabel
+@onready var foxLabel: RichTextLabel = $Control/Control/GridContainer/foxContainer/RichTextLabel
+@onready var alienLabel: RichTextLabel = $Control/Control/GridContainer/alienContainer/RichTextLabel
 
 func _ready():
 	find_root()

@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://yvkon0gr243n"]
+[gd_scene load_steps=6 format=3 uid="uid://dhvwf1wus3dfm"]
 
-[ext_resource type="Script" path="res://Scripts/animal.gd" id="1_fj7us"]
+[ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://PrefabScenes/Animals/animal.tscn" id="1_3h648"]
 [ext_resource type="Texture2D" uid="uid://sb5na2qysqgw" path="res://Sprites/snake1.png" id="2_roq56"]
 [ext_resource type="Texture2D" uid="uid://dtqlfaojm6xua" path="res://Sprites/snake2.png" id="3_yu71g"]
-[ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="4_nn25t"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_veocg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_txrrs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -19,33 +18,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpykj"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_6l71k"]
+radius = 13.0384
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w570n"]
-
-[node name="snake" type="CharacterBody2D"]
-collision_mask = 6
-script = ExtResource("1_fj7us")
+[node name="Snake" instance=ExtResource("1_3h648")]
 speed = 22000
-max_throw_distance = 550.0
+max_throw_distance = 250.0
 min_throw_distance = 100.0
 type = 3
 ui_sprite = ExtResource("2_roq56")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_veocg")
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_txrrs")
 autoplay = "default"
+frame_progress = 0.164149
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -2)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_bpykj")
-
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("4_nn25t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, -2)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_w570n")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_6l71k")

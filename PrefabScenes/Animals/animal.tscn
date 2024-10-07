@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="2_b4qwk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_801pg"]
+radius = 25.1794
 
 [node name="Animal" type="CharacterBody2D"]
 collision_mask = 7
@@ -17,3 +18,12 @@ script = ExtResource("2_b4qwk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_801pg")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -70.0
+offset_top = 15.0
+offset_right = 72.0
+offset_bottom = 64.0
+text = "Won't reproduce if only 1 is left"
+autowrap_mode = 2

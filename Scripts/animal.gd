@@ -17,11 +17,11 @@ var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
 
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 
+@onready var label = $Label
+
 @export var speed : int
-@export var size : int
 @export var max_throw_distance : float
 @export var min_throw_distance : float
-@export var reproduction_rate : int
 @export var type : AnimalType
 @export var ui_sprite: Texture2D
 @export var state : AnimalState
@@ -110,10 +110,14 @@ func on_press():
 	if is_in_stack:
 		if Vivier.instance:
 			Vivier.instance.remove_animal(self.type)
+			if Vivier.instance.get_animal_count(type) <= 1:
+				label.show()
+				
 		else:
 			push_error("No vivier instance in the scene!")
 			
 func on_release():
+	label.hide()
 	ThrowArea.instance.un_highlight();
 	if state != AnimalState.STACKED and state != AnimalState.HELD:
 		return

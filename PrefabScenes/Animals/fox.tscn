@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0llnbyisa1qf"]
+[gd_scene load_steps=6 format=3 uid="uid://b8i6rcx7uonvf"]
 
-[ext_resource type="Script" path="res://Scripts/animal.gd" id="1_o8pjd"]
+[ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://PrefabScenes/Animals/animal.tscn" id="1_ips1x"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="2_4a0oy"]
 [ext_resource type="Texture2D" uid="uid://vmbn1l5yr0sm" path="res://Sprites/fox_walk2.png" id="3_ltup8"]
-[ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="4_ymy2i"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_udrfj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0sny"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -19,36 +18,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qwrgi"]
-radius = 16.0
-height = 60.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_fyk6u"]
+radius = 23.0217
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3utjb"]
-radius = 20.0
-height = 70.0
-
-[node name="Fox" type="CharacterBody2D"]
-collision_mask = 6
-script = ExtResource("1_o8pjd")
+[node name="Fox" instance=ExtResource("1_ips1x")]
 speed = 30000
-max_throw_distance = 700.0
+max_throw_distance = 350.0
 min_throw_distance = 100.0
 type = 5
 ui_sprite = ExtResource("2_4a0oy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_udrfj")
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_x0sny")
 autoplay = "default"
+frame_progress = 0.164098
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 3)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_qwrgi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_fyk6u")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("4_ymy2i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, 3)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_3utjb")
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(5, 1)

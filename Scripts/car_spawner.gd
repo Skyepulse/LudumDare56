@@ -6,7 +6,8 @@ var camion: PackedScene = preload("res://PrefabScenes/Voitures/Camion.tscn")
 
 @onready var route = $Road
 
-@export var camera: Camera2D
+@onready var camera: Camera2D = get_node("../Camera2D")
+
 @export var delay = 1 #Time between car
 @export var car_speed = 200
 @export var proba_droite = 0.1
@@ -18,6 +19,7 @@ var top_right_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
 	#Camera
 	var position_camera = camera.get_screen_center_position()
 	var size_camera = get_viewport_rect().size
@@ -25,7 +27,7 @@ func _ready() -> void:
 	var top_route = (position_camera - (0.5*size_camera))
 
 	top_right_position = (position_camera + (0.5*size_camera)*Vector2(1,-1) + Vector2(0,250))
-	# route.position = top_route + Vector2(route.texture.get_width(),route.texture.get_height())/2
+	route.position = top_route + Vector2(route.texture.get_width() - 100,route.texture.get_height())/2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

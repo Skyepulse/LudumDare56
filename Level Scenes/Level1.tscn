@@ -13,25 +13,25 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ss0dk"]
 resource_local_to_scene = true
-size = Vector2(161.5, 295)
+size = Vector2(105.75, 201.25)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_llewe")
 
 [node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(625, 650)
+position = Vector2(717, 689)
 
-[node name="CarSpawner" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("16_50rs8")]
+[node name="CarSpawner" parent="." instance=ExtResource("16_50rs8")]
 position = Vector2(6, 81)
-camera = NodePath("../Camera2D")
 proba_gauche = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
 
 [node name="Vivier" parent="." instance=ExtResource("1_1lgaw")]
-position = Vector2(196, 551)
+position = Vector2(266, 547)
 initial_slugs = 2
+initial_foxes = 1
 
 [node name="WinningLine" parent="." instance=ExtResource("3_o5yjo")]
 position = Vector2(626, 71)
@@ -41,7 +41,7 @@ position = Vector2(626, 71)
 [node name="Area2D" type="Area2D" parent="PredatorSpawner"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PredatorSpawner/Area2D"]
-position = Vector2(-102, 576)
+position = Vector2(-68, 540.375)
 shape = SubResource("RectangleShape2D_ss0dk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -39,112 +39,118 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Control"]
+[node name="GridContainer" type="GridContainer" parent="Control/Control"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -157.0
+offset_top = -172.0
+grow_horizontal = 0
+grow_vertical = 0
+columns = 2
 
-[node name="slugContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="slugContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/slugContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/slugContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_avtrf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/slugContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/slugContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="betterSlugContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="betterSlugContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/betterSlugContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/betterSlugContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_1q6pd")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/betterSlugContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/betterSlugContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="toadContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="toadContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/toadContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/toadContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_g1d3r")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/toadContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/toadContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="snakeContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="snakeContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/snakeContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/snakeContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_k55en")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/snakeContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/snakeContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="chickenContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="chickenContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/chickenContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/chickenContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("4_xylpj")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/chickenContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/chickenContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="foxContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="foxContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/foxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/foxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("5_5128s")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/foxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/foxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="alienContainer" type="HBoxContainer" parent="Control/Control/HBoxContainer"]
+[node name="alienContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/HBoxContainer/alienContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer/alienContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_avtrf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/HBoxContainer/alienContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Control/GridContainer/alienContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
-
-[node name="empty" type="Control" parent="Control/Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
