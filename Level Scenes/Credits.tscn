@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8c3xfno2e2uw"]
+[gd_scene load_steps=11 format=3 uid="uid://c8c3xfno2e2uw"]
 
 [ext_resource type="Texture2D" uid="uid://c2su5qxiri0vl" path="res://Sprites/road.png" id="1_rxbxx"]
 [ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="2_6f7qe"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="4_mi8cn"]
 [ext_resource type="Texture2D" uid="uid://nesn8mpjwreq" path="res://Sprites/carblue2.png" id="5_1amel"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="6_xgsmn"]
+[ext_resource type="Texture2D" uid="uid://cbpx2ft4kehma" path="res://Sprites/buisson.png" id="7_2w3rg"]
+[ext_resource type="Texture2D" uid="uid://bxsgq4gpbj763" path="res://Sprites/gentilcoeur.png" id="8_wavmr"]
+[ext_resource type="Texture2D" uid="uid://c1of1ku8cney0" path="res://Sprites/panneau1.png" id="9_3vo4v"]
+[ext_resource type="Texture2D" uid="uid://t2m2bsoc2yri" path="res://Sprites/tree.png" id="10_y2oro"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -102,3 +106,28 @@ Bisma - Music"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
+
+[node name="Buisson" type="Sprite2D" parent="."]
+position = Vector2(356, 159)
+scale = Vector2(1, 1.4)
+texture = ExtResource("7_2w3rg")
+
+[node name="Buisson2" type="Sprite2D" parent="."]
+position = Vector2(708, 185)
+scale = Vector2(2.19157, 2.09854)
+texture = ExtResource("7_2w3rg")
+
+[node name="Gentilcoeur" type="Sprite2D" parent="."]
+position = Vector2(304, 73)
+scale = Vector2(-2.03535, 1.96315)
+texture = ExtResource("8_wavmr")
+
+[node name="Panneau1" type="Sprite2D" parent="."]
+position = Vector2(847, 237)
+scale = Vector2(-2.3109, 2.41896)
+texture = ExtResource("9_3vo4v")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(726, 17)
+scale = Vector2(2.70589, 3.26145)
+texture = ExtResource("10_y2oro")
