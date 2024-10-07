@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxhhkulpgydwe"]
 
-[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_tw5my"]
+[ext_resource type="Script" path="res://Scripts/Levels/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Scripts/blurr.gdshader" id="2_p2h16"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="3_ragyt"]
 [ext_resource type="Texture2D" uid="uid://c1t75d2fsxr1e" path="res://Sprites/level_box_2.png" id="3_tk813"]

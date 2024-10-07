@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://dd0ko2clldqka"]
 
-[ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_8tgj3"]
+[ext_resource type="Script" path="res://Scripts/Levels/level_2.gd" id="1_8tgj3"]
 [ext_resource type="PackedScene" uid="uid://dwan1huf7kheg" path="res://PrefabScenes/throw_area.tscn" id="1_xorrs"]
 [ext_resource type="PackedScene" uid="uid://4vvxaoggeiqn" path="res://PrefabScenes/vivier.tscn" id="4_ssp5o"]
 [ext_resource type="PackedScene" uid="uid://brxn3wghyn815" path="res://PrefabScenes/winning_line.tscn" id="5_bif0b"]
-[ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/predator_spawner.tscn" id="11_ih2bp"]
+[ext_resource type="PackedScene" uid="uid://caicia6cx13ru" path="res://PrefabScenes/Predators/predator_spawner.tscn" id="11_ih2bp"]
 [ext_resource type="PackedScene" uid="uid://ca16fr3xs2hdg" path="res://PrefabScenes/stack_control_ui.tscn" id="12_mhjmv"]
 [ext_resource type="PackedScene" uid="uid://c61p5l12878sx" path="res://PrefabScenes/level_info_ui.tscn" id="13_apu16"]
 [ext_resource type="PackedScene" uid="uid://bxhhkulpgydwe" path="res://PrefabScenes/pause_menu.tscn" id="14_8kwsw"]
 [ext_resource type="AudioStream" uid="uid://cyq2lcf4urjhs" path="res://Musics/v3.mp3" id="15_hbq4n"]
-[ext_resource type="PackedScene" uid="uid://bea80sbyltokd" path="res://PrefabScenes/car_spawner.tscn" id="16_vwc71"]
+[ext_resource type="PackedScene" uid="uid://bea80sbyltokd" path="res://PrefabScenes/Voitures/car_spawner.tscn" id="16_vwc71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2x5s"]
 resource_local_to_scene = true

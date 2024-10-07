@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c61p5l12878sx"]
 
 [ext_resource type="Texture2D" uid="uid://o8u0imqa1b3k" path="res://Sprites/clock.svg" id="1_6g13l"]
-[ext_resource type="Script" path="res://Scripts/level_info_ui.gd" id="1_qlppt"]
+[ext_resource type="Script" path="res://Scripts/Levels/level_info_ui.gd" id="1_qlppt"]
 [ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="2_wrat0"]
 
 [node name="level_info_ui" type="Control"]

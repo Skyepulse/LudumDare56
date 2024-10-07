@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1stno1q8il64"]
 
-[ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/predator.tscn" id="1_3jybl"]
+[ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/Predators/predator.tscn" id="1_3jybl"]
 [ext_resource type="Texture2D" uid="uid://sb5na2qysqgw" path="res://Sprites/snake1.png" id="2_lacep"]
 [ext_resource type="Texture2D" uid="uid://dtqlfaojm6xua" path="res://Sprites/snake2.png" id="3_k4jma"]
 

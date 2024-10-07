@@ -1,10 +1,10 @@
 extends Node2D
 
-var voiture_rouge: PackedScene = preload("res://PrefabScenes/Voiture_rouge.tscn")
-var voiture_bleu: PackedScene = preload("res://PrefabScenes/Voiture_bleu.tscn")
-var camion: PackedScene = preload("res://PrefabScenes/Camion.tscn")
+var voiture_rouge: PackedScene = preload("res://PrefabScenes/Voitures/Voiture_rouge.tscn")
+var voiture_bleu: PackedScene = preload("res://PrefabScenes/Voitures/Voiture_bleu.tscn")
+var camion: PackedScene = preload("res://PrefabScenes/Voitures/Camion.tscn")
 
-var road: PackedScene = preload("res://PrefabScenes/sprite_2d.tscn")
+var road: PackedScene = preload("res://PrefabScenes/road_sprite.tscn")
 
 @export var delay = 0.15 #Time between car
 @export var car_speed = 1000

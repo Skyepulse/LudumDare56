@@ -28,12 +28,12 @@ const max_animals = {
 var animal_timers = {}
 
 #----------Preloads----------#
-var slug: PackedScene = preload("res://Level Scenes/slug.tscn")
-var better_slug: PackedScene = preload("res://Level Scenes/better_slug.tscn")
-var toad: PackedScene = preload("res://Level Scenes/toad.tscn")
-var snake: PackedScene = preload("res://Level Scenes/snake.tscn")
-var chicken: PackedScene = preload("res://Level Scenes/chicken.tscn")
-var fox: PackedScene = preload("res://Level Scenes/fox.tscn")
+var slug: PackedScene = preload("res://PrefabScenes/Animals/slug.tscn")
+var better_slug: PackedScene = preload("res://PrefabScenes/Animals/better_slug.tscn")
+var toad: PackedScene = preload("res://PrefabScenes/Animals/toad.tscn")
+var snake: PackedScene = preload("res://PrefabScenes/Animals/snake.tscn")
+var chicken: PackedScene = preload("res://PrefabScenes/Animals/chicken.tscn")
+var fox: PackedScene = preload("res://PrefabScenes/Animals/fox.tscn")
 
 #----------Signals----------#
 signal animal_added(animal)

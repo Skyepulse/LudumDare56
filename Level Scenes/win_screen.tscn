@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://2pt1cxdrak6g"]
 
-[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_5cqks"]
+[ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_5cqks"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_5p3a8"]
 [ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_1nukb"]
 

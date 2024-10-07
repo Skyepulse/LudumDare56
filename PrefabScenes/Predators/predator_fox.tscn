@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnwtgouj7ifed"]
 
-[ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/predator.tscn" id="1_lkjag"]
+[ext_resource type="PackedScene" uid="uid://cux36tf7iuug0" path="res://PrefabScenes/Predators/predator.tscn" id="1_lkjag"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="2_s6and"]
 [ext_resource type="Texture2D" uid="uid://vmbn1l5yr0sm" path="res://Sprites/fox_walk2.png" id="3_jmqi1"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnreyl28nj3dc"]
 
-[ext_resource type="PackedScene" uid="uid://b85yc2dcgsrvy" path="res://PrefabScenes/Voiture.tscn" id="1_o8y1h"]
+[ext_resource type="PackedScene" uid="uid://b85yc2dcgsrvy" path="res://PrefabScenes/Voitures/Voiture.tscn" id="1_o8y1h"]
 [ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="2_vnqwb"]
 [ext_resource type="Texture2D" uid="uid://nesn8mpjwreq" path="res://Sprites/carblue2.png" id="3_e6pxw"]
 
