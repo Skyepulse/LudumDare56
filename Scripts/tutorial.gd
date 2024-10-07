@@ -23,7 +23,9 @@ func hover_pen() -> void :
 	display_text()
 	
 func exit_object() -> void :
-	hide_text()
+	hints.clear()
+	text = "Hover objects to know more"
+	display_text()
 
 func display_text()->void :
 	hints.add_text(text)
