@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8c3xfno2e2uw"]
+[gd_scene load_steps=12 format=3 uid="uid://c8c3xfno2e2uw"]
 
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_ru2of"]
 [ext_resource type="Texture2D" uid="uid://c2su5qxiri0vl" path="res://Sprites/road.png" id="1_rxbxx"]
 [ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="2_6f7qe"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="3_wswq5"]
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ru2of")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -131,3 +133,14 @@ texture = ExtResource("9_3vo4v")
 position = Vector2(726, 17)
 scale = Vector2(2.70589, 3.26145)
 texture = ExtResource("10_y2oro")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 573.0
+offset_right = 822.0
+offset_bottom = 604.0
+theme_override_fonts/font = ExtResource("6_xgsmn")
+text = "BACK"
+
+[connection signal="pressed" from="back" to="." method="back"]
