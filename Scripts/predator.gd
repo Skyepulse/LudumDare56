@@ -50,9 +50,7 @@ func _process(_delta):
 		global_position = get_global_mouse_position()
 
 func on_press():
-	if state == PredatorState.FLEEING:
-		return
-		
+	collision_shape.disabled = false
 	if timer:
 		timer.stop()
 
