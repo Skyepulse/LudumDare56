@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dccowd8npis50"]
+
+[ext_resource type="Texture2D" uid="uid://cn7wgh5wdip80" path="res://Sprites/IdleLoop-Sheet.png" id="1_jgay2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62aeb"]
+atlas = ExtResource("1_jgay2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_788rv"]
+atlas = ExtResource("1_jgay2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtpt5"]
+atlas = ExtResource("1_jgay2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhxyh"]
+atlas = ExtResource("1_jgay2")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62aeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_788rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtpt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhxyh")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}]

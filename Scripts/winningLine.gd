@@ -2,13 +2,13 @@ extends Node
 class_name WinningLine
 
 const points = {
-	Animal.AnimalType.SLUG: 5,
-	Animal.AnimalType.BETTER_SLUG: 10,
-	Animal.AnimalType.TOAD: 20,
-	Animal.AnimalType.SNAKE: 40,
-	Animal.AnimalType.CHICKEN: 80,
-	Animal.AnimalType.FOX: 160,
-	Animal.AnimalType.ALIEN: 320
+	Animal.AnimalType.SLUG: 1,
+	Animal.AnimalType.BETTER_SLUG: 2,
+	Animal.AnimalType.TOAD: 4,
+	Animal.AnimalType.SNAKE: 8,
+	Animal.AnimalType.CHICKEN: 15,
+	Animal.AnimalType.FOX: 20,
+	Animal.AnimalType.ALIEN: 50
 }
 
 enum GameState {

@@ -26,6 +26,8 @@ var throwArrowPrefab: PackedScene = preload("res://PrefabScenes/red_arrow.tscn")
 @export var ui_sprite: Texture2D
 @export var state : AnimalState
 
+const FIRE: SpriteFrames = preload("res://fire.tres")
+
 #===========Throw parameters================#
 var throw_time: float = 0.5 # seconds, time for the animal to land once thrown
 var throw_rotation_speed: float =  20.0# radians per second
@@ -194,3 +196,5 @@ func queue_free_delayed(label: Label, seconds: float):
 func squish():
 	state = AnimalState.SQUISHED
 	collision_shape.disabled = true;
+	sprite.frames = FIRE
+	sprite.play("burn")

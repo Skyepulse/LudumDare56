@@ -6,8 +6,10 @@ var camion: PackedScene = preload("res://PrefabScenes/Voitures/Camion.tscn")
 
 var road: PackedScene = preload("res://PrefabScenes/road_sprite.tscn")
 
-@export var delay = 0.15 #Time between car
-@export var car_speed = 1000
+@export var delay = 1 #Time between car
+@export var car_speed = 200
+@export var proba_droite = 0.1
+@export var proba_gauche = 0.1
 var time_passed = 0.0
 
 var top_left_position
@@ -35,9 +37,9 @@ func _process(delta: float) -> void:
 	var rand_droite = randf()
 
 	if time_passed >= delay:
-		if rand_gauche <= 0.1: #probability that there is a car on delay
+		if rand_gauche <= proba_droite: #probability that there is a car on delay
 			voiture_move(top_left_position, 2, true)
-		if rand_droite <= 0.1: #probability that there is a car on delay
+		if rand_droite <= proba_gauche: #probability that there is a car on delay
 			voiture_move(top_right_position, 1, false)
 		time_passed = 0.0
 			

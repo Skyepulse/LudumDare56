@@ -4,7 +4,8 @@
 
 [node name="CarSpawner" type="Node2D"]
 script = ExtResource("1_i5x5e")
-car_speed = 200
+proba_droite = 0.25
+proba_gauche = 0.25
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

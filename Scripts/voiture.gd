@@ -17,5 +17,6 @@ func _process(delta: float) -> void:
 		velocity = speed*direction_gauche
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		var animal: Animal = collision.get_collider()
-		animal.squish()
+		var animal = collision.get_collider()
+		if animal.has_method("squish"):
+			animal.squish()
