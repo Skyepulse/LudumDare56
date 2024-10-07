@@ -1,5 +1,5 @@
 extends Control
-@onready var next_button = $MarginContainer/VBoxContainer/HBoxContainer/NextLevel
+@onready var next_button = $MarginContainer/VBoxContainer/HBoxContainer/Next
 
 var levelPathsArray = ["res://Level Scenes/Level1.tscn",
 						"res://Level Scenes/Level2.tscn",
