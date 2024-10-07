@@ -3,11 +3,6 @@ extends Node2D
 func _ready() -> void:
 	LevelNumber.level_number = 1; # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func win()-> void : 
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://Level Scenes/win_screen.tscn")
