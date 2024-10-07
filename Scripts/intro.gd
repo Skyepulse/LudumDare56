@@ -8,7 +8,7 @@ var texts = [
 			"you were happy",
 			"One day, they built a road separating your slugs from their feeding field.",
 			"Alas! the trucks were too dangerous for you...",
-			"And so, you decided to throw the slugs and other visitors across,",
+			"And so, you decided to throw the slugs and other visitors ggiacross,",
 			" hoping most of them would make it..."]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

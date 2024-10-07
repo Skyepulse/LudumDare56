@@ -166,7 +166,7 @@ texture = ExtResource("1_lswa6")
 material = SubResource("ShaderMaterial_fabfe")
 offset_left = 16.0
 offset_top = 391.0
-offset_right = 354.0
+offset_right = 314.0
 offset_bottom = 556.0
 
 [node name="road" type="TextureRect" parent="."]

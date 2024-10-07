@@ -36,3 +36,8 @@ func hide_text() -> void :
 	hints.hide()
 func go_menu() -> void :
 	get_tree().change_scene_to_file("res://Level Scenes/control.tscn")
+
+func hover_predator() -> void : 
+	hints.clear()
+	text = "Predators can eat your stack... \n domesticate them by dragging them in the pen!"
+	display_text()
