@@ -27,7 +27,7 @@ radius = 13.0
 speed = 20000
 max_throw_distance = 200.0
 min_throw_distance = 100.0
-type = 2
+type = 1
 ui_sprite = ExtResource("2_getoe")
 
 [node name="AnimatedSprite2D" parent="." index="0"]

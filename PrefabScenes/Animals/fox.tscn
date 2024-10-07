@@ -29,7 +29,7 @@ height = 66.0
 speed = 30000
 max_throw_distance = 350.0
 min_throw_distance = 100.0
-type = 5
+type = 4
 ui_sprite = ExtResource("2_4a0oy")
 
 [node name="AnimatedSprite2D" parent="." index="0"]

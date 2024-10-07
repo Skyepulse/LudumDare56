@@ -102,7 +102,7 @@ func debug_animal_list():
 		
 	result += "]"
 	
-	#print(result)
+	print(result)
 
 func add_animal(animal: Animal):
 	animal_list.append(animal)
