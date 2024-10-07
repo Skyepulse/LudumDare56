@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_51p1n"]
 [ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="4_gts8a"]
 [ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="5_gi2b8"]
-[ext_resource type="Texture2D" uid="uid://d06j17wyjpymn" path="res://Sprites/fire_crash.png" id="6_up046"]
+[ext_resource type="Texture2D" uid="uid://6r6gfs3h5ao5" path="res://Sprites/fire_crash.png" id="6_up046"]
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
