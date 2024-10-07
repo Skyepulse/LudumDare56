@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxhhkulpgydwe"]
+[gd_scene load_steps=13 format=3 uid="uid://bxhhkulpgydwe"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Scripts/blurr.gdshader" id="2_p2h16"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="3_ragyt"]
 [ext_resource type="Texture2D" uid="uid://dtijsqxsoxlax" path="res://Sprites/pause_button.png" id="4_el6cu"]
+[ext_resource type="Texture2D" uid="uid://bi1tlsulru1v6" path="res://Sprites/play_button.png" id="4_r2lqq"]
 [ext_resource type="Texture2D" uid="uid://32dbdtn7o7a2" path="res://Sprites/pause_button_fonce.png" id="5_kh81t"]
+[ext_resource type="Texture2D" uid="uid://d4kteftn62e0d" path="res://Sprites/play_button_fonce.png" id="5_oc82q"]
+[ext_resource type="Texture2D" uid="uid://ciyhru6e4t0uv" path="res://Sprites/replay_button.png" id="6_bu7ax"]
+[ext_resource type="Texture2D" uid="uid://djm1e1djx3skg" path="res://Sprites/replay_button_fonce.png" id="7_738q6"]
+[ext_resource type="Texture2D" uid="uid://lkhnce0ymiwo" path="res://Sprites/home_button.png" id="8_s73ir"]
+[ext_resource type="Texture2D" uid="uid://btya56e33fr84" path="res://Sprites/home_button_fonce.png" id="9_x0x2l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bdq0o"]
 shader = ExtResource("2_p2h16")
@@ -33,6 +39,20 @@ mouse_filter = 2
 [node name="Menu" type="Control" parent="."]
 anchors_preset = 0
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="Menu"]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 117.0
+offset_right = 816.0
+offset_bottom = 159.0
+theme_override_colors/default_color = Color(0.138468, 0.233015, 0.534295, 1)
+theme_override_fonts/normal_font = ExtResource("3_ragyt")
+theme_override_font_sizes/normal_font_size = 40
+text = "Game Paused"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
 [node name="hiddenMenu" type="MarginContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = 8
@@ -50,23 +70,20 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/hiddenMenu"]
 layout_mode = 2
 
-[node name="Resume" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
-custom_minimum_size = Vector2(64, 45)
+[node name="Resume" type="TextureButton" parent="Menu/hiddenMenu/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ragyt")
-text = "Resume"
+texture_normal = ExtResource("4_r2lqq")
+texture_pressed = ExtResource("5_oc82q")
 
-[node name="Replay" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
-custom_minimum_size = Vector2(64, 45)
+[node name="Replay" type="TextureButton" parent="Menu/hiddenMenu/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ragyt")
-text = "Replay"
+texture_normal = ExtResource("6_bu7ax")
+texture_pressed = ExtResource("7_738q6")
 
-[node name="Home" type="Button" parent="Menu/hiddenMenu/VBoxContainer"]
-custom_minimum_size = Vector2(64, 45)
+[node name="Home" type="TextureButton" parent="Menu/hiddenMenu/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ragyt")
-text = "Home"
+texture_normal = ExtResource("8_s73ir")
+texture_pressed = ExtResource("9_x0x2l")
 
 [node name="PauseButton" type="TextureButton" parent="."]
 layout_mode = 1

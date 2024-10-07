@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfxalqyg2hlyc"]
+[gd_scene load_steps=10 format=3 uid="uid://bfxalqyg2hlyc"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_k8ugf"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_8r226"]
-[ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_51p1n"]
+[ext_resource type="Texture2D" uid="uid://ciyhru6e4t0uv" path="res://Sprites/replay_button.png" id="3_v4vs2"]
 [ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="4_gts8a"]
+[ext_resource type="Texture2D" uid="uid://djm1e1djx3skg" path="res://Sprites/replay_button_fonce.png" id="4_ntmht"]
 [ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="5_gi2b8"]
 [ext_resource type="Texture2D" uid="uid://6r6gfs3h5ao5" path="res://Sprites/fire_crash.png" id="6_up046"]
+[ext_resource type="Texture2D" uid="uid://lkhnce0ymiwo" path="res://Sprites/home_button.png" id="6_vdc16"]
+[ext_resource type="Texture2D" uid="uid://btya56e33fr84" path="res://Sprites/home_button_fonce.png" id="7_i6ms5"]
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
@@ -69,15 +72,15 @@ focus_neighbor_top = NodePath("../RichTextLabel")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Replay" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Replay2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_51p1n")
-text = "Replay"
+texture_normal = ExtResource("3_v4vs2")
+texture_pressed = ExtResource("4_ntmht")
 
-[node name="Home" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Home2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_51p1n")
-text = "Home"
+texture_normal = ExtResource("6_vdc16")
+texture_pressed = ExtResource("7_i6ms5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -88,7 +91,7 @@ fit_content = true
 tab_size = 6
 
 [node name="Carred1" type="Sprite2D" parent="."]
-position = Vector2(419, 327)
+position = Vector2(395, 327)
 texture = ExtResource("4_gts8a")
 
 [node name="Carblue1" type="Sprite2D" parent="."]
@@ -104,5 +107,5 @@ texture = ExtResource("6_up046")
 position = Vector2(311, 322)
 texture = ExtResource("6_up046")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay" to="." method="replay"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home" to="." method="go_home"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay2" to="." method="replay"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home2" to="." method="go_home"]

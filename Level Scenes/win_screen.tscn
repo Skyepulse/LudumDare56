@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://2pt1cxdrak6g"]
+[gd_scene load_steps=13 format=3 uid="uid://2pt1cxdrak6g"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_5cqks"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_5p3a8"]
-[ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_1nukb"]
+[ext_resource type="Texture2D" uid="uid://ciyhru6e4t0uv" path="res://Sprites/replay_button.png" id="3_ndnsm"]
 [ext_resource type="Texture2D" uid="uid://dhlf0oliv2tyu" path="res://Sprites/slug_turn.png" id="4_4myf4"]
+[ext_resource type="Texture2D" uid="uid://djm1e1djx3skg" path="res://Sprites/replay_button_fonce.png" id="4_7eam4"]
 [ext_resource type="Texture2D" uid="uid://vmbn1l5yr0sm" path="res://Sprites/fox_walk2.png" id="5_12g8b"]
+[ext_resource type="Texture2D" uid="uid://basnpsisulg16" path="res://Sprites/next_button.png" id="5_y4oql"]
 [ext_resource type="Texture2D" uid="uid://c5tmi18ecjg7w" path="res://Sprites/betterSlug_walk_1.png" id="6_6xpnt"]
+[ext_resource type="Texture2D" uid="uid://oieybhmajpvc" path="res://Sprites/next_button_fonce.png" id="6_lqktm"]
+[ext_resource type="Texture2D" uid="uid://lkhnce0ymiwo" path="res://Sprites/home_button.png" id="7_og2nf"]
 [ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="7_qctju"]
+[ext_resource type="Texture2D" uid="uid://btya56e33fr84" path="res://Sprites/home_button_fonce.png" id="8_0njpy"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -70,21 +75,20 @@ focus_neighbor_top = NodePath("../RichTextLabel")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Replay" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Replay" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1nukb")
-text = "Replay"
+texture_normal = ExtResource("3_ndnsm")
+texture_pressed = ExtResource("4_7eam4")
 
-[node name="NextLevel" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Next" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1nukb")
-text = "Next "
-icon_alignment = 1
+texture_normal = ExtResource("5_y4oql")
+texture_pressed = ExtResource("6_lqktm")
 
-[node name="Home" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Home" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1nukb")
-text = "Home"
+texture_normal = ExtResource("7_og2nf")
+texture_pressed = ExtResource("8_0njpy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -114,6 +118,4 @@ position = Vector2(567, 201)
 scale = Vector2(3, 3)
 texture = ExtResource("7_qctju")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay" to="." method="replay"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NextLevel" to="." method="go_to_next"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home" to="." method="go_home"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="go_to_next"]
