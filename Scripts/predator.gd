@@ -50,14 +50,19 @@ func _process(_delta):
 		global_position = get_global_mouse_position()
 
 func on_press():
+	if state == PredatorState.FLEEING:
+		return
+		
 	if timer:
 		timer.stop()
+
 	state = PredatorState.HELD
 	if deathTimer != null:
 		deathTimer.stop()
 		deathTimer = null
 			
 func on_release():
+	print(is_in_stack)
 	if is_in_stack:
 		if Vivier.instance:
 			Vivier.instance.instantiate_animal(kind)
