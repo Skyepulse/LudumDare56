@@ -14,11 +14,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func roll_credits() -> void :
+	get_tree().change_scene_to_file("res://Level Scenes/Credits.tscn")
 func goToLevel(number : int) -> void :
 	#temp definition
 	get_tree().change_scene_to_file(levelPathsArray[number-1])
 	
-	
+
 func goToLevel1() -> void :
 	goToLevel(1);
 func goToLevel2() -> void :
