@@ -46,14 +46,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -157.0
-offset_top = -172.0
+offset_left = -168.0
+offset_top = -152.0
 grow_horizontal = 0
 grow_vertical = 0
 columns = 2
 
 [node name="slugContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -68,7 +68,7 @@ size_flags_horizontal = 3
 text = "0"
 
 [node name="betterSlugContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -83,7 +83,7 @@ size_flags_horizontal = 3
 text = "0"
 
 [node name="toadContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -98,6 +98,7 @@ size_flags_horizontal = 3
 text = "0"
 
 [node name="snakeContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -112,7 +113,7 @@ size_flags_horizontal = 3
 text = "0"
 
 [node name="chickenContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -127,6 +128,7 @@ size_flags_horizontal = 3
 text = "0"
 
 [node name="foxContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -142,6 +144,7 @@ text = "0"
 
 [node name="alienContainer" type="HBoxContainer" parent="Control/Control/GridContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 

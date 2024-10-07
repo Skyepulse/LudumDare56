@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch20a0toivxrs"]
+[gd_scene load_steps=7 format=3 uid="uid://ch20a0toivxrs"]
 
 [ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://PrefabScenes/Animals/animal.tscn" id="1_aa8qn"]
 [ext_resource type="Texture2D" uid="uid://s4cjheo1fwwp" path="res://Sprites/poulet1.png" id="2_8xxsq"]
@@ -21,6 +21,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_vipaw"]
 radius = 12.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8en2"]
+radius = 12.0
+height = 42.0
+
 [node name="Chicken" instance=ExtResource("1_aa8qn")]
 speed = 25000
 max_throw_distance = 300.0
@@ -36,3 +40,7 @@ frame_progress = 0.974876
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_vipaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_a8en2")

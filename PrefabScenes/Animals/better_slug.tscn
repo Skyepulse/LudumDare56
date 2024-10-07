@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddy0tjcvihfi2"]
+[gd_scene load_steps=8 format=3 uid="uid://ddy0tjcvihfi2"]
 
 [ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://PrefabScenes/Animals/animal.tscn" id="1_fx4m6"]
 [ext_resource type="Texture2D" uid="uid://c5tmi18ecjg7w" path="res://Sprites/betterSlug_walk_1.png" id="2_n0evy"]
@@ -22,6 +22,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_atbed"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nq7b2"]
+
 [node name="BetterSlug" instance=ExtResource("1_fx4m6")]
 speed = 12000
 max_throw_distance = 175.0
@@ -37,3 +39,7 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_atbed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_nq7b2")

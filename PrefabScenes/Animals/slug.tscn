@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0h4t8bmmobpp"]
+[gd_scene load_steps=7 format=3 uid="uid://d0h4t8bmmobpp"]
 
 [ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://PrefabScenes/Animals/animal.tscn" id="1_jliu6"]
 [ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="2_kwfaj"]
@@ -21,6 +21,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0lq71"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bffls"]
+
 [node name="Slug" instance=ExtResource("1_jliu6")]
 collision_mask = 6
 speed = 10000
@@ -29,7 +31,6 @@ min_throw_distance = 100.0
 ui_sprite = ExtResource("2_kwfaj")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_10orl")
 autoplay = "default"
 frame_progress = 0.393228
@@ -37,3 +38,6 @@ frame_progress = 0.393228
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_0lq71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_bffls")

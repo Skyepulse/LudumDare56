@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbd4vp07g7p1a"]
+[gd_scene load_steps=3 format=3 uid="uid://cbd4vp07g7p1a"]
 
 [ext_resource type="Script" path="res://Scripts/animal.gd" id="1_52t7k"]
 [ext_resource type="Script" path="res://Scripts/drag_and_drop.gd" id="2_b4qwk"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_801pg"]
-radius = 25.1794
 
 [node name="Animal" type="CharacterBody2D"]
 collision_mask = 7
@@ -15,9 +12,6 @@ script = ExtResource("1_52t7k")
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 6
 script = ExtResource("2_b4qwk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_801pg")
 
 [node name="Label" type="Label" parent="."]
 visible = false

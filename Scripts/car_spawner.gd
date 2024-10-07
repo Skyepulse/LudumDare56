@@ -57,5 +57,6 @@ func voiture_move(camera_position, direc: int,a: bool ) -> void:
 	voiture_instance.speed = car_speed
 	
 	voiture_instance.direc = direc
+	voiture_instance.scale.y = 1 / scale.y
 	add_child(voiture_instance)
 	voiture_instance.position = camera_position

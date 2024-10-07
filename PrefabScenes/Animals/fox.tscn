@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8i6rcx7uonvf"]
+[gd_scene load_steps=7 format=3 uid="uid://b8i6rcx7uonvf"]
 
 [ext_resource type="PackedScene" uid="uid://cbd4vp07g7p1a" path="res://PrefabScenes/Animals/animal.tscn" id="1_ips1x"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="2_4a0oy"]
@@ -21,6 +21,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fyk6u"]
 radius = 23.0217
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whsol"]
+radius = 19.0
+height = 66.0
+
 [node name="Fox" instance=ExtResource("1_ips1x")]
 speed = 30000
 max_throw_distance = 350.0
@@ -37,5 +41,6 @@ frame_progress = 0.164098
 position = Vector2(2, 3)
 shape = SubResource("CircleShape2D_fyk6u")
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(5, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(4, 3)
+shape = SubResource("CapsuleShape2D_whsol")
