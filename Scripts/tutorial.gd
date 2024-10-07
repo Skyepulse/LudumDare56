@@ -39,5 +39,5 @@ func go_menu() -> void :
 
 func hover_predator() -> void : 
 	hints.clear()
-	text = "Predators can eat your stack... \n domesticate them by dragging them in the pen!"
+	text = "Predators eat your stack... \n domesticate them by dragging them in the pen!"
 	display_text()

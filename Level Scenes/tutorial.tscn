@@ -276,13 +276,20 @@ offset_right = 332.0
 offset_bottom = 473.0
 texture = ExtResource("1_lswa6")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="transparent" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_fabfe")
 layout_mode = 0
 offset_left = 16.0
 offset_top = 391.0
-offset_right = 354.0
+offset_right = 305.0
 offset_bottom = 556.0
+
+[node name="transparent2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fabfe")
+offset_left = 244.0
+offset_top = 468.0
+offset_right = 373.0
+offset_bottom = 578.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -306,6 +313,8 @@ autoplay = true
 [connection signal="mouse_exited" from="car2" to="." method="exit_object"]
 [connection signal="mouse_entered" from="throwing zone" to="." method="hover_throwing_zone"]
 [connection signal="mouse_exited" from="throwing zone" to="." method="exit_object"]
-[connection signal="mouse_entered" from="ColorRect2" to="." method="hover_pen"]
-[connection signal="mouse_exited" from="ColorRect2" to="." method="exit_object"]
+[connection signal="mouse_entered" from="transparent" to="." method="hover_pen"]
+[connection signal="mouse_exited" from="transparent" to="." method="exit_object"]
+[connection signal="mouse_entered" from="transparent2" to="." method="hover_predator"]
+[connection signal="mouse_exited" from="transparent2" to="." method="exit_object"]
 [connection signal="pressed" from="Button" to="." method="go_menu"]
