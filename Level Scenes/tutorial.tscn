@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="6_odhdm"]
 [ext_resource type="Texture2D" uid="uid://d2m5hnka55vly" path="res://Sprites/terrain_lancer.png" id="7_0v85i"]
 [ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="7_m5bqn"]
-[ext_resource type="Texture2D" uid="uid://d2m5hnka55vly" path="res://Sprites/terrain_lancer.png" id="7_r73nr"]
 [ext_resource type="Texture2D" uid="uid://cycfbpregtkia" path="res://Sprites/truck2.png" id="8_4b7i4"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="9_xoib5"]
 [ext_resource type="Texture2D" uid="uid://t2m2bsoc2yri" path="res://Sprites/tree.png" id="10_1kp1s"]
