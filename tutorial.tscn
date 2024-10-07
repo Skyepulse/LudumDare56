@@ -273,5 +273,6 @@ scroll_active = false
 [connection signal="mouse_exited" from="car" to="." method="exit_object"]
 [connection signal="mouse_entered" from="car2" to="." method="hover_cars"]
 [connection signal="mouse_exited" from="car2" to="." method="exit_object"]
+[connection signal="mouse_entered" from="predator" to="." method="hover_predator"]
 [connection signal="mouse_entered" from="throwing zone" to="." method="hover_throwing_zone"]
 [connection signal="mouse_exited" from="throwing zone" to="." method="exit_object"]
