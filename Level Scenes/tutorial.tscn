@@ -9,12 +9,12 @@
 [ext_resource type="Shader" path="res://tutorial.gdshader" id="6_3hpnb"]
 [ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="6_odhdm"]
 [ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="7_m5bqn"]
+[ext_resource type="Texture2D" uid="uid://d2m5hnka55vly" path="res://Sprites/terrain_lancer.png" id="7_r73nr"]
 [ext_resource type="Texture2D" uid="uid://cycfbpregtkia" path="res://Sprites/truck2.png" id="8_4b7i4"]
 [ext_resource type="Texture2D" uid="uid://by1830x2ndrj1" path="res://Sprites/fox_walk1.png" id="9_xoib5"]
 [ext_resource type="Texture2D" uid="uid://t2m2bsoc2yri" path="res://Sprites/tree.png" id="10_1kp1s"]
 [ext_resource type="Texture2D" uid="uid://bwdhlwan668i7" path="res://Sprites/coeur.png" id="11_365fg"]
 [ext_resource type="Texture2D" uid="uid://cbpx2ft4kehma" path="res://Sprites/buisson.png" id="12_2r8k4"]
-[ext_resource type="Texture2D" uid="uid://bxycrnu4ryrob" path="res://icon.svg" id="12_sasit"]
 [ext_resource type="Texture2D" uid="uid://cgsyfni5fw3an" path="res://Sprites/grass_patch_3.png" id="13_i317t"]
 [ext_resource type="Texture2D" uid="uid://deftxgkvbcv8h" path="res://Sprites/arrival.png" id="14_rdhj5"]
 [ext_resource type="FontFile" uid="uid://blebgpfn3utle" path="res://fonts/Avenixel-Regular.ttf" id="17_17mcr"]
@@ -107,7 +107,7 @@ offset_left = 410.0
 offset_top = 379.0
 offset_right = 773.0
 offset_bottom = 507.0
-texture = ExtResource("12_sasit")
+texture = ExtResource("7_r73nr")
 
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(1061, 385)
@@ -119,7 +119,7 @@ position = Vector2(171, 463)
 texture = ExtResource("11_365fg")
 
 [node name="Buisson" type="Sprite2D" parent="."]
-position = Vector2(818, 570)
+position = Vector2(377, 582)
 scale = Vector2(4.375, 4.25)
 texture = ExtResource("12_2r8k4")
 
@@ -137,10 +137,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 416.0
-offset_top = 516.0
-offset_right = -395.0
-offset_bottom = -25.0
+offset_left = 368.0
+offset_top = 93.0
+offset_right = -443.0
+offset_bottom = -448.0
 theme_override_fonts/normal_font = ExtResource("17_17mcr")
 theme_override_font_sizes/normal_font_size = 30
 theme_override_styles/background = SubResource("StyleBoxFlat_m23nb")

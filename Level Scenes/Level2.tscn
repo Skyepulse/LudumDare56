@@ -38,8 +38,7 @@ initial_foxes = 1
 position = Vector2(621, -48)
 rotation = -1.5708
 
-[node name="PredatorSpawner" parent="." node_paths=PackedStringArray("vivier") instance=ExtResource("11_ih2bp")]
-vivier = NodePath("../Vivier")
+[node name="PredatorSpawner" parent="." instance=ExtResource("11_ih2bp")]
 
 [node name="Area2D" type="Area2D" parent="PredatorSpawner"]
 
