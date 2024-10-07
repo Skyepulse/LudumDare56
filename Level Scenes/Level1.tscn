@@ -25,8 +25,7 @@ size = Vector2(161.5, 295)
 script = ExtResource("1_llewe")
 
 [node name="Throw Area" parent="." instance=ExtResource("11_aoj50")]
-position = Vector2(597, 511)
-rotation = -1.57079
+position = Vector2(625, 650)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(579, 325)
@@ -72,8 +71,7 @@ state = 2
 position = Vector2(597, 499)
 state = 2
 
-[node name="PredatorSpawner" parent="." node_paths=PackedStringArray("vivier") instance=ExtResource("1_34c6p")]
-vivier = NodePath("../Vivier")
+[node name="PredatorSpawner" parent="." instance=ExtResource("1_34c6p")]
 
 [node name="Area2D" type="Area2D" parent="PredatorSpawner"]
 
