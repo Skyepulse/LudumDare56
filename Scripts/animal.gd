@@ -173,31 +173,31 @@ func update_arrow_position():
 		
 #===============Floating Label=====================#
 func spawn_floating_label(value: int, spawn_point: Vector2):
-	var label = Label.new()
+	var qlabel = Label.new()
 	
-	label.text = "+%d" % value
-	label.add_theme_color_override("font_color", Color(1, 0, 0))
-	label.add_theme_font_size_override("font_size", 30)
+	qlabel.text = "+%d" % value
+	qlabel.add_theme_color_override("font_color", Color(1, 0, 0))
+	qlabel.add_theme_font_size_override("font_size", 30)
 	
 	
-	label.position = spawn_point
-	label.rotation = 0
+	qlabel.position = spawn_point
+	qlabel.rotation = 0
 	
-	get_tree().get_root().get_node("Level").add_child(label)
+	get_tree().get_root().get_node("Level").add_child(qlabel)
 	
-	tween_floating_text(label)
+	tween_floating_text(qlabel)
 	
-	queue_free_delayed(label, 1.5)
+	queue_free_delayed(qlabel, 1.5)
 
-func tween_floating_text(label: Label):
+func tween_floating_text(qlabel: Label):
 	var tween = create_tween()
 	# Animate the label moving upwards by 50 units in 1.5 seconds
-	tween.tween_property(label, "position:y", self.position.y - 50, 1.5)
-	tween.tween_property(label, "modulate:a", 0, 1.5)  # Fade out
+	tween.tween_property(qlabel, "position:y", self.position.y - 50, 1.5)
+	tween.tween_property(qlabel, "modulate:a", 0, 1.5)  # Fade out
 
-func queue_free_delayed(label: Label, seconds: float):
+func queue_free_delayed(qlabel: Label, seconds: float):
 	await get_tree().create_timer(seconds).timeout
-	label.queue_free()
+	qlabel.queue_free()
 
 func squish():
 	state = AnimalState.SQUISHED
