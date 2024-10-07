@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Levels/pause_menu.gd" id="1_tw5my"]
 [ext_resource type="Shader" path="res://Scripts/blurr.gdshader" id="2_p2h16"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="3_ragyt"]
-[ext_resource type="Texture2D" uid="uid://c1t75d2fsxr1e" path="res://Sprites/level_box_2.png" id="3_tk813"]
-[ext_resource type="Texture2D" uid="uid://2wj8ge4j4r8" path="res://Sprites/level_box_2_fonce.png" id="4_o8exn"]
+[ext_resource type="Texture2D" uid="uid://dtijsqxsoxlax" path="res://Sprites/pause_button.png" id="4_el6cu"]
+[ext_resource type="Texture2D" uid="uid://32dbdtn7o7a2" path="res://Sprites/pause_button_fonce.png" id="5_kh81t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bdq0o"]
 shader = ExtResource("2_p2h16")
@@ -76,8 +76,8 @@ anchor_right = 1.0
 offset_left = -64.0
 offset_bottom = 64.0
 grow_horizontal = 0
-texture_normal = ExtResource("3_tk813")
-texture_pressed = ExtResource("4_o8exn")
+texture_normal = ExtResource("4_el6cu")
+texture_pressed = ExtResource("5_kh81t")
 
 [connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Resume" to="." method="pause_game"]
 [connection signal="pressed" from="Menu/hiddenMenu/VBoxContainer/Replay" to="." method="replay"]

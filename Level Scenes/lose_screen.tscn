@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfxalqyg2hlyc"]
+[gd_scene load_steps=7 format=3 uid="uid://bfxalqyg2hlyc"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_k8ugf"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_8r226"]
 [ext_resource type="FontFile" uid="uid://cv2i8dwlyc2i8" path="res://fonts/pixhobo.ttf" id="3_51p1n"]
+[ext_resource type="Texture2D" uid="uid://cvqvooamd33yw" path="res://Sprites/carred1.png" id="4_gts8a"]
+[ext_resource type="Texture2D" uid="uid://c4vg6u5ua00sq" path="res://Sprites/carblue1.png" id="5_gi2b8"]
+[ext_resource type="Texture2D" uid="uid://d06j17wyjpymn" path="res://Sprites/fire_crash.png" id="6_up046"]
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
@@ -83,6 +86,23 @@ bbcode_enabled = true
 text = "A game by MATELOU & co"
 fit_content = true
 tab_size = 6
+
+[node name="Carred1" type="Sprite2D" parent="."]
+position = Vector2(419, 327)
+texture = ExtResource("4_gts8a")
+
+[node name="Carblue1" type="Sprite2D" parent="."]
+position = Vector2(771, 98)
+texture = ExtResource("5_gi2b8")
+flip_h = true
+
+[node name="FireCrash2" type="Sprite2D" parent="."]
+position = Vector2(892, 87)
+texture = ExtResource("6_up046")
+
+[node name="FireCrash" type="Sprite2D" parent="."]
+position = Vector2(311, 322)
+texture = ExtResource("6_up046")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay" to="." method="replay"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home" to="." method="go_home"]
