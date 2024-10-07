@@ -108,7 +108,7 @@ func on_press():
 	ThrowArea.instance.highlight();
 	if is_in_stack:
 		if Vivier.instance:
-			Vivier.instance.remove_animal(self.type)
+			Vivier.instance.remove_animal(self)
 			if Vivier.instance.get_animal_count(type) <= 1:
 				label.show()
 				
