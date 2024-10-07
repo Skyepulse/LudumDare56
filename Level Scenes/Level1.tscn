@@ -62,4 +62,5 @@ visible = false
 stream = ExtResource("15_vmjbd")
 autoplay = true
 
+[connection signal="lose" from="WinningLine" to="." method="lose"]
 [connection signal="win" from="WinningLine" to="." method="win"]
