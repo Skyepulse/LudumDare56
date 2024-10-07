@@ -27,7 +27,7 @@ height = 66.0
 
 [node name="Fox" instance=ExtResource("1_ips1x")]
 speed = 30000
-max_throw_distance = 350.0
+max_throw_distance = 220.0
 min_throw_distance = 100.0
 type = 4
 ui_sprite = ExtResource("2_4a0oy")
