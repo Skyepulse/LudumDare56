@@ -286,6 +286,7 @@ offset_bottom = 556.0
 
 [node name="transparent2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_fabfe")
+layout_mode = 0
 offset_left = 244.0
 offset_top = 468.0
 offset_right = 373.0
@@ -293,17 +294,28 @@ offset_bottom = 578.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 918.0
-offset_top = 557.0
-offset_right = 1133.0
-offset_bottom = 618.0
+offset_left = 912.0
+offset_top = 536.0
+offset_right = 1131.0
+offset_bottom = 640.0
 theme_override_fonts/font = ExtResource("19_s4haj")
-theme_override_font_sizes/font_size = 45
-text = "Play!"
+theme_override_font_sizes/font_size = 30
+text = "Click here
+
+ to PLAY"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_nk1vv")
 autoplay = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 223.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("19_s4haj")
+theme_override_font_sizes/font_size = 30
+text = "TUTORIAL : "
 
 [connection signal="mouse_entered" from="road" to="." method="hover_road"]
 [connection signal="mouse_exited" from="road" to="." method="exit_object"]
