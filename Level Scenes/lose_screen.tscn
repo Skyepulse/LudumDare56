@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfxalqyg2hlyc"]
+[gd_scene load_steps=11 format=3 uid="uid://bfxalqyg2hlyc"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_k8ugf"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_8r226"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://6r6gfs3h5ao5" path="res://Sprites/fire_crash.png" id="6_up046"]
 [ext_resource type="Texture2D" uid="uid://lkhnce0ymiwo" path="res://Sprites/home_button.png" id="6_vdc16"]
 [ext_resource type="Texture2D" uid="uid://btya56e33fr84" path="res://Sprites/home_button_fonce.png" id="7_i6ms5"]
+[ext_resource type="AudioStream" uid="uid://b1m6y3j24yqot" path="res://Musics/Little jazz.mp3" id="10_qgty3"]
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
@@ -106,6 +107,10 @@ texture = ExtResource("6_up046")
 [node name="FireCrash" type="Sprite2D" parent="."]
 position = Vector2(311, 322)
 texture = ExtResource("6_up046")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_qgty3")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Replay2" to="." method="replay"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Home2" to="." method="go_home"]

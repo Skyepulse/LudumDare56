@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2pt1cxdrak6g"]
+[gd_scene load_steps=14 format=3 uid="uid://2pt1cxdrak6g"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/win_screen.gd" id="1_5cqks"]
 [ext_resource type="FontFile" uid="uid://c4mtij8u5yy2j" path="res://fonts/fs-a-pixel-away.ttf" id="2_5p3a8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://lkhnce0ymiwo" path="res://Sprites/home_button.png" id="7_og2nf"]
 [ext_resource type="Texture2D" uid="uid://6fb6twl3vvbb" path="res://Sprites/frog1.png" id="7_qctju"]
 [ext_resource type="Texture2D" uid="uid://btya56e33fr84" path="res://Sprites/home_button_fonce.png" id="8_0njpy"]
+[ext_resource type="AudioStream" uid="uid://b1m6y3j24yqot" path="res://Musics/Little jazz.mp3" id="13_umomx"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -117,5 +118,9 @@ texture = ExtResource("6_6xpnt")
 position = Vector2(567, 201)
 scale = Vector2(3, 3)
 texture = ExtResource("7_qctju")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_umomx")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="go_to_next"]
