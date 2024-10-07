@@ -25,6 +25,7 @@ rotation = 1.57068
 texture = ExtResource("1_rxbxx")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1221.0
 offset_top = -120.0
 offset_right = 3701.0
@@ -61,6 +62,7 @@ rotation = 1.57117
 texture = ExtResource("4_mi8cn")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 397.0
 offset_top = 52.0
 offset_right = 1053.0
@@ -74,6 +76,7 @@ scroll_active = false
 shortcut_keys_enabled = false
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 340.0
 offset_top = 190.0
 offset_right = 996.0

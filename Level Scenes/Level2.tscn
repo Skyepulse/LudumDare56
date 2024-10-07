@@ -35,8 +35,11 @@ initial_slugs = 2
 
 [node name="WinningLine" parent="." instance=ExtResource("5_bif0b")]
 position = Vector2(626, 71)
+total_needed_points = 20
+time_to_win = 200
 
 [node name="PredatorSpawner" parent="." instance=ExtResource("11_ih2bp")]
+predator_max = 1
 
 [node name="Area2D" type="Area2D" parent="PredatorSpawner"]
 
