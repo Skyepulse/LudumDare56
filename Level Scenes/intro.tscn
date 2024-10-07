@@ -1,0 +1,189 @@
+[gd_scene load_steps=15 format=3 uid="uid://tddn70yda2w5"]
+
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_risp8"]
+[ext_resource type="Texture2D" uid="uid://d2m5hnka55vly" path="res://Sprites/terrain_lancer.png" id="2_tjwqq"]
+[ext_resource type="FontFile" uid="uid://blebgpfn3utle" path="res://fonts/Avenixel-Regular.ttf" id="3_1jmk8"]
+[ext_resource type="Texture2D" uid="uid://dv56c205cx1x0" path="res://Sprites/viver_right.png" id="4_og6s6"]
+[ext_resource type="Texture2D" uid="uid://by5wpixti0amb" path="res://Sprites/viver_left.png" id="5_8pvrs"]
+[ext_resource type="Texture2D" uid="uid://w8qcpggynqyg" path="res://Sprites/viver_face.png" id="6_paeyw"]
+[ext_resource type="Texture2D" uid="uid://d4e1qphd7md06" path="res://Sprites/viver_back.png" id="7_a1y6k"]
+[ext_resource type="Shader" path="res://tutorial.gdshader" id="8_mmln5"]
+[ext_resource type="Texture2D" uid="uid://beg0og36rvmg7" path="res://Sprites/slug_walk_1.png" id="9_228te"]
+[ext_resource type="Texture2D" uid="uid://c2su5qxiri0vl" path="res://Sprites/road.png" id="10_ydgtd"]
+[ext_resource type="Texture2D" uid="uid://t2m2bsoc2yri" path="res://Sprites/tree.png" id="11_opwql"]
+[ext_resource type="Texture2D" uid="uid://bxsgq4gpbj763" path="res://Sprites/gentilcoeur.png" id="12_vrydl"]
+[ext_resource type="AudioStream" uid="uid://b1m6y3j24yqot" path="res://Musics/Little jazz.mp3" id="13_fir4d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31yxt"]
+shader = ExtResource("8_mmln5")
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_risp8")
+
+[node name="TerrainLancer" type="Sprite2D" parent="."]
+position = Vector2(758, 644)
+texture = ExtResource("2_tjwqq")
+
+[node name="most_interesting_content" type="RichTextLabel" parent="."]
+offset_left = 528.0
+offset_top = 409.0
+offset_right = 985.0
+offset_bottom = 636.0
+theme_override_colors/default_color = Color(0.450718, 0.237045, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_1jmk8")
+theme_override_font_sizes/normal_font_size = 50
+text = "Welcome to slug ranch!"
+tab_size = 16
+
+[node name="viver" type="CanvasLayer" parent="."]
+
+[node name="fence" type="TextureRect" parent="viver"]
+offset_left = 259.0
+offset_top = 527.0
+offset_right = 387.0
+offset_bottom = 623.0
+texture = ExtResource("4_og6s6")
+
+[node name="fence2" type="TextureRect" parent="viver"]
+offset_left = 79.0
+offset_top = 527.0
+offset_right = 207.0
+offset_bottom = 623.0
+texture = ExtResource("5_8pvrs")
+
+[node name="fence11" type="TextureRect" parent="viver"]
+offset_left = 106.0
+offset_top = 499.0
+offset_right = 234.0
+offset_bottom = 595.0
+texture = ExtResource("5_8pvrs")
+
+[node name="fence12" type="TextureRect" parent="viver"]
+offset_left = 162.0
+offset_top = 445.0
+offset_right = 290.0
+offset_bottom = 541.0
+texture = ExtResource("5_8pvrs")
+
+[node name="fence13" type="TextureRect" parent="viver"]
+offset_left = 134.0
+offset_top = 471.0
+offset_right = 262.0
+offset_bottom = 567.0
+texture = ExtResource("5_8pvrs")
+
+[node name="fence3" type="TextureRect" parent="viver"]
+offset_left = 339.0
+offset_top = 417.0
+offset_right = 467.0
+offset_bottom = 513.0
+texture = ExtResource("6_paeyw")
+
+[node name="fence8" type="TextureRect" parent="viver"]
+offset_left = 295.0
+offset_top = 417.0
+offset_right = 423.0
+offset_bottom = 513.0
+texture = ExtResource("6_paeyw")
+
+[node name="fence9" type="TextureRect" parent="viver"]
+offset_left = 383.0
+offset_top = 418.0
+offset_right = 511.0
+offset_bottom = 514.0
+texture = ExtResource("6_paeyw")
+
+[node name="fence10" type="TextureRect" parent="viver"]
+offset_left = 251.0
+offset_top = 417.0
+offset_right = 379.0
+offset_bottom = 513.0
+texture = ExtResource("6_paeyw")
+
+[node name="fence4" type="TextureRect" parent="viver"]
+offset_left = 143.0
+offset_top = 524.0
+offset_right = 271.0
+offset_bottom = 620.0
+texture = ExtResource("7_a1y6k")
+
+[node name="fence14" type="TextureRect" parent="viver"]
+offset_left = 189.0
+offset_top = 524.0
+offset_right = 317.0
+offset_bottom = 620.0
+texture = ExtResource("7_a1y6k")
+
+[node name="fence15" type="TextureRect" parent="viver"]
+offset_left = 234.0
+offset_top = 525.0
+offset_right = 362.0
+offset_bottom = 621.0
+texture = ExtResource("7_a1y6k")
+
+[node name="fence16" type="TextureRect" parent="viver"]
+offset_left = 278.0
+offset_top = 526.0
+offset_right = 406.0
+offset_bottom = 622.0
+texture = ExtResource("7_a1y6k")
+
+[node name="fence5" type="TextureRect" parent="viver"]
+offset_left = 312.0
+offset_top = 472.0
+offset_right = 440.0
+offset_bottom = 568.0
+texture = ExtResource("4_og6s6")
+
+[node name="fence6" type="TextureRect" parent="viver"]
+offset_left = 286.0
+offset_top = 499.0
+offset_right = 414.0
+offset_bottom = 595.0
+texture = ExtResource("4_og6s6")
+
+[node name="fence7" type="TextureRect" parent="viver"]
+offset_left = 338.0
+offset_top = 445.0
+offset_right = 466.0
+offset_bottom = 541.0
+texture = ExtResource("4_og6s6")
+
+[node name="ColorRect" type="ColorRect" parent="viver"]
+material = SubResource("ShaderMaterial_31yxt")
+offset_left = 150.0
+offset_top = 459.0
+offset_right = 488.0
+offset_bottom = 624.0
+
+[node name="slug" type="TextureRect" parent="viver"]
+offset_left = 252.0
+offset_top = 535.0
+offset_right = 292.0
+offset_bottom = 575.0
+texture = ExtResource("9_228te")
+
+[node name="Road" type="Sprite2D" parent="."]
+position = Vector2(551, 232)
+scale = Vector2(1, 0.727528)
+texture = ExtResource("10_ydgtd")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(116, 364)
+scale = Vector2(4.085, 4.085)
+texture = ExtResource("11_opwql")
+
+[node name="Gentilcoeur" type="Sprite2D" parent="."]
+position = Vector2(1048, 274)
+scale = Vector2(4, 4)
+texture = ExtResource("12_vrydl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_fir4d")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="do_things"]
