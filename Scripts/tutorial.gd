@@ -2,9 +2,6 @@ extends Control
 @onready var hints = $Hints
 var text = ""
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 func hover_cars() -> void :
 	hints.clear()
 	text = "Cars and Trucks will squish your animals!"
