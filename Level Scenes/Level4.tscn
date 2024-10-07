@@ -38,7 +38,7 @@ initial_snakes = 1
 [node name="WinningLine" parent="." instance=ExtResource("4_r8uby")]
 position = Vector2(626, 71)
 total_needed_points = 70
-time_to_win = 210
+time_to_win = 100
 
 [node name="PredatorSpawner" parent="." instance=ExtResource("5_0qucy")]
 predator_max = 4
