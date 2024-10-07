@@ -92,7 +92,9 @@ func collide_wall() -> void :
 	velocity = Vector2(-cos(angle),-sin(angle));
 	
 func _ready() -> void:
-	velocity = Vector2(cos(rotation),sin(rotation));
+	var angle= randf_range(-PI,PI);
+	rotation = deg_to_rad(angle);
+	velocity = Vector2(-cos(angle),-sin(angle));
 	
 func _process(delta: float) -> void:
 	move(delta);
