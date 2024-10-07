@@ -8,8 +8,8 @@ var levelPathsArray = ["res://Level Scenes/Level1.tscn",
 						"res://Level Scenes/Level5.tscn"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void :
-	if (LevelNumber.level_number==5):
-		next_button.hide()
+	if LevelNumber.level_number == 5:
+		next_button.hidden()
 		
 
 

@@ -31,7 +31,7 @@ position = Vector2(787, 600)
 [node name="Vivier" parent="." instance=ExtResource("4_ssp5o")]
 position = Vector2(272, 496)
 scale = Vector2(1.3, 1.3)
-initial_slugs = 2
+initial_slugs = 4
 
 [node name="WinningLine" parent="." instance=ExtResource("5_bif0b")]
 position = Vector2(626, 71)
@@ -50,7 +50,6 @@ shape = SubResource("RectangleShape2D_o2x5s")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("12_mhjmv")]
-visible = false
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 

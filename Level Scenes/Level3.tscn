@@ -51,7 +51,6 @@ shape = SubResource("RectangleShape2D_qf8jl")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="stack_control_ui" parent="CanvasLayer" instance=ExtResource("6_7cyiu")]
-visible = false
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 

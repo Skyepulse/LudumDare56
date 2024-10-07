@@ -5,8 +5,8 @@ const points = {
 	Animal.AnimalType.SLUG: 1,
 	Animal.AnimalType.TOAD: 4,
 	Animal.AnimalType.SNAKE: 8,
-	Animal.AnimalType.CHICKEN: 15,
-	Animal.AnimalType.FOX: 20,
+	Animal.AnimalType.CHICKEN: 10,
+	Animal.AnimalType.FOX: 15,
 	Animal.AnimalType.ALIEN: 50
 }
 
