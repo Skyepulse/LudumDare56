@@ -38,8 +38,8 @@ initial_chickens = 1
 
 [node name="WinningLine" parent="." instance=ExtResource("5_u1dew")]
 position = Vector2(626, 71)
-total_needed_points = 100
-time_to_win = 240
+total_needed_points = 150
+time_to_win = 130
 
 [node name="PredatorSpawner" parent="." instance=ExtResource("6_5u5w7")]
 predator_max = 4
