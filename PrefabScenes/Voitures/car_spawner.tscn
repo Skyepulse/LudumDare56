@@ -1,18 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bea80sbyltokd"]
+[gd_scene load_steps=4 format=3 uid="uid://bea80sbyltokd"]
 
 [ext_resource type="Script" path="res://Scripts/car_spawner.gd" id="1_i5x5e"]
 [ext_resource type="PackedScene" uid="uid://cnorjv36wfjvd" path="res://PrefabScenes/road_sprite.tscn" id="2_7fgwq"]
+[ext_resource type="Texture2D" uid="uid://cbmyqgyxm66ea" path="res://Sprites/road1x2.png" id="3_xewsd"]
 
 [node name="CarSpawner" type="Node2D"]
 script = ExtResource("1_i5x5e")
-proba_droite = 0.25
 proba_gauche = 0.25
+proba_droite = 0.25
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
-[node name="Road" parent="." instance=ExtResource("2_7fgwq")]
+[node name="Road1x1" parent="." instance=ExtResource("2_7fgwq")]
+visible = false
 position = Vector2(621, 178)
+
+[node name="Road1x2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(575, 178)
+scale = Vector2(0.6, 0.652505)
+texture = ExtResource("3_xewsd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

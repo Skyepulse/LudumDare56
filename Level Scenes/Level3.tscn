@@ -24,6 +24,7 @@ position = Vector2(579, 325)
 [node name="CarSpawner" parent="." instance=ExtResource("1_a4inr")]
 position = Vector2(6, 81)
 scale = Vector2(1, 0.72)
+nbr_route = 2
 
 [node name="Throw Area" parent="." instance=ExtResource("2_7xl6q")]
 position = Vector2(787, 600)
